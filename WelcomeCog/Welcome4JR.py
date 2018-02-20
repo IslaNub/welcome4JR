@@ -12,7 +12,6 @@ class Welcome:
 
     def __init__(self, bot):
         self.bot = bot
-        self.settings = fileIO("data/welcome/settings.json", "load")
 
 
     @commands.group(pass_context=True, no_pm=True)
