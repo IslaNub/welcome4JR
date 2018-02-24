@@ -33,6 +33,7 @@ class Welcome:
             if r.emoji == emoji[0]:
                 pass
             elif r.emoji == emoji[1]:
+                pass
 
 def setup(bot):
     bot.add_cog(Welcome(bot))
