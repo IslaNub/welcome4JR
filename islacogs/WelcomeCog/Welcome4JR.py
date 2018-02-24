@@ -13,8 +13,6 @@ class Welcome:
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.group(pass_context=True, no_pm=True)
-    @checks.admin_or_permissions(manage_server=True)
     async def on_member_join(self, member):
         emojis = []
         numbers = [1, 2]
