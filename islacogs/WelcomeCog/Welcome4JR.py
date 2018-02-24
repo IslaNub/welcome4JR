@@ -16,7 +16,10 @@ class Welcome:
     @commands.group(pass_context=True, no_pm=True)
     @checks.admin_or_permissions(manage_server=True)
     async def on_member_join(self, member):
-        emojis = ['1⃣', '2⃣']
+        emojis = []
+        numbers = [1, 2]
+        for n in numbers:
+            emojis.append('{}⃣'.format(str(n)))
         message = 'welcome, please do shit'
         channel_id = '414095133294985221'
         m = await self.bot.send_message(bot.get_channel(channel_id), message)
