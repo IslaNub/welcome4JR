@@ -25,20 +25,21 @@ class Welcome:
             await self.bot.add_reaction(m, e)
             await asyncio.sleep(0.5)
         try:
-            r, u = await self.bot.wait_for_reaction(emoji=emojis, user=member, message=m, timeout=5)
-        except asyncio.TimeoutError:
+            r, u = await self.bot.wait_for_reaction(emoji=emojis, user=member, message=m, timeout=480)
+        except TypeError:
             await self.bot.clear_reactions(m)
+            await self.bot.edit_message(m, 'Nuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuub.')
         else:
             await self.bot.clear_reactions(m) 
-            if r.emoji == emoji[0]:
+            if r.emoji == emojis[0]:
+                await self.bot.send_message(u, 'U nub.')
+            elif r.emoji == emojis[1]:
                 pass
-            elif r.emoji == emoji[1]:
-                pass
-            elif r.emoji == emoji[2]:
-                pass
-            elif r.emoji == emoji[3]:
-                pass
-            elif r.emoji == emoji[4]:
+            elif r.emoji == emojis[2]:
+                message = ('Beep boop.')
+                channel_id = '414095133294985221'
+                await self.bot.send_message(self.bot.get_channel(channel_id), message)
+            elif r.emoji == emojis[3]:
                 pass
 
 def setup(bot):
