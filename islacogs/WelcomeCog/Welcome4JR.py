@@ -30,7 +30,8 @@ class Welcome:
             await self.bot.clear_reactions(m)
             await self.bot.edit_message(m, 'Nuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuub.')
         else:
-            await self.bot.clear_reactions(m) 
+            await self.bot.clear_reactions(m)
+            await self.bot.edit_message(m, 'Nuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuub.')
             if r.emoji == emojis[0]:
                 await self.bot.send_message(u, 'U nub.')
             elif r.emoji == emojis[1]:
