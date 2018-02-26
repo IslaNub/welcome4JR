@@ -15,10 +15,10 @@ class Welcome:
 
     async def on_member_join(self, member):
         emojis = []
-        numbers = [1, 2, 3, 4]
+        numbers = [1, 2, 3, 4, 5]
         for n in numbers:
             emojis.append('{}⃣'.format(str(n)))
-        message = f'Hello {member.mention}! Welcome to the Official Team Liquid discord server. Hope you have a great time here\n1. Want to join our Team Liquid Clans?\n2. Look at our Clan List.\n3. Have any questions?\n4. Ask for a role'
+        message = f'Hello {member.mention}! Welcome to the Official Team Liquid discord server. Hope you have a great time here\n1. Want to join our Team Liquid Clans?\n2. Look at our Clan List.\n3. Have any questions?\n4. Ask for a role.\n5. Just visiting.'
         channel_id = '389100476630695946'
         m = await self.bot.send_message(self.bot.get_channel(channel_id), message)
         for e in emojis:
@@ -40,9 +40,12 @@ class Welcome:
                 ModMail = '<@413786880111542282>'
                 await self.bot.edit_message(m, f'{member.mention} if you have any question regarding Liquid send a message in private to {ModMail}.')
             elif r.emoji == emojis[3]:
-                r = discord.utils.get(member.server.roles, name='Visitors')
-                await self.bot.add_roles(member, r)
-                await self.bot.edit_message(m, f'Added Visitors Role to {member.mention}, you can ask for a Role here.')
+                t = discord.utils.get(member.server.roles, name='Trusted')
+                await self.bot.add_roles(member, t)
+                await self.bot.edit_message(m, f'Added Trusted Role to {member.mention}, you can ask for a Role here.')
+            elif r.emoji == emojis[4]:
+                v = discord.utils.get(member.server.roles, name='Visitors')
+                await self.bot.add_roles(member, v)
+                await self.bot.edit_message(m, f'Added Visitors Role to {member.mention}')
 
 def setup(bot):
-    bot.add_cog(Welcome(bot))
