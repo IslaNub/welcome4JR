@@ -49,3 +49,4 @@ class Welcome:
                 await self.bot.edit_message(m, f'Added Visitors Role to {member.mention}')
 
 def setup(bot):
+    bot.add_cog(Welcome(bot))
