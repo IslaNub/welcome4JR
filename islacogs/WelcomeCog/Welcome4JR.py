@@ -65,7 +65,6 @@ class Welcome:
                 server = self.bot.get_server('301578535175323658')
                 c = self.bot.get_channel('389100476630695946')
                 v = discord.utils.get(server.roles, name='Visitors')
-                await self.bot.add_roles(member, v)
                 s = await self.bot.send_message(c, 'I\'m going to ask to you a couple of questions, please just answer in chat.')
                 q1 = await self.bot.send_message(c, '1) What games do you play?')
                 a1 = await self.bot.wait_for_message(author = member)
@@ -81,6 +80,7 @@ class Welcome:
                 messages = (q1, q2, q3, q4, a1, a2, a3, a4, s)
                 await self.bot.delete_messages(messages)
                 await self.bot.send_message(c, embed = em)
+                await self.bot.add_roles(member, v)
                 await self.bot.send_message(c, f'Added Visitors Role to {member.mention}')
 def setup(bot):
     bot.add_cog(Welcome(bot))
