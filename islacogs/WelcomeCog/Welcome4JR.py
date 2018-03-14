@@ -82,11 +82,21 @@ class Welcome:
                 await self.bot.send_message(c, embed = em)
                 await self.bot.add_roles(member, v)
                 await self.bot.send_message(c, f'Added Visitors Role to {member.mention}')
-                cr = discord.utils.get(server.roles, name = 'Clash Royale')
-                if 'Clash Royale' in a1.content:
+                if 'Clash Royale' in a1.content or 'clash royale' in a1.content or 'Clash royale' in a1.content:
+                    cr = discord.utils.get(server.roles, name = 'Clash Royale')
                     await self.bot.add_roles(member, cr)
                     await self.bot.send_message(c, f'Added Clash Royale Role to {member.mention}')
-
+                    pass
+                if 'Brawl Stars' in a1.content or 'brawl stars' in a1.content or 'Brawl stars' in a1.content:
+                    bs = discord.utils.get(server.roles, name = 'Brawl Stars')
+                    await self.bot.add_roles(member, bs)
+                    await self.bot.send_message(c, f'Added Brawl Stars Role to {member.mention}')
+                    pass
+                if 'Arena of Valor' in a1.content or 'Arena Of Valor' in a1.content or 'arena of valor' in a1.content or 'Arena of valor' in a1.content:
+                    aov = discord.utils.get(server.roles, name = 'Arena of Valor')
+                    await self.bot.add_roles(member, aov)
+                    await self.bot.send_message(c, f'Added Arena of Valor Role to {member.mention}')
+                    pass
 def setup(bot):
     bot.add_cog(Welcome(bot))
     
