@@ -82,6 +82,11 @@ class Welcome:
                 await self.bot.send_message(c, embed = em)
                 await self.bot.add_roles(member, v)
                 await self.bot.send_message(c, f'Added Visitors Role to {member.mention}')
+                cr = discord.utils.get(server.roles, name = 'Clash Royale')
+                if q1.content == 'Clash Royale':
+                await self.bot.add_roles(member, cr)
+                await ctx.send_message(c, 'Added Clash Royale Role to {member.mention}')
+
 def setup(bot):
     bot.add_cog(Welcome(bot))
     
