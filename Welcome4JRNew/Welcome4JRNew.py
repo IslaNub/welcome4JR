@@ -32,12 +32,12 @@ class Welcome4JR:
             await self.bot.clear_reactions(m)
             if r.emoji == emojis[0]:
                 c = self.bot.get_channel('389100476630695946')
-                await self.bot.send_message(member, 'Hello and welcome to Team Liquid\'s Mobile empire. Please review our new player pamphlet for an introduction to Team Liquid and information on our mobile teams. If you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official player registration located https://goo.gl/6kGVPZ - If you have any questions then please join one of our community chats or reach out to a Discord moderator.')
+                await self.bot.send_message(member, 'Hello and welcome to Team Liquid\'s Mobile empire. Please review our new player pamphlet https://goo.gl/GkPGqU for an introduction to Team Liquid and information on our mobile teams. If you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official player registration located https://goo.gl/6kGVPZ - If you have any questions then please join one of our community chats or reach out to a Discord moderator.')
                 await self.bot.send_message(c, f'Sent Google Form in DM to {member.mention}.')
             elif r.emoji == emojis[1]:
                 c = self.bot.get_channel('389100476630695946')
                 MMod = '<@&325720548527308800>'
-                await self.bot.send_message(c, f'{member.mention} please send a photo of your profile and let me summon a {MMod}.')
+                await self.bot.send_message(member, 'Hello and welcome to Team Liquid\'s Mobile empire. Please review our new player pamphlet https://goo.gl/GkPGqU for an introduction to Team Liquid and information on our mobile teams. If you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official player registration located https://goo.gl/6kGVPZ - If you have any questions then please join one of our community chats or reach out to a Discord moderator.')
             elif r.emoji == emojis[2]:
                 c = self.bot.get_channel('389100476630695946')
                 s = await self.bot.send_message(c, 'I\'m going to ask to you a couple of questions, please just answer in chat.')
