@@ -32,15 +32,17 @@ class Welcome4JR:
             await self.bot.clear_reactions(m)
             if r.emoji == emojis[0]:
                 c = self.bot.get_channel('389100476630695946')
-                await self.bot.send_message(member, 'Hello and welcome to Team Liquid\'s Mobile empire. Please review our new player pamphlet @https://goo.gl/GkPGqU for an introduction to Team Liquid and information on our mobile teams. \n\nIf you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official player registration located @ https://goo.gl/6kGVPZ - \n\nIf you have any questions then please join one of our community chats or reach out to a Discord moderator.')
+                await self.bot.send_message(member, 'Hello and welcome to Team Liquid\'s Mobile empire. Please review our new player pamphlet @ https://bit.ly/2pfvl4x for an introduction to Team Liquid and information on our mobile teams. \n\nIf you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official player registration located @ https://goo.gl/6kGVPZ - \n\nIf you have any questions then please join one of our community chats or reach out to a Discord moderator.')
                 await self.bot.send_message(c, f'Sent Google Form in DM to {member.mention}.')
             elif r.emoji == emojis[1]:
                 c = self.bot.get_channel('389100476630695946')
                 MMod = '<@&325720548527308800>'
-                await self.bot.send_message(member, 'Hello and welcome to Team Liquid\'s Mobile empire. Please review our new player pamphlet @https://goo.gl/GkPGqU for an introduction to Team Liquid and information on our mobile teams. \n\nIf you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official player registration located @ https://goo.gl/6kGVPZ - \n\nIf you have any questions then please join one of our community chats or reach out to a Discord moderator.')
+                await self.bot.send_message(member, 'Hello and welcome to Team Liquid\'s Mobile empire. Please review our new player pamphlet @ https://bit.ly/2pfvl4x for an introduction to Team Liquid and information on our mobile teams. \n\nIf you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official player registration located @ https://goo.gl/6kGVPZ - \n\nIf you have any questions then please join one of our community chats or reach out to a Discord moderator.')
             elif r.emoji == emojis[2]:
                 c = self.bot.get_channel('389100476630695946')
-                await self.bot.send_message(c, 'Hello and welcome to Team Liquid\'s Mobile empire. Please review our new player pamphlet @https://goo.gl/GkPGqU for an introduction to Team Liquid and information on our mobile teams. \n\nIf you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official player registration located @ https://https//goo.gl/X2bKez - \n\nIf you have any questions then please join one of our community chats or reach out to a Discord moderator.')
+                await self.bot.send_message(c, 'Hello and welcome to Team Liquid\'s Mobile empire. Please review our new player pamphlet @ http://bit.ly/2pfvl4x for an introduction to Team Liquid and information on our mobile teams. \n\nIf you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official player registration located @ https://goo.gl/U7ye34\n- \n\nIf you have any questions then please join one of our community chats or reach out to a Discord moderator.')
+
+
                 #q1 = await self.bot.send_message(c, '1) What\'s your In Game Name?')
                 #a1 = await self.bot.wait_for_message(author=member)
                 #q2 = await self.bot.send_message(c, '2) What game do you need a Discord role?')
@@ -60,11 +62,11 @@ class Welcome4JR:
             elif r.emoji == emojis[3]:
                 c = self.bot.get_channel('389100476630695946')
                 ModMail = '<@422438974859116544>'
-                await self.bot.send_message(c, 'Hello and welcome to Team Liquid\'s Mobile empire. Please review our new player pamphlet @https://goo.gl/GkPGqU for an introduction to Team Liquid and information on our mobile teams. \n\nIf you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official player registration located @ https://goo.gl/U7ye34\n\nIf you have any questions then please join one of our community chats or reach out to a Discord moderator- \n\nIf you have any questions then please join one of our community chats or reach out to a Discord moderator')
+                await self.bot.send_message(c, 'Hello and welcome to Team Liquid\'s Mobile empire. Please review our new player pamphlet @ http://bit.ly/2pfvl4x  for an introduction to Team Liquid and information on our mobile teams. \nIf you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official player registration located @ https://goo.gl/U7ye34\nIf you have any questions then please join one of our community chats or reach out to a Discord moderator\n- \n\nIf you have any questions then please join one of our community chats or reach out to a Discord moderator')
             elif r.emoji == emojis[4]:
                 server = self.bot.get_server('301578535175323658')
                 c = self.bot.get_channel('389100476630695946')
-                await self.bot.send_message(c, '1) What games do you play?\n2) In Game Name\n3) What team are you on?\n4) Anything else you would like to add?')
+                await self.bot.send_message(c, 'Hello and welcome to Team Liquid\'s Mobile empire. Please review our new player pamphlet @ http://bit.ly/2pfvl4x  for an introduction to Team Liquid and information on our mobile teams. \nIf you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official player registration located @ https://goo.gl/U7ye34\nIf you have any questions then please join one of our community chats or reach out to a Discord moderator\n- \n\nIf you have any questions then please join one of our community chats or reach out to a Discord moderator')
                 #v = discord.utils.get(server.roles, name='Visitors')
                 #s = await self.bot.send_message(c, 'I\'m going to ask to you a couple of questions, please just answer in chat.')
                 #q1 = await self.bot.send_message(c, '1) What games do you play?')
