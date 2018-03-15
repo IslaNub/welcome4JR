@@ -64,6 +64,7 @@ class Welcome4JR:
             elif r.emoji == emojis[4]:
                 server = self.bot.get_server('301578535175323658')
                 c = self.bot.get_channel('389100476630695946')
+                await self.bot.send_message(c, '1) What games do you play?\n2) In Game Name\n3) What team are you on?\n4) Anything else you would like to add?')
                 #v = discord.utils.get(server.roles, name='Visitors')
                 #s = await self.bot.send_message(c, 'I\'m going to ask to you a couple of questions, please just answer in chat.')
                 #q1 = await self.bot.send_message(c, '1) What games do you play?')
