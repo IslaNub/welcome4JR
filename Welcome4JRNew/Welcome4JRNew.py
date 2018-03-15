@@ -40,23 +40,23 @@ class Welcome4JR:
                 await self.bot.send_message(member, 'Hello and welcome to Team Liquid\'s Mobile empire. Please review our new player pamphlet https://goo.gl/GkPGqU for an introduction to Team Liquid and information on our mobile teams. If you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official player registration located https://goo.gl/6kGVPZ - If you have any questions then please join one of our community chats or reach out to a Discord moderator.')
             elif r.emoji == emojis[2]:
                 c = self.bot.get_channel('389100476630695946')
-                s = await self.bot.send_message(c, 'I\'m going to ask to you a couple of questions, please just answer in chat.')
-                q1 = await self.bot.send_message(c, '1) What\'s your In Game Name?')
-                a1 = await self.bot.wait_for_message(author=member)
-                q2 = await self.bot.send_message(c, '2) What game do you need a Discord role?')
-                a2 = await self.bot.wait_for_message(author=member)
-                q3 = await self.bot.send_message(c, '3) What clan are you in?')
-                a3 = await self.bot.wait_for_message(author=member)
-                q4 = await self.bot.send_message(c, '4) What is your current rank?')
-                a4 = await self.bot.wait_for_message(author=member)
-                q5 = await self.bot.send_message(c, '5) Anything else you like to add?')
-                a5 = await self.bot.wait_for_message(author=member)
-                em = discord.Embed()
-                em.title = f'Informations for "{member.name}"'
-                em.description = f'**__In-Game Name:__**\n{a1.content}\n\n**__Game:__**\n{a2.content}\n\n**__Clan:__**\n{a3.content}\n\n**__Current rank:__**\n{a4.content}\n\n**__Notes:__**\n{a5.content}'
-                messages = (q1, q2, q3, q4, q5, a1, a2, a3, a4, a5, s)
-                await self.bot.delete_messages(messages)
-                await self.bot.send_message(c, embed = em)
+                s = await self.bot.send_message(c, '1) In Game Name\n2) What game do you need a Discord role?\n3) What clan are you in?\n4) What is your current rank?\n5) Anything else you like to add?')
+                #q1 = await self.bot.send_message(c, '1) What\'s your In Game Name?')
+                #a1 = await self.bot.wait_for_message(author=member)
+                #q2 = await self.bot.send_message(c, '2) What game do you need a Discord role?')
+                #a2 = await self.bot.wait_for_message(author=member)
+                #q3 = await self.bot.send_message(c, '3) What clan are you in?')
+                #a3 = await self.bot.wait_for_message(author=member)
+                #q4 = await self.bot.send_message(c, '4) What is your current rank?')
+                #a4 = await self.bot.wait_for_message(author=member)
+                #q5 = await self.bot.send_message(c, '5) Anything else you like to add?')
+                #a5 = await self.bot.wait_for_message(author=member)
+                #em = discord.Embed()
+                #em.title = f'Informations for "{member.name}"'
+                #em.description = f'**__In-Game Name:__**\n{a1.content}\n\n**__Game:__**\n{a2.content}\n\n**__Clan:__**\n{a3.content}\n\n**__Current rank:__**\n{a4.content}\n\n**__Notes:__**\n{a5.content}'
+                #messages = (q1, q2, q3, q4, q5, a1, a2, a3, a4, a5, s)
+                #await self.bot.delete_messages(messages)
+                #await self.bot.send_message(c, embed = em)
             elif r.emoji == emojis[3]:
                 c = self.bot.get_channel('389100476630695946')
                 ModMail = '<@422438974859116544>'
