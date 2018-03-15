@@ -98,7 +98,8 @@ class Welcome:
                     await self.bot.send_message(c, f'Added Arena of Valor Role to {member.mention}')
                     pass
 def setup(bot):
-    bot.add_cog(Welcome(bot))
+    n = Welcome(bot)
+    bot.add_cog(n)
     
 
 # 1) What games do you play?
