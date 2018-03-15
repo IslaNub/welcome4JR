@@ -60,7 +60,7 @@ class Welcome4JR:
             elif r.emoji == emojis[3]:
                 c = self.bot.get_channel('389100476630695946')
                 ModMail = '<@422438974859116544>'
-                await self.bot.send_message(c, '1) What games do you play?\n2) In Game Name\n3) What team are you on?\n4) Anything else you would like to add?')
+                await self.bot.send_message(c, 'Hello and welcome to Team Liquid\'s Mobile empire. Please review our new player pamphlet @https://goo.gl/GkPGqU for an introduction to Team Liquid and information on our mobile teams. \n\nIf you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official player registration located @ https://goo.gl/U7ye34\n\nIf you have any questions then please join one of our community chats or reach out to a Discord moderator- \n\nIf you have any questions then please join one of our community chats or reach out to a Discord moderator')
             elif r.emoji == emojis[4]:
                 server = self.bot.get_server('301578535175323658')
                 c = self.bot.get_channel('389100476630695946')
