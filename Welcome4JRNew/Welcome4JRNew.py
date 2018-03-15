@@ -18,7 +18,7 @@ class Welcome4JR:
         numbers = [1, 2, 3, 4, 5]
         for n in numbers:
             emojis.append('{}⃣'.format(str(n)))
-        message = f'Hello {member.mention}! Welcome to the Official Team Liquid Mobile discord server. Please choose one of these options.\n1. I want to join a Team Liquid Clan.\n2. I am already in a Team Liquid clan, I need to register as an official player.\n3. I need a specific Team Liquid Mobile Discord role.\n4. I have a questions.\n5. Just visiting.'
+        message = f'Hello {member.mention} and welcome to Team Liquid\'s Mobile empire. Please review our new player pamphlet for an introduction to Team Liquid and information on our mobile teams. If you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official player registration located https://goo.gl/6kGVPZ - If you have any questions then please join one of our community chats or reach out to a Discord moderator.'
         channel_id = '389100476630695946'
         m = await self.bot.send_message(self.bot.get_channel(channel_id), message)
         for e in emojis:
