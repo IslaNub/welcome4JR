@@ -18,7 +18,7 @@ class Welcome4JR:
         numbers = [1, 2, 3, 4, 5]
         for n in numbers:
             emojis.append('{}⃣'.format(str(n)))
-        message = f'Hello {member.mention} and welcome to Team Liquid\'s Mobile empire. Please review our new player pamphlet for an introduction to Team Liquid and information on our mobile teams. If you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official player registration located https://goo.gl/6kGVPZ - If you have any questions then please join one of our community chats or reach out to a Discord moderator.'
+        message = f'Hello {member.mention}! Welcome to the Official Team Liquid Mobile discord server. Please choose one of these options.\n1. I want to join a Team Liquid Clan.\n2. I am already in a Team Liquid clan, I need to register as an official player.\n3. I need a specific Team Liquid Mobile Discord role.\n4. I have a questions.\n5. Just visiting.'
         channel_id = '389100476630695946'
         m = await self.bot.send_message(self.bot.get_channel(channel_id), message)
         for e in emojis:
@@ -32,7 +32,7 @@ class Welcome4JR:
             await self.bot.clear_reactions(m)
             if r.emoji == emojis[0]:
                 c = self.bot.get_channel('389100476630695946')
-                await self.bot.send_message(c, 'Thanks for your interest! Here is the Google Form to Liquid:\nhttps://docs.google.com/forms/d/e/1FAIpQLSdl65dcN6ROYdtMKCfR6C8_b6T-shOJTsmi0UY7juEAUutY1Q/viewform?usp=sf_link')
+                await self.bot.send_message(member, 'Hello and welcome to Team Liquid\'s Mobile empire. Please review our new player pamphlet for an introduction to Team Liquid and information on our mobile teams. If you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official player registration located https://goo.gl/6kGVPZ - If you have any questions then please join one of our community chats or reach out to a Discord moderator.')
                 await self.bot.send_message(m, f'Sent Google Form in DM to {member.mention}.')
             elif r.emoji == emojis[1]:
                 c = self.bot.get_channel('389100476630695946')
