@@ -3,8 +3,8 @@
 	"SHORT": "Welcome",
 	"DESCRIPTION": "Welcome cog for Team Liquid.",
 	"DISABLED": false,
-	"NAME": "welcome",
+	"NAME": "Welcome",
 	"REQUIREMENTS": [],
-	"TAGS": ["welcome"],
+	"TAGS": ["Welcome"],
 	"INSTALL_MSG": "Thanks for installing."
 }
