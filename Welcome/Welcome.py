@@ -7,7 +7,7 @@ import os
 import asyncio
 
 
-class Welcome:
+class Welcome4JR:
     """Welcomes new members to the server in the default channel"""
 
     def __init__(self, bot):
@@ -98,7 +98,7 @@ class Welcome:
                     await self.bot.send_message(c, f'Added Arena of Valor Role to {member.mention}')
                     pass
 def setup(bot):
-    n = Welcome(bot)
+    n = Welcome4JR(bot)
     bot.add_cog(n)
     
 
