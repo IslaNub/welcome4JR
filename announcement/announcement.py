@@ -21,7 +21,9 @@ class announcement:
     async def empire_announcement(self, ctx):
         await self.bot.say('kek')
         u = ctx.message.author
+        await self.bot.say('kek2')
         ea = discord.utils.get(server.roles, name = 'Empire Announcement')
+        await self.bot.say('kek3')
         if ea in u.roles:
             await self.bot.say('You already have this role.')
         elif ctx.message.channel.id == '423748512396738571':
