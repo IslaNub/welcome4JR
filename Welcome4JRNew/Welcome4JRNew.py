@@ -103,6 +103,20 @@ class Welcome4JR:
                     #await self.bot.add_roles(member, aov)
                     #await self.bot.send_message(c, f'Added Arena of Valor Role to {member.mention}')
                     #pass
+                    
+    @commands.command(pass_context = True, no_pm = True)
+    async def empire_announcement(self, ctx):
+        u = ctx.message.author
+        ea = discord.utils.get(server.roles, name = 'Empire Announcement')
+        if ea in u.roles:
+            await self.bot.say('You already have this role.)
+        elif ctx.message.channel.id == '423748512396738571':
+            await self.bot.add_roles(u, ea)
+            await self.bot.say(f'Added Empire Announcement role to {u.mention}')
+        else:
+            await self.bot.say('You cannot use this command.')
+            
+                    
 def setup(bot):
     n = Welcome4JR(bot)
     bot.add_cog(n)
