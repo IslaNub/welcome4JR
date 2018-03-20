@@ -1,0 +1,9 @@
+{
+	"AUTHOR": "IslaNub",	"SHORT": "Welcome",
+	"DESCRIPTION": "Announce",
+	"DISABLED": false,
+	"NAME": "announcement",
+	"REQUIREMENTS": [],
+	"TAGS": ["Welcome"],
+	"INSTALL_MSG": "Thanks for installing."
+}
