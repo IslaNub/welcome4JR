@@ -13,7 +13,13 @@ class announcement:
     def __init__(self, bot):
         self.bot = bot
         
-    @commands.command(pass_context = True, no_pm = True)
+    @commands.group(pass_context=True, no_pm=True)
+    async def empire(self, ctx):
+        """Empire"""
+        if ctx.invoked_subcommand is None:
+            await self.bot.send_cmd_help(ctx)
+        
+    @empire.command(pass_context = True, no_pm = True, name = 'announcement')
     async def empire_announcement(self, ctx):
         u = ctx.message.author
         c = self.bot.get_channel('423748512396738571')
