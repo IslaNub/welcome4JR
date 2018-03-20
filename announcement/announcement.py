@@ -25,7 +25,7 @@ class announcement:
         await self.bot.say('kek')
         u = ctx.message.author
         await self.bot.say('kek2')
-        ea = discord.utils.get(server.roles, name = 'Empire Announcement')
+        ea = discord.utils.get(server.roles, name = 'Arena of Valor')
         await self.bot.say('kek3')
         if ea in u.roles:
             await self.bot.say('You already have this role.')
