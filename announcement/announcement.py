@@ -22,15 +22,15 @@ class announcement:
             #await self.bot.send_cmd_help(ctx)
         
 
-    @commands.command(pass_context = True, no_pm = True, name = 'announcement')
-    async def empire(self, ctx, rolename):
+    @commands.command(pass_context = True, no_pm = True)
+    async def empire(self, ctx, announcement):
         await self.bot.say('kek')
 
         await self.bot.say('kek2')
         author = ctx.message.author
         channel = ctx.message.channel
         server = ctx.message.server
-        role = self._role_from_string(server, rolename)
+        role = self._role_from_string(server, announcement)
         if ctx.message.channel.id == '423748512396738571' and role == 'announcement':
             await self.bot.add_roles(author, role)
 
