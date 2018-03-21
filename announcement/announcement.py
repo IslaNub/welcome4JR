@@ -15,15 +15,15 @@ class announcement:
     def __init__(self, bot):
         self.bot = bot
         
-    @commands.group(pass_context=True, no_pm=True)
-    async def empire(self, ctx):
-        """Empire"""
-        if ctx.invoked_subcommand is None:
-            await self.bot.send_cmd_help(ctx)
+    #@commands.group(pass_context=True, no_pm=True)
+    #async def empire(self, ctx):
+        #"""Empire"""
+        #if ctx.invoked_subcommand is None:
+            #await self.bot.send_cmd_help(ctx)
         
 
-    @empire.command(pass_context = True, no_pm = True, name = 'announcement')
-    async def empire_announcement(self, ctx, rolename):
+    @commands.command(pass_context = True, no_pm = True, name = 'announcement')
+    async def empire(self, ctx, rolename):
         await self.bot.say('kek')
 
         await self.bot.say('kek2')
