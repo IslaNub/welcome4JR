@@ -27,7 +27,7 @@ class announcement:
         await self.bot.say('kek2')
         ea = 'Empire Announcement'
         if ctx.message.channel.id == '423748512396738571':
-            await self.bot.add_roles(u, 'Empire Announcement')
+            await self.bot.add_roles(u, ea)
 
             await self.bot.say(f'Added Empire Announcement role to {u.mention}')
         else:
