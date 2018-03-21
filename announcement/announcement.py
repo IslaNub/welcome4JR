@@ -31,9 +31,10 @@ class announcement:
         channel = ctx.message.channel
         server = ctx.message.server
         role = self._role_from_string(server, announcement)
+        await self.bot.say('kek3')
         if ctx.message.channel.id == '423748512396738571' and role == 'announcement':
+            await self.bot.say('kek4')
             await self.bot.add_roles(author, role)
-
             await self.bot.say(f'Added Empire Announcement role to {u.mention}')
         else:
             await self.bot.say('You cannot use this command.')
