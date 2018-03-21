@@ -1,10 +1,12 @@
 import discord
 from discord.ext import commands
-from .utils.dataIO import fileIO
-from .utils import checks
-from __main__ import send_cmd_help
-import os
+from cogs.utils import checks
+from cogs.utils.dataIO import dataIO
+from cogs.utils.chat_formatting import box, pagify
+from copy import deepcopy
 import asyncio
+import logging
+import os
 
 
 class announcement:
@@ -21,13 +23,16 @@ class announcement:
         
 
     @empire.command(pass_context = True, no_pm = True, name = 'announcement')
-    async def empire_announcement(self, ctx):
+    async def empire_announcement(self, ctx, rolename):
         await self.bot.say('kek')
-        u = ctx.message.author
+
         await self.bot.say('kek2')
-        ea = 'Empire Announcement'
-        if ctx.message.channel.id == '423748512396738571':
-            await self.bot.add_roles(u, ea)
+        author = ctx.message.author
+        channel = ctx.message.channel
+        server = ctx.message.server
+        role = self._role_from_string(server, rolename)
+        if ctx.message.channel.id == '423748512396738571' and role == 'announcement':
+            await self.bot.add_roles(author, role)
 
             await self.bot.say(f'Added Empire Announcement role to {u.mention}')
         else:
