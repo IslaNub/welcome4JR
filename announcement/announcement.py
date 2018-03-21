@@ -28,6 +28,7 @@ class announcement:
 
         await self.bot.say('kek2')
         author = ctx.message.author
+        await self.bot.say('top kek')
         channel = ctx.message.channel
         server = ctx.message.server
         role = self._role_from_string(server, announcement)
