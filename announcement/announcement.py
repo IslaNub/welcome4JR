@@ -24,18 +24,12 @@ class announcement:
 
     @commands.command(pass_context = True, no_pm = True)
     async def empire(self, ctx):
-        await self.bot.say('kek')
-
-        await self.bot.say('kek2')
         u = ctx.message.author
-        await self.bot.say('top kek')
-        channel = ctx.message.channel
-        server = ctx.message.server
         ea = discord.utils.get(server.roles, name = 'Empire Announcement')
-        await self.bot.say('kek3')
-        if ctx.message.channel.id == '423748512396738571':
-            await self.bot.say('kek4')
-            await self.bot.add_roles(u,  ea)
+        if ea in u.roles:
+            await self.bot.say('You already have this role.')
+        elif ctx.message.channel.id == '423748512396738571':
+            await self.bot.add_roles(u, ea)
             await self.bot.say(f'Added Empire Announcement role to {u.mention}')
         else:
             await self.bot.say('You cannot use this command.')
