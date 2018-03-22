@@ -25,6 +25,7 @@ class announcement:
     @commands.command(pass_context = True, no_pm = True)
     async def empire(self, ctx):
         u = ctx.message.author
+        server = ctx.message.server
         ea = discord.utils.get(server.roles, name = 'Empire Announcement')
         if ea in u.roles:
             await self.bot.say('You already have this role.')
