@@ -1,0 +1,9 @@
+{
+	"AUTHOR": "IslaNub",	"SHORT": "Welcome",
+	"DESCRIPTION": "Welcome cog for Team Liquid.",
+	"DISABLED": false,
+	"NAME": "Welcome",
+	"REQUIREMENTS": [],
+	"TAGS": ["Welcome"],
+	"INSTALL_MSG": "Thanks for installing."
+}
