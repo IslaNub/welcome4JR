@@ -5,7 +5,7 @@ from .utils import checks
 from __main__ import send_cmd_help
 
 class liquidwelcome:
-    """Welcomes new members to the server in the default channel"""
+    """Welcomes new members to Team Liquid Mobile"""
 
     def __init__(self, bot):
         self.bot = bot
