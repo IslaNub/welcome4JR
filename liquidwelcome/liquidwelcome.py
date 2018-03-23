@@ -17,6 +17,10 @@ class liquidwelcome:
         m2 ='Hello and welcome to Team Liquid\'s Mobile empire. Please review our new member pamphlet @ https://bit.ly/2px9czy for an introduction to Team Liquid and information on our mobile teams. \n\nIf you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official member registration located @ https://goo.gl/6kGVPZ - \n\nIf you have any questions then please join one of our community chats or reach out to a Discord moderator'
         await self.bot.send_message(member, m2)
         
+    async def on_member_remove(self, member):
+        c = self.bot.get_channel('414894603947343882')
+        m = '{} has just left the Server, bye bye...'
+        await self.bot.send_message(c, m.format(member.name))
 def setup(bot):
     n = liquidwelcome(bot)
     bot.add_cog(n)
