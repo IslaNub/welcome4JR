@@ -21,7 +21,7 @@ class liquidwelcome:
         c = self.bot.get_channel('414094090070786058')
         s = self.bot.get_server('301578535175323658')
         m = '{} has just left the Server, bye bye<:QooBeeConsole:422749739591794688>...\n{} members left in the Server'
-        await self.bot.send_message(c, m.format(member name, s.member_count))
+        await self.bot.send_message(c, m.format(member.name, s.member_count))
 def setup(bot):
     n = liquidwelcome(bot)
     bot.add_cog(n)
