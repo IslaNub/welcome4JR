@@ -20,3 +20,4 @@ class liquidwelcome:
 def setup(bot):
     n = liquidwelcome(bot)
     bot.add_cog(n)
+
