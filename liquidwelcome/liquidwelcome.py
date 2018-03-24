@@ -33,7 +33,7 @@ class liquidwelcome:
         em = discord.Embed(colour=discord.Colour(value=colour))
         em.title = "Team Liquid Information"
         em.description = "Welcome to Team Liquid Mobile!"
-        if server.icon_url:
+        if ctx.message.server.icon_url:
             em.set_author(name=server.name, url=server.icon_url)
             em.set_thumbnail(url=server.icon_url)
         em.add_field(name="Guide", value="Here is a brief guide to our server to get you started\n\n[Team Liquid Mobile New Member Pamphlet](https://bit.ly/2px9czy)-[Team Liquid Mobile New Member Registration](https://goo.gl/6kGVPZ)-\n\n[Team Liquid Mobile Academy Team Pamphlet](https://bit.ly/2uk38PI)-\n[Team Liquid Mobile Academy Team Registration](https://bit.ly/2G7YTbA)-")
