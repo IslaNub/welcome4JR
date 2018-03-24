@@ -27,7 +27,7 @@ class liquidwelcome:
         
     @commands.command(pass_context = True, no_pm = True)
     async def liquid(self, ctx):
-        """Liquid Info"""
+        """Team Liquid Mobile Information"""
         server = ctx.message.server
         colour = ''.join([choice('0123456789ABCDEF') for x in range(6)])
         colour = int(colour, 16)
