@@ -22,6 +22,20 @@ class liquidwelcome:
         s = self.bot.get_server('301578535175323658')
         m = '**{}** has just left the Server, bye bye<:QooBeeConsole:422749739591794688>... {} members left in the Server'.format(member.name, s.member_count)
         await self.bot.send_message(c, m)
+        
+    async def liquid(self, ctx):
+        """Liquid Info"""
+        colour = ''.join([choice('0123456789ABCDEF') for x in range(6)])
+        colour = int(colour, 16)
+        em = discord.Embed(colour=discord.Colour(value=colour)))
+        em.title = "Team Liquid Information"
+        em.description = "Welcome to Team Liquid Mobile!"
+        if server.icon_url:
+            em.set_author(name=server.name, url=server.icon_url)
+            em.set_thumbnail(url=server.icon_url)
+        em.add_field(name="Guide", value="Here is a brief guide to our server to get you started\n\n[Team Liquid Mobile New Member Pamphlet](https://bit.ly/2px9czy)-[Team Liquid Mobile New Member Registration](https://goo.gl/6kGVPZ)-\n\n[Team Liquid Mobile Academy Team Pamphlet](https://bit.ly/2uk38PI)-\n[Team Liquid Mobile Academy Team Registration](https://bit.ly/2G7YTbA)-")
+        em.set_footer(text="Pika Bot | scripted in discord.py")
+        await self.bot.say(embed=em)
 
 def setup(bot):
     n = liquidwelcome(bot)
