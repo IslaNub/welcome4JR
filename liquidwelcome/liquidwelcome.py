@@ -3,6 +3,8 @@ from discord.ext import commands
 from .utils.dataIO import fileIO
 from .utils import checks
 from __main__ import send_cmd_help
+from random import choice
+from random import randint
 
 class liquidwelcome:
     """Welcomes new members to Team Liquid Mobile"""
