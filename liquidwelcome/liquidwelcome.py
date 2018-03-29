@@ -77,7 +77,7 @@ class liquidwelcome:
 
     @commands.command(pass_context = True, no_pm = True)
     async def msping(self, ctx):
-        await self.bot.say(f'Pong! ({self.bot.latency * 1000:.0f} ms)')
+        await self.bot.say(f'Pong! ({self.bot.ws.latency * 1000:.0f} ms)')
 
 def setup(bot):
     n = liquidwelcome(bot)
