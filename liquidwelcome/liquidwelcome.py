@@ -74,6 +74,11 @@ class liquidwelcome:
                 await self.bot.send_message(self.bot.get_channel(channel_id), 'Nice! You\'re right, because you\'re stupid!')
             else:
                 await self.bot.send_message(self.bot.get_channel(channel_id), 'What don\'t you understand of "yes/no"??? Look how stupid...')
+
+    @commands.command(pass_context = True, no_pm = True)
+    async def msping(self, ctx):
+        await self.bot.say('Pong! ({} ms)'.format(self.bot.latency * 1000:.0f)
+
 def setup(bot):
     n = liquidwelcome(bot)
     bot.add_cog(n)
