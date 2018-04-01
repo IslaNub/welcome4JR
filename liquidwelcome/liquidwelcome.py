@@ -14,7 +14,7 @@ class liquidwelcome:
 
     async def on_member_join(self, member):
         c = self.bot.get_channel('389100476630695946')
-        m = '**Hello {}! Welcome to the Official Team Liquid Mobile Discord server.**\n\n:tl:Please look in <#429719437763936256> and add the role for the game you play.\n:tl:You must be a member in one of our official teams to have a member role.\n:tl:Check out our various channels for info on prizes, events, teams, and much more.\n:tl:Tag an online moderator or DM Liquid Mail if you have any questions.'.format(member.mention)
+        m = '**Hello {}! Welcome to the Official Team Liquid Mobile Discord server.**\n\n<:tl:429889965397245964>Please look in #selfroles and add the role for the game you play.\n<:tl:429889965397245964>You must be a member in one of our official teams to have a member role.\n<:tl:429889965397245964>Check out our various channels for info on prizes, events, teams, and much more.\n<:tl:429889965397245964>Tag an online moderator or DM Liquid Mail if you have any questions.'.format(member.mention)
         await self.bot.send_message(c, m)
     #   m2 ='Hello and welcome to Team Liquid\'s Mobile empire. Please review our new member pamphlet @ https://bit.ly/2px9czy for an introduction to Team Liquid and information on our mobile teams. \n\nIf you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official member registration located @ https://goo.gl/6kGVPZ - \n\nIf you have any questions then please join one of our community chats or reach out to a Discord moderator'
     #   await self.bot.send_message(member, m2)
