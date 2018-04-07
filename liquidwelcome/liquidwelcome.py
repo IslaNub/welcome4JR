@@ -16,7 +16,7 @@ class liquidwelcome:
         ser = self.bot.get_server('301578535175323658')
         nv = discord.utils.get(ser.roles, name = 'Not Verified')
         await self.bot.add_roles(member, nv)
-        c = self.bot.get_channel('389100476630695946')
+        c = self.bot.get_channel('432154053825265684')
         m = '**Hello {}! Welcome to the Official Team Liquid Mobile Discord server.**\n\n<:tl:429889965397245964>Please look in <#429719437763936256> and add the role for the game you play.\n<:tl:429889965397245964>You must be a member in one of our official teams to have a member role.\n<:tl:429889965397245964>Check out our various channels for info on prizes, events, teams, and much more.\n<:tl:429889965397245964>Tag an online moderator or DM Liquid Mail if you have any questions.\nBy clicking on the "✅" reaction you will get access to the Server and you declare that you have read the Server rules.'.format(member.mention)
         emojis = ['✅']
         ms = await self.bot.send_message(c, m)
