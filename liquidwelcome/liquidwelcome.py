@@ -16,7 +16,7 @@ class liquidwelcome:
         ser = self.bot.get_server('301578535175323658')
         nv = discord.utils.get(ser.roles, name = 'Not Verified')
         cj = self.bot.get_channel('432157348371628042')
-        mj = '**{}** has joined the Server! <:liquid3:425779102927290388>...\n```{} members in the Server.```.format(member.name, ser.member_count)
+        mj = '**{}** has joined the Server! <:liquid3:425779102927290388>...\n```{} members in the Server.```'.format(member.name, ser.member_count)
         await self.bot.send_message(cj, mj)
         await self.bot.add_roles(member, nv)
         c = self.bot.get_channel('432154053825265684')
