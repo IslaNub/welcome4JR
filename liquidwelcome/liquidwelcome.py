@@ -16,7 +16,7 @@ class liquidwelcome:
         ser = self.bot.get_server('301578535175323658')
         nv = discord.utils.get(ser.roles, name = 'Not Verified')
         cj = self.bot.get_channel('432157348371628042')
-        mj = '**{}** has joined the Server! <:liquid3:425779102927290388>...\n```{} members in the Server.```'.format(member.name, ser.member_count)
+        mj = '**{}** has joined the Server! <:liquid3:425779102927290388>\n```{} members in the Server.```'.format(member.name, ser.member_count)
         await self.bot.send_message(cj, mj)
         await self.bot.add_roles(member, nv)
         c = self.bot.get_channel('432154053825265684')
@@ -35,7 +35,7 @@ class liquidwelcome:
     async def on_member_remove(self, member):
         c = self.bot.get_channel('432157348371628042')
         s = self.bot.get_server('301578535175323658')
-        m = '**{}** has just left the Server, bye bye<:QooBeeConsole:422749739591794688>...\n```{} members left in the Server.```'.format(member.name, s.member_count)
+        m = '**{}** has just the Server, bye bye... <:QooBeeConsole:422749739591794688>\n```{} members left in the Server.```'.format(member.name, s.member_count)
         await self.bot.send_message(c, m)
         
     @commands.command(pass_context = True, no_pm = True)
