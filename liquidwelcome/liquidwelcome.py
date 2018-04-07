@@ -24,7 +24,7 @@ class liquidwelcome:
             await self.bot.add_reaction(ms, e)
         r, u = await self.bot.wait_for_reaction(emoji = emojis, user = member, message = ms)
         if r.emoji == emojis[0]:
-            await self.bot.remove_roles(nv, member)
+            await self.bot.remove_roles(member, nv)
     #   m2 ='Hello and welcome to Team Liquid\'s Mobile empire. Please review our new member pamphlet @ https://bit.ly/2px9czy for an introduction to Team Liquid and information on our mobile teams. \n\nIf you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official member registration located @ https://goo.gl/6kGVPZ - \n\nIf you have any questions then please join one of our community chats or reach out to a Discord moderator'
     #   await self.bot.send_message(member, m2)
         
