@@ -13,7 +13,7 @@ class liquidwelcome:
         self.bot = bot
 
     async def on_member_join(self, member):
-        ser = await self.bot.get_server('301578535175323658')
+        ser = self.bot.get_server('301578535175323658')
         nv = discord.utils.get(ser, name = 'Not Verified')
         await self.bot.add_roles(nv, member)
         c = self.bot.get_channel('389100476630695946')
