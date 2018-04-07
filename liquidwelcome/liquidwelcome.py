@@ -15,6 +15,9 @@ class liquidwelcome:
     async def on_member_join(self, member):
         ser = self.bot.get_server('301578535175323658')
         nv = discord.utils.get(ser.roles, name = 'Not Verified')
+        cj = self.bot.get_channel('432157348371628042')
+        mj = '**{}** has joined the Server! <:liquid3:425779102927290388>...\n```{} members in the Server.```.format(member.name, ser.member_count)
+        await self.bot.send_message(cj, mj)
         await self.bot.add_roles(member, nv)
         c = self.bot.get_channel('432154053825265684')
         m = '**Hello {}! Welcome to the Official Team Liquid Mobile Discord server.**\n\n<:tl:429889965397245964>Please look in <#429719437763936256> and add the role for the game you play.\n<:tl:429889965397245964>You must be a member in one of our official teams to have a member role.\n<:tl:429889965397245964>Check out our various channels for info on prizes, events, teams, and much more.\n<:tl:429889965397245964>Tag an online moderator or DM Liquid Mail if you have any questions.\n***__By clicking on the "✅" reaction you will get access to the Server and you declare that you have read the Server rules.__***'.format(member.mention)
@@ -30,9 +33,9 @@ class liquidwelcome:
     #   await self.bot.send_message(member, m2)
         
     #async def on_member_remove(self, member):
-    #    c = self.bot.get_channel('414094090070786058')
+    #    c = self.bot.get_channel('432157348371628042')
     #    s = self.bot.get_server('301578535175323658')
-    #    m = '**{}** has just left the Server, bye bye<:QooBeeConsole:422749739591794688>... {} members left in the Server'.format(member.name, s.member_count)
+    #    m = '**{}** has just left the Server, bye bye<:QooBeeConsole:422749739591794688>...\n```{} members left in the Server.```'.format(member.name, s.member_count)
     #    await self.bot.send_message(c, m)
         
     @commands.command(pass_context = True, no_pm = True)
