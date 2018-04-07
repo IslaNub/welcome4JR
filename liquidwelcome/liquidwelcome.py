@@ -35,7 +35,7 @@ class liquidwelcome:
     async def on_member_remove(self, member):
         c = self.bot.get_channel('432157348371628042')
         s = self.bot.get_server('301578535175323658')
-        m = '**{}** has just the Server, bye bye... <:QooBeeConsole:422749739591794688>\n```{} members left in the Server.```'.format(member.name, s.member_count)
+        m = '**{}** has left the Server, bye bye... <:QooBeeConsole:422749739591794688>\n```{} members left in the Server.```'.format(member.name, s.member_count)
         await self.bot.send_message(c, m)
         
     @commands.command(pass_context = True, no_pm = True)
