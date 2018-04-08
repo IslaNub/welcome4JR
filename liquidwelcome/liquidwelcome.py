@@ -5,6 +5,7 @@ from .utils import checks
 from __main__ import send_cmd_help
 from random import choice
 from random import randint
+import asyncio
 
 class liquidwelcome:
     """Welcomes new members to Team Liquid Mobile"""
@@ -22,13 +23,15 @@ class liquidwelcome:
         c = self.bot.get_channel('432154053825265684')
         m = '**Hello {}! Welcome to the Official Team Liquid Mobile Discord server.**\n\n<:tl:429889965397245964>Please look in <#429719437763936256> and add the role for the game you play.\n<:tl:429889965397245964>You must be a member in one of our official teams to have a member role.\n<:tl:429889965397245964>Check out our various channels for info on prizes, events, teams, and much more.\n<:tl:429889965397245964>Tag an online moderator or DM Liquid Mail if you have any questions.\n***__By clicking on the "✅" reaction you will get access to the Server and you declare that you have read the Server rules.__***'.format(member.mention)
         emojis = ['✅']
-        ms = await self.bot.send_message(c, m)
-        for e in emojis:
-            await self.bot.add_reaction(ms, e)
-        r, u = await self.bot.wait_for_reaction(emoji = emojis, user = member, message = ms)
-        if r.emoji == emojis[0]:
-            await self.bot.remove_roles(member, nv)
-        await self.bot.delete_message(ms)
+        messageVariable = await self.bot.send_message(c, m)
+        await asyncio.sleep(20)
+        await self.bot.delete_message(messageVariable)
+    #    for e in emojis:
+    #        await self.bot.add_reaction(ms, e)
+    #    r, u = await self.bot.wait_for_reaction(emoji = emojis, user = member, message = ms)
+    #    if r.emoji == emojis[0]:
+    #        await self.bot.remove_roles(member, nv)
+    #    await self.bot.delete_message(ms)
     #   m2 ='Hello and welcome to Team Liquid\'s Mobile empire. Please review our new member pamphlet @ https://bit.ly/2px9czy for an introduction to Team Liquid and information on our mobile teams. \n\nIf you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official member registration located @ https://goo.gl/6kGVPZ - \n\nIf you have any questions then please join one of our community chats or reach out to a Discord moderator'
     #   await self.bot.send_message(member, m2)
         
