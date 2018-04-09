@@ -33,6 +33,7 @@ class liquidwelcome:
             await self.bot.delete_message(ms) 
             await self.bot.remove_roles(member, nv)
             await self.bot.add_roles(member, dumb)
+            await self.bot.remove_roles(member, nv)
         else:
             if r.emoji == emojis[0]:
                 await self.bot.delete_message(ms) 
