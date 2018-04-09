@@ -16,6 +16,7 @@ class liquidwelcome:
     async def on_member_join(self, member):
         ser = self.bot.get_server('301578535175323658')
         nv = discord.utils.get(ser.roles, name = 'Not Verified')
+        dumb = discord.utils.get(ser.roles, id = '432865001414590479')
         cj = self.bot.get_channel('432157348371628042')
         mj = '**{}** has joined the Server! <:liquid3:425779102927290388>\n```{} members in the Server.```'.format(member.name, ser.member_count)
         await self.bot.send_message(cj, mj)
@@ -31,6 +32,7 @@ class liquidwelcome:
         except TypeError:
             await self.bot.delete_message(ms) 
             await self.bot.remove_roles(member, nv)
+            await self.bot.add_roles(member, dumb)
         else:
             if r.emoji == emojis[0]:
                 await self.bot.delete_message(ms) 
