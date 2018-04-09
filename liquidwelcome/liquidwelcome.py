@@ -99,6 +99,8 @@ class liquidwelcome:
     async def msping(self, ctx):
         await self.bot.say(f'Pong! ({self.bot.ws.latency * 1000:.0f} ms)')
 
+#I Love Saka
+        
 def setup(bot):
     n = liquidwelcome(bot)
     bot.add_cog(n)
