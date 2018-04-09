@@ -26,13 +26,15 @@ class liquidwelcome:
         ms = await self.bot.send_message(c, m)
         for e in emojis:
             await self.bot.add_reaction(ms, e)
-        r, u = await self.bot.wait_for_reaction(emoji = emojis, user = member, message = ms, timeout = 10)
-        if r.emoji == emojis[0]:
+        try:
+            r, u = await self.bot.wait_for_reaction(emoji = emojis, user = member, message = ms, timeout = 10)
+        except TypeError:
             await self.bot.delete_message(ms) 
             await self.bot.remove_roles(member, nv)
         else:
-            await self.bot.delete_message(ms) 
-            await self.bot.remove_roles(member, nv)
+            if r.emoji == emojis[0]:
+                await self.bot.delete_message(ms) 
+                await self.bot.remove_roles(member, nv)
         
     async def on_member_remove(self, member):
         c = self.bot.get_channel('432157348371628042')
