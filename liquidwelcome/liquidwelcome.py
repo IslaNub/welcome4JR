@@ -28,7 +28,7 @@ class liquidwelcome:
             await self.bot.add_reaction(ms, e)
         r, u = await self.bot.wait_for_reaction(emoji = emojis, user = member, message = ms)
         
-        while r.emoji is None:
+        if r.emoji is None:
             await asyncio.sleep(5)
             await self.bot.remove_roles(member, nv)
             await self.bot.delete_message(ms)
