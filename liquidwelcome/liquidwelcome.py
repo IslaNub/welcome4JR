@@ -27,15 +27,19 @@ class liquidwelcome:
         for e in emojis:
             await self.bot.add_reaction(ms, e)
         r, u = await self.bot.wait_for_reaction(emoji = emojis, user = member, message = ms)
-        
-        if r.emoji is None:
-            await asyncio.sleep(5)
+        while r.emoji == emojis[0]:
+            await self.bot.delete_message(c, ms) 
             await self.bot.remove_roles(member, nv)
-            await self.bot.delete_message(ms)
-        else:
-            
-            await self.bot.remove_roles(member, nv)
-            await self.bot.delete_message(ms)
+        action_process = Process(target=do_actions)
+ 
+        # We start the process and we block for 5 seconds.
+        action_process.start()
+        action_process.join(timeout=5)
+ 
+    # We terminate the process.
+        action_process.terminate()
+        await self.bot.delete_message(c, ms) 
+        await self.bot.remove_roles(member, nv)
     #   m2 ='Hello and welcome to Team Liquid\'s Mobile empire. Please review our new member pamphlet @ https://bit.ly/2px9czy for an introduction to Team Liquid and information on our mobile teams. \n\nIf you are currently in the Team Liquid Mobile empire or you would like to join then please fill out our official member registration located @ https://goo.gl/6kGVPZ - \n\nIf you have any questions then please join one of our community chats or reach out to a Discord moderator'
     #   await self.bot.send_message(member, m2)
         
