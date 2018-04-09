@@ -28,7 +28,7 @@ class liquidwelcome:
         for e in emojis:
             await self.bot.add_reaction(ms, e)
         try:
-            r, u = await self.bot.wait_for_reaction(emoji = emojis, user = member, message = ms, timeout = 10)
+            r, u = await self.bot.wait_for_reaction(emoji = emojis, user = member, message = ms, timeout = 600)
         except TypeError:
             await self.bot.delete_message(ms) 
             await self.bot.remove_roles(member, nv)
