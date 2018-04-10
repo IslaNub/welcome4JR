@@ -101,6 +101,7 @@ class liquidwelcome:
 
     @commands.command(pass_context = True, no_pm = True) 
     async def addacademy(self, ctx, user : discord.Member):
+        """Adds Academy role to user."""
         ser = self.bot.get_server('301578535175323658')
         ac = discord.utils.get(ser.roles, id = '430495770014253056')
         s = discord.utils.get(ser.roles, id = '432550860229443594')
@@ -113,7 +114,8 @@ class liquidwelcome:
             await self.bot.say('You don\'t have permissions to use this command.')
         
     @commands.command(pass_context = True, no_pm = True) 
-    async def removecademy(self, ctx, user : discord.Member):
+    async def removeacademy(self, ctx, user : discord.Member):
+        """Removes Academy role to user."""
         ser = self.bot.get_server('301578535175323658')
         ac = discord.utils.get(ser.roles, id = '430495770014253056')
         s = discord.utils.get(ser.roles, id = '432550860229443594')
