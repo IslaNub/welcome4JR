@@ -123,7 +123,7 @@ class liquidwelcome:
         u = ctx.message.author
         if ac in u.roles or s in u.roles:
             await self.bot.remove_roles(user, ma)
-            await self.bot.say('Removed "{}" role to {}.'.format(ma.name, user.mention))
+            await self.bot.say('Removed "{}" role from {}.'.format(ma.name, user.mention))
         else:
             await self.bot.say('You don\'t have permissions to use this command.')
         
