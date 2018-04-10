@@ -115,7 +115,7 @@ class liquidwelcome:
         
     @commands.command(pass_context = True, no_pm = True) 
     async def removeacademy(self, ctx, user : discord.Member):
-        """Removes Academy role to user."""
+        """Removes Academy role from user."""
         ser = self.bot.get_server('301578535175323658')
         ac = discord.utils.get(ser.roles, id = '430495770014253056')
         s = discord.utils.get(ser.roles, id = '432550860229443594')
