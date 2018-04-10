@@ -107,7 +107,7 @@ class liquidwelcome:
         s = discord.utils.get(ser.roles, id = '432550860229443594')
         ma = discord.utils.get(ser.roles, id = '430493433669353483')
         u = ctx.message.author
-        if ac in u.roles or s in u.roles:
+        if s in u.roles:
             await self.bot.add_roles(user, ma)
             await self.bot.say('Added "{}" role to {}.'.format(ma.name, user.mention))
         else:
@@ -121,7 +121,7 @@ class liquidwelcome:
         s = discord.utils.get(ser.roles, id = '432550860229443594')
         ma = discord.utils.get(ser.roles, id = '430493433669353483')
         u = ctx.message.author
-        if ac in u.roles or s in u.roles:
+        if s in u.roles:
             await self.bot.remove_roles(user, ma)
             await self.bot.say('Removed "{}" role from {}.'.format(ma.name, user.mention))
         else:
