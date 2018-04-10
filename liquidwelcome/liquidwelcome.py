@@ -99,7 +99,18 @@ class liquidwelcome:
     async def msping(self, ctx):
         await self.bot.say(f'Pong! ({self.bot.ws.latency * 1000:.0f} ms)')
 
-#I Love Saka
+    @commands.command(pass_context = True, no_pm = True) 
+    async def addacademy(self, ctx, user : discord.Member):
+        ser = self.bot.get_server('301578535175323658')
+        ac = discord.utils.get(ser.roles, id = '430495770014253056')
+        s = discord.utils.get(ser.roles, id = '432550860229443594')
+        ma = discord.utils.get(ser.roles, id = '430493433669353483')
+        u = ctx.message.author
+        if ac in u.roles or s in u.roles:
+            await self.bot.add_roles(user, ma)
+            await self.bot.say('Added {} to {}'.format(ma.name, user.mention))
+        else:
+            await self.bot.say('You don\'t have permissions to use this command.')
         
 def setup(bot):
     n = liquidwelcome(bot)
