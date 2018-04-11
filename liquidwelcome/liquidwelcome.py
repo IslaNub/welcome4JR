@@ -13,31 +13,31 @@ class liquidwelcome:
     def __init__(self, bot):
         self.bot = bot
 
-    #async def on_member_join(self, member):
+    async def on_member_join(self, member):
         ser = self.bot.get_server('301578535175323658')
         nv = discord.utils.get(ser.roles, name = 'Not Verified')
         dumb = discord.utils.get(ser.roles, id = '432865001414590479')
         cj = self.bot.get_channel('432157348371628042')
         mj = '**{}** has joined the Server! <:liquid3:425779102927290388>\n```{} members in the Server.```'.format(member.name, ser.member_count)
         await self.bot.send_message(cj, mj)
-        await self.bot.add_roles(member, nv)
-        c = self.bot.get_channel('432154053825265684')
-        m = '**Hello {}! Welcome to the Official Team Liquid Mobile Discord server.**\n\n<:tl:429889965397245964>Please look in <#429719437763936256> and add the role for the game you play.\n<:tl:429889965397245964>You must be a member in one of our official teams to have a member role.\n<:tl:429889965397245964>Check out our various channels for info on prizes, events, teams, and much more.\n<:tl:429889965397245964>Tag an online moderator or DM Liquid Mail if you have any questions.\n***__By clicking on the "✅" reaction you will get access to the Server and you declare that you have read the Server rules.__***'.format(member.mention)
-        emojis = ['✅']
-        ms = await self.bot.send_message(c, m)
-        for e in emojis:
-            await self.bot.add_reaction(ms, e)
-        try:
-            r, u = await self.bot.wait_for_reaction(emoji = emojis, user = member, message = ms, timeout = 600)
-        except TypeError:
-            await self.bot.delete_message(ms) 
-            await self.bot.remove_roles(member, nv)
-            await self.bot.add_roles(member, dumb)
-            await self.bot.remove_roles(member, nv)
-        else:
-            if r.emoji == emojis[0]:
-                await self.bot.delete_message(ms) 
-                await self.bot.remove_roles(member, nv)
+        #await self.bot.add_roles(member, nv)
+        #c = self.bot.get_channel('432154053825265684')
+        #m = '**Hello {}! Welcome to the Official Team Liquid Mobile Discord server.**\n\n<:tl:429889965397245964>Please look in <#429719437763936256> and add the role for the game you play.\n<:tl:429889965397245964>You must be a member in one of our official teams to have a member role.\n<:tl:429889965397245964>Check out our various channels for info on prizes, events, teams, and much more.\n<:tl:429889965397245964>Tag an online moderator or DM Liquid Mail if you have any questions.\n***__By clicking on the "✅" reaction you will get access to the Server and you declare that you have read the Server rules.__***'.format(member.mention)
+        #emojis = ['✅']
+        #ms = await self.bot.send_message(c, m)
+        #for e in emojis:
+        #    await self.bot.add_reaction(ms, e)
+        #try:
+        #    r, u = await self.bot.wait_for_reaction(emoji = emojis, user = member, message = ms, timeout = 600)
+        #except TypeError:
+        #    await self.bot.delete_message(ms) 
+        #    await self.bot.remove_roles(member, nv)
+        #    await self.bot.add_roles(member, dumb)
+        #    await self.bot.remove_roles(member, nv)
+        #else:
+        #    if r.emoji == emojis[0]:
+        #        await self.bot.delete_message(ms) 
+        #        await self.bot.remove_roles(member, nv)
         
     async def on_member_remove(self, member):
         c = self.bot.get_channel('432157348371628042')
