@@ -13,7 +13,7 @@ class liquidwelcome:
     def __init__(self, bot):
         self.bot = bot
 
-    async def on_member_join(self, member):
+    #async def on_member_join(self, member):
         ser = self.bot.get_server('301578535175323658')
         nv = discord.utils.get(ser.roles, name = 'Not Verified')
         dumb = discord.utils.get(ser.roles, id = '432865001414590479')
