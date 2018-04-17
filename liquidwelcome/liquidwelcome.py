@@ -15,11 +15,16 @@ class liquidwelcome:
 
     async def on_member_join(self, member):
         ser = self.bot.get_server('301578535175323658')
-        nv = discord.utils.get(ser.roles, name = 'Not Verified')
-        dumb = discord.utils.get(ser.roles, id = '432865001414590479')
-        cj = self.bot.get_channel('432157348371628042')
-        mj = '**{}** has joined the Server! <:liquid3:425779102927290388>\n```{} members in the Server.```'.format(member.name, ser.member_count)
-        await self.bot.send_message(cj, mj)
+        #nv = discord.utils.get(ser.roles, name = 'Not Verified')
+        cr = discord.utils.get(ser.roles, name = 'Clash Royale')
+        bs = discord.utils.get(ser.roles, name = 'Brawl Stars')
+        aov = discord.utils.get(ser.roles, name = 'Arena of Valor)
+        #cj = self.bot.get_channel('432157348371628042')
+        #mj = '**{}** has joined the Server! <:liquid3:425779102927290388>\n```{} members in the Server.```'.format(member.name, ser.member_count)
+        #await self.bot.send_message(cj, mj)
+        await self.bot.add_roles(member, cr)
+        await self.bot.add_roles(member, aov)
+        await self.bot.add_roles(member, bs)                        
         #await self.bot.add_roles(member, nv)
         #c = self.bot.get_channel('432154053825265684')
         #m = '**Hello {}! Welcome to the Official Team Liquid Mobile Discord server.**\n\n<:tl:429889965397245964>Please look in <#429719437763936256> and add the role for the game you play.\n<:tl:429889965397245964>You must be a member in one of our official teams to have a member role.\n<:tl:429889965397245964>Check out our various channels for info on prizes, events, teams, and much more.\n<:tl:429889965397245964>Tag an online moderator or DM Liquid Mail if you have any questions.\n***__By clicking on the "✅" reaction you will get access to the Server and you declare that you have read the Server rules.__***'.format(member.mention)
@@ -126,6 +131,36 @@ class liquidwelcome:
             await self.bot.say('Removed "{}" role from {}.'.format(ma.name, user.mention))
         else:
             await self.bot.say('You don\'t have permissions to use this command.')
+        
+        
+    @commands.command(pass_context=True)
+    async def remindme(self, ctx,  quantity : int, time_unit : str, *, text : str):
+        """Sends you <text> when the time is up
+        Accepts: minutes, hours, days, weeks, month
+        Example:
+        [p]remindme 3 days Have sushi with Asu and JennJenn"""
+        time_unit = time_unit.lower()
+        author = ctx.message.author
+        s = ""
+        if time_unit.endswith("s"):
+            time_unit = time_unit[:-1]
+            s = "s"
+        if not time_unit in self.units:
+            await self.bot.say("Invalid time unit. Choose minutes/hours/days/weeks/month")
+            return
+        if quantity < 1:
+            await self.bot.say("Quantity must not be 0 or negative.")
+            return
+        if len(text) > 1960:
+            await self.bot.say("Text is too long.")
+            return
+        seconds = self.units[time_unit] * quantity
+        future = int(time.time()+seconds)
+        self.reminders.append({"ID" : author.id, "FUTURE" : future, "TEXT" : text})
+        logger.info("{} ({}) set a reminder.".format(author.name, author.id))
+        await self.bot.say("I will remind you that in {} {}.".format(str(quantity), time_unit + s))
+        fileIO("data/remindme/reminders.json", "save", self.reminders)
+        
         
 def setup(bot):
     n = liquidwelcome(bot)
