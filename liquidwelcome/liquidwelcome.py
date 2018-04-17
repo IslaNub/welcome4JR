@@ -18,7 +18,7 @@ class liquidwelcome:
         #nv = discord.utils.get(ser.roles, name = 'Not Verified')
         cr = discord.utils.get(ser.roles, name = 'Clash Royale')
         bs = discord.utils.get(ser.roles, name = 'Brawl Stars')
-        aov = discord.utils.get(ser.roles, name = 'Arena of Valor)
+        aov = discord.utils.get(ser.roles, name = 'Arena of Valor')
         #cj = self.bot.get_channel('432157348371628042')
         #mj = '**{}** has joined the Server! <:liquid3:425779102927290388>\n```{} members in the Server.```'.format(member.name, ser.member_count)
         #await self.bot.send_message(cj, mj)
