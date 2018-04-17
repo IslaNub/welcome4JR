@@ -138,11 +138,11 @@ class liquidwelcome:
         c = self.bot.get_channel('430496334340947978')
         m = await self.bot.get_message(c, ID)
         try:
-            r = await self.bot.get_reaction_users(m)
+            r = await self.bot.get_reaction_users(m.reactions)
             await self.bot.say(r)
         except Exception as e:
             await self.bot.say(e)
-            print(TypeError)
+            print(e)
             
 def setup(bot):
     n = liquidwelcome(bot)
