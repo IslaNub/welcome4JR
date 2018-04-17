@@ -138,7 +138,7 @@ class liquidwelcome:
         c = self.bot.get_channel('430496334340947978')
         m = await self.bot.get_message(c, ID)
         try:
-            r = await self.bot.get_reaction_users(emoji = '✅', message = m)
+            r = await self.bot.get_reaction_users(discord.Reaction(emoji = '✅', message = m))
             await self.bot.say(r)
         except Exception as e:
             await self.bot.say(e)
