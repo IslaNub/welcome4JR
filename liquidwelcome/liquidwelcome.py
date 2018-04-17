@@ -132,6 +132,18 @@ class liquidwelcome:
         else:
             await self.bot.say('You don\'t have permissions to use this command.')
  
+    @commands.command(pass_context = True, no_pm = True)
+    async def getpracticestats(self, ctx, message_ID):
+        ID = message_ID
+        c = self.bot.get_channel('430496334340947978')
+        m = await self.bot.get_message(c, ID)
+        try:
+            r = await self.bot.get_reaction_users(m)
+            await self.bot.say(r)
+        except Exception as e:
+            await self.bot.say(e)
+            print(TypeError)
+            
 def setup(bot):
     n = liquidwelcome(bot)
     bot.add_cog(n)
