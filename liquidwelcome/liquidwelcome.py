@@ -131,37 +131,7 @@ class liquidwelcome:
             await self.bot.say('Removed "{}" role from {}.'.format(ma.name, user.mention))
         else:
             await self.bot.say('You don\'t have permissions to use this command.')
-        
-        
-    @commands.command(pass_context=True)
-    async def remindme(self, ctx,  quantity : int, time_unit : str, *, text : str):
-        """Sends you <text> when the time is up
-        Accepts: minutes, hours, days, weeks, month
-        Example:
-        [p]remindme 3 days Have sushi with Asu and JennJenn"""
-        time_unit = time_unit.lower()
-        author = ctx.message.author
-        s = ""
-        if time_unit.endswith("s"):
-            time_unit = time_unit[:-1]
-            s = "s"
-        if not time_unit in self.units:
-            await self.bot.say("Invalid time unit. Choose minutes/hours/days/weeks/month")
-            return
-        if quantity < 1:
-            await self.bot.say("Quantity must not be 0 or negative.")
-            return
-        if len(text) > 1960:
-            await self.bot.say("Text is too long.")
-            return
-        seconds = self.units[time_unit] * quantity
-        future = int(time.time()+seconds)
-        self.reminders.append({"ID" : author.id, "FUTURE" : future, "TEXT" : text})
-        logger.info("{} ({}) set a reminder.".format(author.name, author.id))
-        await self.bot.say("I will remind you that in {} {}.".format(str(quantity), time_unit + s))
-        fileIO("data/remindme/reminders.json", "save", self.reminders)
-        
-        
+ 
 def setup(bot):
     n = liquidwelcome(bot)
     bot.add_cog(n)
