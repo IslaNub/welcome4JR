@@ -140,7 +140,7 @@ class liquidwelcome:
         try:
             r = await self.bot.get_reaction_users(discord.Reaction(emoji = '✅', message = m))
             
-            await self.bot.say(r.name)
+            await self.bot.say(r[0].name)
         except Exception as e:
             await self.bot.say(e)
             print(e)
