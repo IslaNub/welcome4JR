@@ -139,11 +139,11 @@ class liquidwelcome:
         m = await self.bot.get_message(c, ID)
         try:
             r = await self.bot.get_reaction_users(discord.Reaction(emoji = '✅', message = m))
-            x = 0
-            m = await self.bot.say(r[x].name)
+            x = 1
+            m = await self.bot.say(r[0].name)
             while True:
                 try:
-                    m = await self.bot.edit_message(m, f'{m.content}+\n{r[x].name}')
+                    m = await self.bot.edit_message(m, f'{m.content}\n{r[x].name}')
                     x += 1
                 except Exception:
                     pass
