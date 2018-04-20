@@ -145,8 +145,8 @@ class liquidwelcome:
                 try:
                     m = await self.bot.edit_message(m, f'{m.content}\n{r[x].name}')
                     x += 1
-                except Exception:
-                    pass
+                except Exception as e:
+                    print(e)
         except Exception as e:
             await self.bot.say(e)
             print(e)
