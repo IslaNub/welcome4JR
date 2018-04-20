@@ -141,11 +141,12 @@ class liquidwelcome:
             r = await self.bot.get_reaction_users(discord.Reaction(emoji = '✅', message = m))
             x = 1
             m = await self.bot.say(r[0].name)
-            num = int(r[].name)
-            await self.bot.say(num)
-            for x in range(0, num):
-                m = await self.bot.edit_message(m, f'{m.content}\n{r[x].name}'.replace('list index out of range', ''))
-                x += 1
+            while True:
+                try:
+                    m = await self.bot.edit_message(m, f'{m.content}\n{r[x].name}')
+                    x += 1
+                except Exception:
+                    break
         except Exception as e:
             await self.bot.say(e)
             print(e)
