@@ -142,10 +142,11 @@ class liquidwelcome:
             x = 0
             while True:
                 try:
-                    await self.bot.say(r[x].name)
+                    y = r[x].name
                     x += 1
-                except Exception:
-                    pass
+                    await self.bot.say(y)
+            except Exception:
+                pass
         except Exception as e:
             await self.bot.say(e)
             print(e)
