@@ -142,9 +142,8 @@ class liquidwelcome:
             x = 1
             m = await self.bot.say(r[0].name)
             while True:
-                try:
-                    m = await self.bot.edit_message(m, f'{m.content}\n{r[x].name}')
-                    x += 1
+                m = await self.bot.edit_message(m, f'{m.content}\n{r[x].name}')
+                x += 1
         except Exception as e:
             await self.bot.say(e)
             print(e)
