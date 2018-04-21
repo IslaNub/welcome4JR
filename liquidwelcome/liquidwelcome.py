@@ -133,10 +133,15 @@ class liquidwelcome:
             await self.bot.say('You don\'t have permissions to use this command.')
  
     @commands.command(pass_context = True, no_pm = True)
-    async def getpracticestats(self, ctx, message_ID):
+    async def getpracticestats(self, ctx, message_ID = None):
         ID = message_ID
         c = self.bot.get_channel('430496334340947978')
         m = await self.bot.get_message(c, ID)
+        if message_ID is None:
+            logs = yield from self.bot.logs_from(c, reverse = True)
+            for message in logs:
+                m = await self.bot.get_message(c, logs[0].id)
+                pass
         try:
             r = await self.bot.get_reaction_users(discord.Reaction(emoji = '✅', message = m))
             x = 0
