@@ -148,8 +148,9 @@ class liquidwelcome:
             x = 0
             ser = ctx.message.server
             s = discord.utils.get(ser.roles, id = '432550860229443594')
+            acs = discord.utils.get(ser.roles, id = '430495770014253056')
             u = ctx.message.author
-            if s in u.roles:
+            if s in u.roles or acs in u.roles:
                 m = await self.bot.say(r[x].name)
                 while True:
                     try:
@@ -179,8 +180,9 @@ class liquidwelcome:
             x = 0
             ser = ctx.message.server
             s = discord.utils.get(ser.roles, id = '432550860229443594')
+            acs = discord.utils.get(ser.roles, id = '430495770014253056')
             u = ctx.message.author
-            if s in u.roles:
+            if s in u.roles or acs in u.roles:
                 await self.bot.say('For which region do you need stats?')
                 try:
                     a = await self.bot.wait_for_message(author = u, timeout = 15)
