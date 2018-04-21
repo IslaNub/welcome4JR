@@ -147,13 +147,18 @@ class liquidwelcome:
             r = await self.bot.get_reaction_users(discord.Reaction(emoji = '✅', message = m))
             x = 0
             m = await self.bot.say(r[x].name)
-            while True:
-                try:
-                    x += 1
-                    m = await self.bot.edit_message(m, f'{m.content}\n{r[x].name}')
-                except Exception:
-                    break
-            await self.bot.say('**{} users have reacted.**'.format(len(r)))
+            s = discord.utils.get(ser.roles, id = '432550860229443594')
+            u = ctx.message.author
+            if s in u.roles:
+                while True:
+                    try:
+                        x += 1
+                        m = await self.bot.edit_message(m, f'{m.content}\n{r[x].name}')
+                    except Exception:
+                        break
+                await self.bot.say('**{} users have reacted.**'.format(len(r)))
+            else:
+                await self.bot.say('You are not allowed to use this command, only {} can.'.format(s.name))
         except Exception as e:
             await self.bot.say(e)
             print(e)
