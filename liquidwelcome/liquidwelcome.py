@@ -190,10 +190,7 @@ class liquidwelcome:
                     if a.content.lower().strip() == 'na':
                         r = await self.bot.get_reaction_users(discord.Reaction(emoji = '🇺🇸', message = m))
                         pass
-                    if a.content.lower().strip() == 'apac':
-                        r = await self.bot.get_reaction_users(discord.Reaction(emoji = '🇨🇳', message = m))
-                        pass
-                except TypeError:
+                except Exception:
                     await self.bot.say('Canceling operation.')
                 m = await self.bot.say(r[x].name)
                 while True:
