@@ -153,7 +153,7 @@ class liquidwelcome:
                     m = await self.bot.edit_message(m, f'{m.content}\n{r[x].name}')
                 except Exception:
                     break
-            await self.bot.say('**{} users have reacted.**'.format(len(r[])))
+            await self.bot.say('**{} users have reacted.**'.format(len(r)))
         except Exception as e:
             await self.bot.say(e)
             print(e)
