@@ -138,9 +138,9 @@ class liquidwelcome:
         c = self.bot.get_channel('430496334340947978')
         
         if message_ID is None:
-            async for message in self.bot.logs_from(c, reverse = True):
+            async for message in self.bot.logs_from(c, limit = 1, reverse = True):
             
-                m = await self.bot.get_message(c, message[0].id)
+                m = await self.bot.get_message(c, message.id)
                 pass
         if message_ID is not None:
             m = await self.bot.get_message(c, ID)
