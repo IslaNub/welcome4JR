@@ -136,12 +136,15 @@ class liquidwelcome:
     async def getpracticestats(self, ctx, message_ID = None):
         ID = message_ID
         c = self.bot.get_channel('430496334340947978')
-        m = await self.bot.get_message(c, ID)
+        
         if message_ID is None:
             logs = await self.bot.logs_from(c, reverse = True)
             for message in logs:
                 m = await self.bot.get_message(c, logs[0].id)
                 pass
+        if message_ID is not None:
+            m = await self.bot.get_message(c, ID)
+            pass
         try:
             r = await self.bot.get_reaction_users(discord.Reaction(emoji = '✅', message = m))
             x = 0
