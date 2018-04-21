@@ -136,10 +136,8 @@ class liquidwelcome:
     async def getpracticestats(self, ctx, message_ID = None):
         ID = message_ID
         c = self.bot.get_channel('430496334340947978')
-        
         if message_ID is None:
             async for message in self.bot.logs_from(c, limit = 1, reverse = True):
-            
                 m = await self.bot.get_message(c, message.id)
                 pass
         if message_ID is not None:
