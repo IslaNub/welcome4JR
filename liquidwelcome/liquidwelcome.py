@@ -203,7 +203,6 @@ class liquidwelcome:
             else:
                 await self.bot.say('You are not allowed to use this command, only {} can.'.format(s.name))
         except Exception as e:
-            await self.bot.say(e)
             print(e)
             
 def setup(bot):
