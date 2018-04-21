@@ -140,7 +140,7 @@ class liquidwelcome:
         if message_ID is None:
             async for message in self.bot.logs_from(c, reverse = True):
             
-                m = await self.bot.get_message(c, logs[0].id)
+                m = await self.bot.get_message(c, message[0].id)
                 pass
         if message_ID is not None:
             m = await self.bot.get_message(c, ID)
