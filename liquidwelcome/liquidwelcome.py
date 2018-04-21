@@ -146,10 +146,11 @@ class liquidwelcome:
         try:
             r = await self.bot.get_reaction_users(discord.Reaction(emoji = '✅', message = m))
             x = 0
-            m = await self.bot.say(r[x].name)
+            ser = ctx.message.server
             s = discord.utils.get(ser.roles, id = '432550860229443594')
             u = ctx.message.author
             if s in u.roles:
+                m = await self.bot.say(r[x].name)
                 while True:
                     try:
                         x += 1
