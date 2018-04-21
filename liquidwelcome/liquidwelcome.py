@@ -164,6 +164,51 @@ class liquidwelcome:
             await self.bot.say(e)
             print(e)
             
+    @commands.command(pass_context = True, no_pm = True)
+    async def testgetpracticestats(self, ctx, message_ID = None):
+        ID = message_ID
+        c = self.bot.get_channel('430496334340947978')
+        if message_ID is None:
+            async for message in self.bot.logs_from(c, limit = 1, reverse = True):
+                m = await self.bot.get_message(c, message.id)
+                pass
+        if message_ID is not None:
+            m = await self.bot.get_message(c, ID)
+            pass
+        try:
+            x = 0
+            ser = ctx.message.server
+            s = discord.utils.get(ser.roles, id = '432550860229443594')
+            u = ctx.message.author
+            if s in u.roles:
+                await self.bot.say('For which region do you need stats?')
+                try:
+                    a = await self.bot.wait_for_message(author = u, timeout = 15)
+                    if a.content.lower().strip() == 'eu':
+                        r = await self.bot.get_reaction_users(discord.Reaction(emoji = '🇪🇺', message = m))
+                        pass
+                    if a.content.lower().strip() == 'na':
+                        r = await self.bot.get_reaction_users(discord.Reaction(emoji = '🇺🇸', message = m))
+                        pass
+                    if a.content.lower().strip() == 'apac':
+                        r = await self.bot.get_reaction_users(discord.Reaction(emoji = '🇨🇳', message = m))
+                        pass
+                except TypeError:
+                    await self.bot.say('Canceling operation.')
+                m = await self.bot.say(r[x].name)
+                while True:
+                    try:
+                        x += 1
+                        m = await self.bot.edit_message(m, f'{m.content}\n{r[x].name}')
+                    except Exception:
+                        break
+                await self.bot.say('**{} users have reacted.**'.format(len(r)))
+            else:
+                await self.bot.say('You are not allowed to use this command, only {} can.'.format(s.name))
+        except Exception as e:
+            await self.bot.say(e)
+            print(e)
+            
 def setup(bot):
     n = liquidwelcome(bot)
     bot.add_cog(n)
