@@ -47,7 +47,13 @@ class liquidwelcome:
     async def on_member_remove(self, member):
         c = self.bot.get_channel('432157348371628042')
         s = self.bot.get_server('301578535175323658')
-        m = '**{}** has left the Server, bye bye... <:QooBeeConsole:422749739591794688>\n```{} members left in the Server.```'.format(member.name, s.member_count)
+        m = '**{}** has left the Server, bye bye... <:QooBeeConsole:422749739591794688>\n```{} members left in the Server.```'.format(member, s.member_count)
+        await self.bot.send_message(c, m)
+        
+    async def on_member_ban(self, member):
+        c = self.bot.get_channel('432157348371628042')
+        s = self.bot.get_server('301578535175323658')
+        m = 'Someone has used its mighty Hammer and {} has been banned from this Server! <:BanHammer:438979295671746560>\n```{} members left in the Server.```'.format(member, s.member_count)
         await self.bot.send_message(c, m)
         
     @commands.command(pass_context = True, no_pm = True)
