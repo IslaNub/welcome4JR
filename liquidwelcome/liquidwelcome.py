@@ -53,7 +53,7 @@ class liquidwelcome:
     async def on_member_ban(self, member):
         c = self.bot.get_channel('432157348371628042')
         s = self.bot.get_server('301578535175323658')
-        m = 'Someone has used the Hammer and **{}** has been banned from this Server! <:BanHammer:438979295671746560>\n```{} members left in the Server.```'.format(member, s.member_count)
+        m = 'Someone has used the Hammer and **{}** has been banned from this Server! <:BanHammer:438979295671746560>'.format(member)
         await self.bot.send_message(c, m)
         
     @commands.command(pass_context = True, no_pm = True)
