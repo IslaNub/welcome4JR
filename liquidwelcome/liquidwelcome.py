@@ -229,6 +229,7 @@ class liquidwelcome:
             
     @mem.command(pass_context = True, no_pm = True, name = 'eu')
     async def mem_eu(self, ctx, member:discord.Member):
+        """Allows EU Leaders to add EU Member to users"""
         try:
             l = discord.utils.get(ser.roles, name = 'EU Clan Leader')
             eu = discord.utils.get(ser.roles, name = 'EU Clan Member')
@@ -242,13 +243,30 @@ class liquidwelcome:
         except Exception as e:
             await self.bot.say(e)
 
-@mem.command(pass_context = True, no_pm = True, name = 'na')
+    @mem.command(pass_context = True, no_pm = True, name = 'na')
     async def mem_na(self, ctx, member:discord.Member):
+        """Allows NA Leaders to add NA Member to users"""
         try:
             l = discord.utils.get(ser.roles, name = 'NA Clan Leader')
             na = discord.utils.get(ser.roles, name = 'NA Clan Member')
             u = ctx.message.author
             x = na
+            if l in u.roles:
+                await self.bot.add_roles(member, x)
+                await self.bot.say('Added {} role to {}.'.format(x.name, member.name))
+            else:
+                await self.bot.say('You need the {} role, your current highest role is {}.'.format(x.name, member.top_role))
+        except Exception as e:
+            await self.bot.say(e)
+            
+    @mem.command(pass_context = True, no_pm = True, name = 'la')
+    async def mem_la(self, ctx, member:discord.Member):
+        """Allows LA Leaders to add LA Member to users"""
+        try:
+            l = discord.utils.get(ser.roles, name = 'LA Clan Leader')
+            la = discord.utils.get(ser.roles, name = 'LA Clan Member')
+            u = ctx.message.author
+            x = la
             if l in u.roles:
                 await self.bot.add_roles(member, x)
                 await self.bot.say('Added {} role to {}.'.format(x.name, member.name))
