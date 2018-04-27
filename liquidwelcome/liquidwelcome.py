@@ -230,18 +230,33 @@ class liquidwelcome:
     @mem.command(pass_context = True, no_pm = True, name = 'eu')
     async def mem_eu(self, ctx, member:discord.Member):
         try:
-            eul = discord.utils.get(ser.roles, name = 'EU Clan Leader')
+            l = discord.utils.get(ser.roles, name = 'EU Clan Leader')
             eu = discord.utils.get(ser.roles, name = 'EU Clan Member')
             u = ctx.message.author
             x = eu
-            if eul in u.roles:
+            if l in u.roles:
                 await self.bot.add_roles(member, x)
                 await self.bot.say('Added {} role to {}.'.format(x.name, member.name))
             else:
                 await self.bot.say('You need the {} role, your current highest role is {}.'.format(x.name, member.top_role))
         except Exception as e:
             await self.bot.say(e)
-                                   
+
+@mem.command(pass_context = True, no_pm = True, name = 'na')
+    async def mem_na(self, ctx, member:discord.Member):
+        try:
+            l = discord.utils.get(ser.roles, name = 'NA Clan Leader')
+            na = discord.utils.get(ser.roles, name = 'NA Clan Member')
+            u = ctx.message.author
+            x = na
+            if l in u.roles:
+                await self.bot.add_roles(member, x)
+                await self.bot.say('Added {} role to {}.'.format(x.name, member.name))
+            else:
+                await self.bot.say('You need the {} role, your current highest role is {}.'.format(x.name, member.top_role))
+        except Exception as e:
+            await self.bot.say(e)
+            
 def setup(bot):
     n = liquidwelcome(bot)
     bot.add_cog(n)
