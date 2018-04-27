@@ -236,8 +236,12 @@ class liquidwelcome:
             x = eu
             if eul in u.roles:
                 await self.bot.add_roles(member, x)
-                await self.bot.say('Added {} role to {}.'.format(x.name, member.name)
-            
+                await self.bot.say('Added {} role to {}.'.format(x.name, member.name))
+            else:
+                await self.bot.say('You need the {} role, your current highest role is {}.'.format(x.name, member.top_role))
+        except Exception as e:
+            await self.bot.say(e)
+                                   
 def setup(bot):
     n = liquidwelcome(bot)
     bot.add_cog(n)
