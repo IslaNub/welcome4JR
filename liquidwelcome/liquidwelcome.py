@@ -219,6 +219,25 @@ class liquidwelcome:
         except Exception as e:
             print(e)
             
+    @commands.group(pass_context=True, no_pm=True)
+    async def mem(self, ctx):
+        """Gives EU, NA or LA member to users
+        
+        Only Leaders can use this command"""
+        if ctx.invoked_subcommand is None:
+            await self.bot.send_cmd_help(ctx)
+            
+    @mem.command(pass_context = True, no_pm = True, name = 'eu')
+    async def mem_eu(self, ctx, member:discord.Member):
+        try:
+            eul = discord.utils.get(ser.roles, name = 'EU Clan Leader')
+            eu = discord.utils.get(ser.roles, name = 'EU Clan Member')
+            u = ctx.message.author
+            x = eu
+            if eul in u.roles:
+                await self.bot.add_roles(member, x)
+                await self.bot.say('Added {} role to {}.'.format(x.name, member.name)
+            
 def setup(bot):
     n = liquidwelcome(bot)
     bot.add_cog(n)
