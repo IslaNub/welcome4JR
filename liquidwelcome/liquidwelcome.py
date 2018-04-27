@@ -231,6 +231,7 @@ class liquidwelcome:
     async def mem_eu(self, ctx, member:discord.Member):
         """Allows EU Leaders to add EU Member to users"""
         try:
+            ser = ctx.message.server
             l = discord.utils.get(ser.roles, name = 'EU Clan Leader')
             eu = discord.utils.get(ser.roles, name = 'EU Clan Member')
             u = ctx.message.author
@@ -247,6 +248,7 @@ class liquidwelcome:
     async def mem_na(self, ctx, member:discord.Member):
         """Allows NA Leaders to add NA Member to users"""
         try:
+            ser = ctx.message.server
             l = discord.utils.get(ser.roles, name = 'NA Clan Leader')
             na = discord.utils.get(ser.roles, name = 'NA Clan Member')
             u = ctx.message.author
@@ -263,6 +265,7 @@ class liquidwelcome:
     async def mem_la(self, ctx, member:discord.Member):
         """Allows LA Leaders to add LA Member to users"""
         try:
+            ser = ctx.message.server
             l = discord.utils.get(ser.roles, name = 'LA Clan Leader')
             la = discord.utils.get(ser.roles, name = 'LA Clan Member')
             u = ctx.message.author
