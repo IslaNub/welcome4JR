@@ -240,7 +240,7 @@ class liquidwelcome:
                 await self.bot.add_roles(member, x)
                 await self.bot.say('Added {} role to {}.'.format(x.name, member.name))
             else:
-                await self.bot.say('You need the {} role, your current highest role is {}.'.format(x.name, member.top_role))
+                await self.bot.say('You need the {} role to use this command, your current highest role is {}.'.format(l.name, member.top_role))
         except Exception as e:
             await self.bot.say(e)
 
@@ -257,7 +257,7 @@ class liquidwelcome:
                 await self.bot.add_roles(member, x)
                 await self.bot.say('Added {} role to {}.'.format(x.name, member.name))
             else:
-                await self.bot.say('You need the {} role, your current highest role is {}.'.format(x.name, member.top_role))
+                await self.bot.say('You need the {} role to use this command, your current highest role is {}.'.format(l.name, member.top_role))
         except Exception as e:
             await self.bot.say(e)
             
@@ -274,7 +274,7 @@ class liquidwelcome:
                 await self.bot.add_roles(member, x)
                 await self.bot.say('Added {} role to {}.'.format(x.name, member.name))
             else:
-                await self.bot.say('You need the {} role, your current highest role is {}.'.format(x.name, member.top_role))
+                await self.bot.say('You need the {} role to use this command, your current highest role is {}.'.format(l.name, member.top_role))
         except Exception as e:
             await self.bot.say(e)
             
