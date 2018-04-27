@@ -223,6 +223,7 @@ class liquidwelcome:
     async def mem(self, ctx):
         """Gives EU, NA or LA member to users
         
+        
         Only Leaders can use this command"""
         if ctx.invoked_subcommand is None:
             await self.bot.send_cmd_help(ctx)
