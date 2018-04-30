@@ -164,7 +164,13 @@ class liquidwelcome:
                         m = await self.bot.edit_message(m, f'{m.content}\n{r[x].name}')
                     except Exception:
                         break
-                await self.bot.say('**{} users have reacted.**'.format(len(r)))
+                if len(r) > 1:
+                    plural = 's'
+                    pass
+                if len(r) <= 1:
+                    plural = ''
+                    pass
+                await self.bot.say('**{} user{} have reacted.**'.format(len(r), plural))
             else:
                 await self.bot.say('You are not allowed to use this command, only {} can.'.format(s.name))
         except Exception as e:
