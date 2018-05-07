@@ -297,11 +297,14 @@ class liquidwelcome:
         except:
             await self.bot.say("Error: cannot reach Clash Royale Servers. Please try again later.")
             return
-        embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/P2GJGRUY')
-        embed.set_author(name = profiledata[name] + ' #' + clandata[tag])
-        embed.add_field(name = 'Clan', value = clandata['clan']['name'], inline = True)
-        await self.bot.say(embed = embed)
-        
+        try:
+            embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/P2GJGRUY')
+            embed.set_author(name = profiledata[name] + ' #' + clandata[tag])
+            embed.add_field(name = 'Clan', value = clandata['clan']['name'], inline = True)
+            await self.bot.say(embed = embed)
+        except Exception as e:
+            await self.bot.say(e)
+            
 def setup(bot):
     n = liquidwelcome(bot)
     bot.add_cog(n)
