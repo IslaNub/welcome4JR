@@ -7,6 +7,7 @@ from random import choice
 from random import randint
 import asyncio
 import requests
+import aiohttp
 
 class liquidwelcome:
     """Welcomes new members to Team Liquid Mobile"""
@@ -292,18 +293,27 @@ class liquidwelcome:
     @commands.command(pass_context = True, no_pm = True)
     async def academyclan(self, ctx):
         academy = 'P2GJGRUY'
+        headers = {"auth": "2da0f327dd7f41c7b0d87fae844fc3f24bc7c9ad99d44a7b9bc61f9cd76600dd"}
         try:
-            clandata = requests.get('https://api.royaleapi.com/clan/'.format(academy), headers=self.getAuth(), timeout=10).json()
-        except:
-            await self.bot.say("Error: cannot reach Clash Royale Servers. Please try again later.")
-            return
+            url = "https://api.royaleapi.com/clan/{}".format(academy)
+            async with aiohttp.ClientSession() as session:
+                async with session.get(url, headers=headers) as resp:
+                    clandata = await resp.json()
+                    pass
+        except TypeError as e:
+            print(e)
+        #try:
+        #    clandata = requests.get('https://api.royaleapi.com/clan/'.format(academy), headers=self.getAuth(), timeout=10).json()
+        #except:
+        #    await self.bot.say("Error: cannot reach Clash Royale Servers. Please try again later.")
+        #    return
         try:
             embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/P2GJGRUY')
             embed.set_author(name = 'Kek') #clandata['name'] + ' #' + clandata['tag'])
             embed.add_field(name = 'Clan', value = clandata['tag'], inline = True)
             await self.bot.say(embed = embed)
         except TypeError as e:
-            await self.bot.say(e)
+            print(e)
             
 def setup(bot):
     n = liquidwelcome(bot)
