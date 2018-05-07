@@ -313,7 +313,7 @@ class liquidwelcome:
                         embed.add_field(name = 'Required Trophies:', value = data['requiredScore'], inline = True)
                         embed.add_field(name = 'Donations:', value = data['donations'], inline = True)
                         embed.add_field(name = 'Type:', value = f"{data['type']}".capitalize(), inline = True)
-                        embed.set_footer(text = 'API powered by RoyaleAPI', icon_url = ctx.message.server.icon_url)
+                        embed.set_footer(text = 'API powered by RoyaleAPI', icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
                         await self.bot.say(embed = embed)
                     except TypeError as e:
                         await self.bot.say('Something went wrong, please try again later.')
