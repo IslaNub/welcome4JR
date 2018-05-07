@@ -293,29 +293,15 @@ class liquidwelcome:
     @commands.command(pass_context = True, no_pm = True)
     async def academyclan(self, ctx):
         academy = 'P2GJGRUY'
-        #headers = {"auth": "2da0f327dd7f41c7b0d87fae844fc3f24bc7c9ad99d44a7b9bc61f9cd76600dd"}
-        #try:
-        #    url = "https://api.royaleapi.com/clan/{}".format(academy)
-         #   async with aiohttp.ClientSession() as session:
-         #       async with session.get(url, headers=headers) as resp:
-         #           clandata = await resp.json()
-         #           pass
-        #except TypeError as e:
-        #    print(e)
-        #try:
-        #    clandata = requests.get('https://api.royaleapi.com/clan/'.format(academy), headers=self.getAuth(), timeout=10).json()
-        #except:
-        #    await self.bot.say("Error: cannot reach Clash Royale Servers. Please try again later.")
-        #    return
-        url = "https://api.royaleapi.com/clan/{}".format(academy)
-
-        headers = {
-            'auth': "2da0f327dd7f41c7b0d87fae844fc3f24bc7c9ad99d44a7b9bc61f9cd76600dd"
-            }
-
-        response = requests.request("GET", url, headers=headers)
-
-        data = response.json()
+        try:
+            headers = self.getAuth
+            url = "https://api.royaleapi.com/clan/{}".format(academy)
+            async with aiohttp.ClientSession() as session:
+                async with session.get(url, headers=headers) as resp:
+                    data = await resp.json()
+                    pass
+        except TypeError as e:
+            print(e)
         try:
             embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/P2GJGRUY', color = 0x00FFBF)
             embed.set_author(name = 'Stats for Liquid Academy!')
