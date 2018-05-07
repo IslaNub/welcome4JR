@@ -314,6 +314,7 @@ class liquidwelcome:
                         embed.add_field(name = 'Donations:', value = data['donations'], inline = True)
                         embed.add_field(name = 'Type:', value = f"{data['type']}".capitalize(), inline = True)
                         embed.set_footer(text = 'API powered by RoyaleAPI', icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
+                        embed.add_field(name = 'Location:', value = data['location']['name'], inline = True)
                         await self.bot.say(embed = embed)
                     except TypeError as e:
                         await self.bot.say('Something went wrong, please try again later.')
