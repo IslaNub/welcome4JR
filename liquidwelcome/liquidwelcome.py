@@ -319,7 +319,7 @@ class liquidwelcome:
         try:
             embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/P2GJGRUY', color = 0x00FFBF)
             embed.set_author(name = 'Stats for Liquid Academy!')
-            embed.description = f"{data['name']} (#{data['tag']})", inline = True
+            embed.description = f"{data['name']} (#{data['tag']})"
             embed.add_field(name = 'Description:', value = data['description'], inline = True)
             await self.bot.say(embed = embed)
         except TypeError as e:
