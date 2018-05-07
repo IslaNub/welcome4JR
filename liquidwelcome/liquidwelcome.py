@@ -302,7 +302,7 @@ class liquidwelcome:
             embed.set_author(name = clandata['name'] + ' #' + clandata['tag'])
             embed.add_field(name = 'Clan', value = clandata['clan']['name'], inline = True)
             await self.bot.say(embed = embed)
-        except Exception as e:
+        except TypeError as e:
             await self.bot.say(e)
             
 def setup(bot):
