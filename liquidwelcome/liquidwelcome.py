@@ -294,17 +294,17 @@ class liquidwelcome:
 
    
     @commands.command(pass_context = True, no_pm = True)
-    async def academyclan(self, ctx):
-        academy = 'P2GJGRUY'
+    async def liquidclanbeta(self, ctx, clan_tag):
+        clan = clan_tag
         try:
             headers = APIAuth
-            url = "https://api.royaleapi.com/clan/{}".format(academy)
+            url = "https://api.royaleapi.com/clan/{}".format(clan)
             async with aiohttp.ClientSession() as session:
                 async with session.get(url, headers=headers) as resp:
                     data = await resp.json()
                     try:
                         embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/P2GJGRUY', color = 0x00FFBF)
-                        embed.set_author(name = 'Stats for Liquid Academy!')
+                        embed.set_author(name = 'Stats for {}!'.format(data['name'])
                         embed.title = f"{data['name']} (#{data['tag']})"
                         embed.set_thumbnail(url = data['badge']['image'])
                         embed.add_field(name = 'Clan Points:', value = data['score'], inline = True)
