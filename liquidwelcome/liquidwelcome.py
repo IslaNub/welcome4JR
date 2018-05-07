@@ -287,18 +287,20 @@ class liquidwelcome:
             await self.bot.say(e)
             
     def getAuth(self):
-		return {'auth' : '2da0f327dd7f41c7b0d87fae844fc3f24bc7c9ad99d44a7b9bc61f9cd76600dd'}
+        return {'auth' : '2da0f327dd7f41c7b0d87fae844fc3f24bc7c9ad99d44a7b9bc61f9cd76600dd'}
             
     @commands.command(pass_context = True, no_pm = True)
     async def academyclan(self, ctx):
         academy = 'P2GJGRUY'
         try:
-            profiledata = requests.get('https://api.royaleapi.com/clan/'.format(academy), headers=self.getAuth(), timeout=10).json()
+            clandata = requests.get('https://api.royaleapi.com/clan/'.format(academy), headers=self.getAuth(), timeout=10).json()
         except:
             await self.bot.say("Error: cannot reach Clash Royale Servers. Please try again later.")
             return
-	
-        embed.add_field(name="Clan", value=profiledata['clan']['name'], inline=True)
+        embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/P2GJGRUY')
+        embed.set_author(name = profiledata[name] + ' #' + clandata[tag])
+        embed.add_field(name = 'Clan', value = clandata['clan']['name'], inline = True)
+        await self.bot.say(embed = embed)
         
 def setup(bot):
     n = liquidwelcome(bot)
