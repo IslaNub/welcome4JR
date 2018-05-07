@@ -290,10 +290,8 @@ class liquidwelcome:
     def getAuth(self):
         return {'auth' : '2da0f327dd7f41c7b0d87fae844fc3f24bc7c9ad99d44a7b9bc61f9cd76600dd'}
     
-APIAuth = {
-    'auth': "2da0f327dd7f41c7b0d87fae844fc3f24bc7c9ad99d44a7b9bc61f9cd76600dd"
-    }
-            
+APIAuth = {'auth': '2da0f327dd7f41c7b0d87fae844fc3f24bc7c9ad99d44a7b9bc61f9cd76600dd'} 
+   
     @commands.command(pass_context = True, no_pm = True)
     async def academyclan(self, ctx):
         academy = 'P2GJGRUY'
