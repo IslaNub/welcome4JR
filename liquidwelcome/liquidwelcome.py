@@ -6,6 +6,7 @@ from __main__ import send_cmd_help
 from random import choice
 from random import randint
 import asyncio
+import requests
 
 class liquidwelcome:
     """Welcomes new members to Team Liquid Mobile"""
@@ -285,6 +286,17 @@ class liquidwelcome:
         except Exception as e:
             await self.bot.say(e)
             
+    def getAuth(self):
+		return {'auth' : '2da0f327dd7f41c7b0d87fae844fc3f24bc7c9ad99d44a7b9bc61f9cd76600dd'}
+            
+    @commands.command(pass_context = True, no_pm = True)
+    async def academyclan(self, ctx):
+        try:
+				profiledata = requests.get('https://api.royaleapi.com/player/{}?exclude=currentDeck,cards,battles,achievements'.format(profiletag), headers=self.getAuth(), timeout=10).json()
+			except:
+				await self.bot.say("Error: cannot reach Clash Royale Servers. Please try again later.")
+				return
+        
 def setup(bot):
     n = liquidwelcome(bot)
     bot.add_cog(n)
