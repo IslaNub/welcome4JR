@@ -291,11 +291,14 @@ class liquidwelcome:
             
     @commands.command(pass_context = True, no_pm = True)
     async def academyclan(self, ctx):
+        academy = 'P2GJGRUY'
         try:
-				profiledata = requests.get('https://api.royaleapi.com/player/{}?exclude=currentDeck,cards,battles,achievements'.format(profiletag), headers=self.getAuth(), timeout=10).json()
-			except:
-				await self.bot.say("Error: cannot reach Clash Royale Servers. Please try again later.")
-				return
+            profiledata = requests.get('https://api.royaleapi.com/clan/'.format(academy), headers=self.getAuth(), timeout=10).json()
+        except:
+            await self.bot.say("Error: cannot reach Clash Royale Servers. Please try again later.")
+            return
+	
+        embed.add_field(name="Clan", value=profiledata['clan']['name'], inline=True)
         
 def setup(bot):
     n = liquidwelcome(bot)
