@@ -299,7 +299,7 @@ class liquidwelcome:
             async with aiohttp.ClientSession() as session:
                 async with session.get(url, headers=headers) as resp:
                     data = await resp.json()
-                    pass
+                    
         except TypeError as e:
             print(e)
         try:
