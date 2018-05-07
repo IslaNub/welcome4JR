@@ -304,7 +304,7 @@ class liquidwelcome:
                     data = await resp.json()
                     try:
                         embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/P2GJGRUY', color = 0x00FFBF)
-                        embed.set_author(name = 'Stats for {}!'.format(data['name'])
+                        embed.set_author(name = 'Stats for {}!'.format(data['name']))
                         embed.title = f"{data['name']} (#{data['tag']})"
                         embed.set_thumbnail(url = data['badge']['image'])
                         embed.add_field(name = 'Clan Points:', value = data['score'], inline = True)
