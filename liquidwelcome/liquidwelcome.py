@@ -317,8 +317,8 @@ class liquidwelcome:
 
         data = response.json()
         try:
-            embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/P2GJGRUY')
-            embed.set_author(name = 'Stats for Liquid Academy!', color = 0x00FFBF)
+            embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/P2GJGRUY', color = 0x00FFBF)
+            embed.set_author(name = 'Stats for Liquid Academy!')
             embed.add_field(name = data['name'] + ' (#' + data['tag'] + ') Stats!', inline = True)
             embed.add_field(name = 'Description:', value = data['description'], inline = True)
             await self.bot.say(embed = embed)
