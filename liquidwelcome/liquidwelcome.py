@@ -322,12 +322,13 @@ class liquidwelcome:
             embed.title = f"{data['name']} (#{data['tag']})"
             embed.add_field(name = 'Clan Points:', value = data['score'], inline = True)
             embed.add_field(name = 'Description:', value = data['description'], inline = True)
-            embed.add_field(name = 'Member Count:', value = data['memberCount'] + '/50', inline = True)
+            embed.add_field(name = 'Member Count:', value = f"{data['memberCount']}/50", inline = True)
             embed.add_field(name = 'Required Trophies:', value = data['requiredScore'], inline = True)
             embed.add_field(name = 'Donations:', value = data['donations'], inline = True)
             embed.add_field(name = 'Type:', value = data['type'], inline = True)
             await self.bot.say(embed = embed)
         except TypeError as e:
+            await self.bot.say('Something went wrong, please try again later.')
             print(e)
             
 def setup(bot):
