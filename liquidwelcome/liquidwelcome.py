@@ -318,7 +318,7 @@ class liquidwelcome:
         data = response.json()
         try:
             embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/P2GJGRUY')
-            embed.set_author(name = data['name'] + ' (#' + data['tag']') Stats!')
+            embed.set_author(name = data['name'] + ' (#' + data['tag'] + ') Stats!')
             embed.add_field(name = 'Clan', value = data['tag'], inline = True)
             await self.bot.say(embed = embed)
         except TypeError as e:
