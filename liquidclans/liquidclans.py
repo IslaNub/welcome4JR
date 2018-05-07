@@ -19,7 +19,37 @@ class liquidwelcome:
     def clan(self):
         """Clan."""
         return self.info_data.get("clan", None)
+    
+""" "tag": "",
+    "name": "",
+    "description": "",
+    "type": "",
+    "score": ,
+    "memberCount": ,
+    "requiredScore": ,
+    "donations": ,"""
 
+    @property
+    def clan_tag(self):
+        """Clan Tag."""
+        if self.clan is not None:
+            return self.clan.get("tag", None)
+        return None
+    
+    @property
+    def clan_name(self):
+        """Clan Name."""
+        if self.clan is not None:
+            return self.clan.get("name", None)
+        return None
+
+    @property
+    def clan_description(self):
+        """Clan Description."""
+        if self.clan is not None:
+            return self.clan.get("description", None)
+        return None
+    
     @commands.command(pass_context = True, no_pm = True)
     async def clan(self, ctx, clan_id):
         headers = {"auth": "2da0f327dd7f41c7b0d87fae844fc3f24bc7c9ad99d44a7b9bc61f9cd76600dd"}
