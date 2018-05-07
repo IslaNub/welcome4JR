@@ -299,23 +299,22 @@ class liquidwelcome:
             async with aiohttp.ClientSession() as session:
                 async with session.get(url, headers=headers) as resp:
                     data = await resp.json()
-                    
+                    try:
+                        embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/P2GJGRUY', color = 0x00FFBF)
+                        embed.set_author(name = 'Stats for Liquid Academy!')
+                        embed.title = f"{data['name']} (#{data['tag']})"
+                        embed.set_thumbnail(url = data['badge']['image'])
+                        embed.add_field(name = 'Clan Points:', value = data['score'], inline = True)
+                        embed.add_field(name = 'Description:', value = data['description'], inline = True)
+                        embed.add_field(name = 'Member Count:', value = f"{data['memberCount']}/50", inline = True)
+                        embed.add_field(name = 'Required Trophies:', value = data['requiredScore'], inline = True)
+                        embed.add_field(name = 'Donations:', value = data['donations'], inline = True)
+                        embed.add_field(name = 'Type:', value = f"{data['type']}".capitalize(), inline = True)
+                        await self.bot.say(embed = embed)
+                    except TypeError as e:
+                        await self.bot.say('Something went wrong, please try again later.')
+                        print(e)
         except TypeError as e:
-            print(e)
-        try:
-            embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/P2GJGRUY', color = 0x00FFBF)
-            embed.set_author(name = 'Stats for Liquid Academy!')
-            embed.title = f"{data['name']} (#{data['tag']})"
-            embed.set_thumbnail(url = data['badge']['image'])
-            embed.add_field(name = 'Clan Points:', value = data['score'], inline = True)
-            embed.add_field(name = 'Description:', value = data['description'], inline = True)
-            embed.add_field(name = 'Member Count:', value = f"{data['memberCount']}/50", inline = True)
-            embed.add_field(name = 'Required Trophies:', value = data['requiredScore'], inline = True)
-            embed.add_field(name = 'Donations:', value = data['donations'], inline = True)
-            embed.add_field(name = 'Type:', value = f"{data['type']}".capitalize(), inline = True)
-            await self.bot.say(embed = embed)
-        except TypeError as e:
-            await self.bot.say('Something went wrong, please try again later.')
             print(e)
             
 def setup(bot):
