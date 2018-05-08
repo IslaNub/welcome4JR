@@ -330,7 +330,7 @@ class liquidwelcome:
             
     @commands.command(pass_context = True, no_pm = True)
     async def euclanbeta(self, ctx):
-        await self.bot.say(f"1 {kek}")
+        await self.bot.say(f"1 {self.kek}")
         await self.bot.say(f"2 {self.kek}")
         x = 0
         while True:
