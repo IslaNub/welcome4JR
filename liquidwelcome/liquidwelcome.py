@@ -330,11 +330,11 @@ class liquidwelcome:
             
     @commands.command(pass_context = True, no_pm = True)
     async def euclanbeta(self, ctx):
-        #x = 0
-        #while True:
-        try:    
-            clan = self.euclans()
-            for x in clan:
+        x = 0
+        while True:
+            try:    
+                clan = LiquidClanWhiteList[x]
+            
                 try:
                     headers = APIAuth
                     url = "https://api.royaleapi.com/clan/{}".format(x)
@@ -360,11 +360,11 @@ class liquidwelcome:
                                 await self.bot.say('Something went wrong, please try again later.')
                                 print(e)
                 except Exception as e:
-                    break
+                    
                     await self.bot.say(e) 
                     print(e)
         except Exception as e:
-            #break
+            break
             await self.bot.say(e)
         
 def setup(bot):
