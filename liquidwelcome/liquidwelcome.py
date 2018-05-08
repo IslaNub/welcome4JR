@@ -10,7 +10,7 @@ import requests
 import aiohttp
 
 APIAuth = {'auth': '2da0f327dd7f41c7b0d87fae844fc3f24bc7c9ad99d44a7b9bc61f9cd76600dd'}
-LiquidClanWhiteList = ['98R22PLY',' 98PYR0VJ', '9UP2JY2P', 'P0YJ0P2V', '8J0J2RQC', '9QRUO2GR', 'P888QQQ9']
+LiquidClanWhiteList = ['98R22PLY',' 98PYROVJ', '9UP2JY2P', 'P0YJ0P2V', '8J0J2RQC', '9QRUO2GR', 'P888QQQ9']
 
 class liquidwelcome:
     """Welcomes new members to Team Liquid Mobile"""
