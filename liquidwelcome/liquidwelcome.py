@@ -349,7 +349,7 @@ class liquidwelcome:
                     clan = NAClans[x]
                     pass
                 if region.lower().strip() == 'la':
-                    await self.bot.say('Please specify a country. (Available: Mexico, Honduras, ElSalvador, Venezuela, Colombia, Peru, Ecuador, Argentina')
+                    await self.bot.say('Please specify a country. `(Available: Mexico, Honduras, ElSalvador, Venezuela, Colombia, Peru, Ecuador, Argentina)`')
                     answer = await self.bot.wait_for_message(author = ctx.message.author, timeout = 15)
                     if answer.content.lower().strip() == 'mexico':
                         clan = MexicoClans[x]
@@ -375,6 +375,9 @@ class liquidwelcome:
                     if answer.content.lower().strip() == 'argentina':
                         clan = ArgentinaClans[x]
                         pass
+                    if answer.content.lower().strip() not in ['mexico', 'honduras', 'elsalvador', 'venezuela', 'colombia', 'peru', 'ecuador', 'argentina']:
+                        await self.bot.say('Invalid country.')
+                        return
                     pass
                 if region.lower().strip() not in ['eu', 'na', 'la']:
                     await self.bot.say('Invalid region: please choose `eu`, `na` or `la`.')
