@@ -334,10 +334,10 @@ class liquidwelcome:
         while True:
             try:    
                 clan = LiquidClanWhiteList[x]
-            
+                x += 1
                 try:
                     headers = APIAuth
-                    url = "https://api.royaleapi.com/clan/{}".format(x)
+                    url = "https://api.royaleapi.com/clan/{}".format(clan)
                     async with aiohttp.ClientSession() as session:
                         async with session.get(url, headers=headers) as resp:
                             data = await resp.json()
