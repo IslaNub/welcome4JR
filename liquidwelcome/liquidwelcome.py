@@ -341,8 +341,7 @@ class liquidwelcome:
     async def liquidclans(self, ctx, region:str):
         x = 0
         while True:
-            
-            try:    
+            try:
                 if region.lower().strip() == 'eu':
                     clan = EUClans[x]
                     x += 1
@@ -355,7 +354,7 @@ class liquidwelcome:
                     if x == 0:
                         await self.bot.say('Please specify a country. `(Available: Mexico, Honduras, ElSalvador, Venezuela, Colombia, Peru, Ecuador, Argentina)`')
                         answer = await self.bot.wait_for_message(author = ctx.message.author, timeout = 15)
-                    if 1 > 0:
+                    if x > 0:
                         if answer.content.lower().strip() == 'mexico':
                             clan = MexicoClans[x]
                             x += 1
@@ -389,17 +388,13 @@ class liquidwelcome:
                             pass
                         if answer.content.lower().strip() not in ['mexico', 'honduras', 'elsalvador', 'venezuela', 'colombia', 'peru', 'ecuador', 'argentina']:
                             await self.bot.say('Invalid country.')
-                            
                             return
                         pass
                     pass
                 if region.lower().strip() not in ['eu', 'na', 'la']:
                     await self.bot.say('Invalid region: please choose `eu`, `na` or `la`.')
                     return
-                
-                try:
-                    
-                
+               try:
                     headers = APIAuth
                     url = "https://api.royaleapi.com/clan/{}".format(clan)
                     async with aiohttp.ClientSession() as session:
@@ -423,9 +418,7 @@ class liquidwelcome:
                                 await self.bot.say(e)
                                 await self.bot.say('Something went wrong, please try again later.')
                                 print(e)
-                    
                 except Exception as e:
-                    
                     await self.bot.say(e) 
                     print(e)
             except Exception as e:
