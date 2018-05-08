@@ -340,7 +340,8 @@ class liquidwelcome:
     @commands.command(pass_context = True, no_pm = True)
     async def liquidclans(self, ctx, region:str):
         x = 0
-        while True:
+        if 1 > 0:
+            
             try:    
                 if region.lower().strip() == 'eu':
                     clan = EUClans[x]
@@ -382,8 +383,9 @@ class liquidwelcome:
                 if region.lower().strip() not in ['eu', 'na', 'la']:
                     await self.bot.say('Invalid region: please choose `eu`, `na` or `la`.')
                     return
-                x += 1
-                try:
+                while True:
+                    
+                
                     headers = APIAuth
                     url = "https://api.royaleapi.com/clan/{}".format(clan)
                     async with aiohttp.ClientSession() as session:
@@ -407,10 +409,11 @@ class liquidwelcome:
                                 await self.bot.say(e)
                                 await self.bot.say('Something went wrong, please try again later.')
                                 print(e)
-                except Exception as e:
+                    x += 1
+                #except Exception as e:
                     
-                    await self.bot.say(e) 
-                    print(e)
+                #    await self.bot.say(e) 
+                #    print(e)
             except Exception as e:
                 break
                 await self.bot.say(e)
