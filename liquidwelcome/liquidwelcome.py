@@ -329,6 +329,8 @@ class liquidwelcome:
             
     @commands.command(pass_context = True, no_pm = True)
     async def euclanbeta(self, ctx):
+        await self.bot.say(LiquidClanWhiteList[0])
+        await self.bot.say(LiquidClanWhiteList[1])
         while True:
             try:
                 x = 0
