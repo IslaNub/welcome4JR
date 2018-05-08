@@ -293,8 +293,6 @@ class liquidwelcome:
     def getAuth(self):
         return {'auth' : '2da0f327dd7f41c7b0d87fae844fc3f24bc7c9ad99d44a7b9bc61f9cd76600dd'}
     
-
-   
     @commands.command(pass_context = True, no_pm = True)
     async def liquidclanbeta(self, ctx, clan_tag):
         clan = clan_tag
@@ -324,22 +322,19 @@ class liquidwelcome:
                         await self.bot.say('Something went wrong, please try again later.')
                         print(e)
         except Exception as e:
-            await self.bot.say(e) 
+            await self.bot.say(e)
             print(e)
-     
-    
+
+    def kek(self):
+        return 'lol'
             
     @commands.command(pass_context = True, no_pm = True)
     async def euclanbeta(self, ctx):
+        await self.bot.say(f"1 {kek}")
+        await self.bot.say(f"2 {self.kek}")
         x = 0
-        try:
-            await self.bot.say(LiquidClanWhiteList[0])
-            await self.bot.say(LiquidClanWhiteList[1])
-        except Exception as e:
-            await self.bot.say(e) 
         while True:
-            try:
-                
+            try:    
                 clan = LiquidClanWhiteList[x]
                 x += 1
                 try:
@@ -355,7 +350,6 @@ class liquidwelcome:
                                 embed.set_thumbnail(url = data['badge']['image'])
                                 embed.add_field(name = 'Description:', value = data['description'], inline = True)
                                 embed.add_field(name = 'Clan Points :', value = f"{data['score']} <:Trophy:443281867316264960>", inline = True)
-
                                 embed.add_field(name = 'Member Count:', value = f"{data['memberCount']}/50 <:Members:443282536764801026>", inline = True)
                                 embed.add_field(name = 'Required Trophies:', value = f"{data['requiredScore']} <:Trophy:443281867316264960>", inline = True)
                                 embed.add_field(name = 'Donations:', value = f"{data['donations']} <:Cards:443285942875193344>", inline = True)
@@ -367,11 +361,9 @@ class liquidwelcome:
                                 await self.bot.say(e)
                                 await self.bot.say('Something went wrong, please try again later.')
                                 print(e)
-                    
                 except Exception as e:
                     await self.bot.say(e) 
                     print(e)
-                
             except Exception as e:
                 break
                 await self.bot.say(e)
