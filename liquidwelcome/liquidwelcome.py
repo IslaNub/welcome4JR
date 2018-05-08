@@ -303,7 +303,7 @@ class liquidwelcome:
                 async with session.get(url, headers=headers) as resp:
                     data = await resp.json()
                     try:
-                        embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/P2GJGRUY', color = 0x00FFBF)
+                        embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/{}'.format{clan}, color = 0x00FFBF)
                         embed.set_author(name = 'Stats for {}!'.format(data['name']))
                         embed.title = f"{data['name']} (#{data['tag']})"
                         embed.set_thumbnail(url = data['badge']['image'])
