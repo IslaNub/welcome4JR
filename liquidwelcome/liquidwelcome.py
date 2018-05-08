@@ -344,7 +344,7 @@ class liquidwelcome:
                                 embed.title = f"{data['name']} (#{data['tag']})"
                                 embed.set_thumbnail(url = data['badge']['image'])
                                 embed.add_field(name = 'Description:', value = data['description'], inline = True)
-                                embed.add_field(name = 'Clan Points :', value = f"{data['score']} <:Trophy:443281867316264960>", inline = True)
+                                embed.add_field(name = 'Clan Points:', value = f"{data['score']} <:Trophy:443281867316264960>", inline = True)
                                 embed.add_field(name = 'Member Count:', value = f"{data['memberCount']}/50 <:Members:443282536764801026>", inline = True)
                                 embed.add_field(name = 'Required Trophies:', value = f"{data['requiredScore']} <:Trophy:443281867316264960>", inline = True)
                                 embed.add_field(name = 'Donations:', value = f"{data['donations']} <:Cards:443285942875193344>", inline = True)
