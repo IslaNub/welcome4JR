@@ -362,9 +362,9 @@ class liquidwelcome:
                 except Exception as e:
                     await self.bot.say(e) 
                     print(e)
-            except Exception as e:
-                break
-                await self.bot.say(e)
+        except Exception as e:
+            break
+            await self.bot.say(e)
         
 def setup(bot):
     n = liquidwelcome(bot)
