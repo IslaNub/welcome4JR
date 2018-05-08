@@ -330,7 +330,7 @@ class liquidwelcome:
             
     @commands.command(pass_context = True, no_pm = True)
     async def euclanbeta(self, ctx):
-        x = 0
+        #x = 0
         #while True:
         try:    
             clan = self.euclans()
