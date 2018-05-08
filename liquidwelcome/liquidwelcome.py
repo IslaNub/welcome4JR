@@ -326,7 +326,7 @@ class liquidwelcome:
             print(e)
 
     def kek(self):
-        return 'lol'
+        return str('lol')
             
     @commands.command(pass_context = True, no_pm = True)
     async def euclanbeta(self, ctx):
