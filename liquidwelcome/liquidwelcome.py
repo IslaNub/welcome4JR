@@ -325,9 +325,6 @@ class liquidwelcome:
             await self.bot.say(e)
             print(e)
 
-    def kek(self):
-        return str('lol')
-            
     @commands.command(pass_context = True, no_pm = True)
     async def euclanbeta(self, ctx):
         await self.bot.say(f"1 {str(self.kek)}")
