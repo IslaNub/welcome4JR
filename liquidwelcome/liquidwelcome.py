@@ -331,13 +331,13 @@ class liquidwelcome:
     @commands.command(pass_context = True, no_pm = True)
     async def euclanbeta(self, ctx):
         x = 0
-        while True:
-            try:    
-                clan = self.euclans[x]
-                x += 1
+        #while True:
+        try:    
+            clan = self.euclans()
+            for x in clan:
                 try:
                     headers = APIAuth
-                    url = "https://api.royaleapi.com/clan/{}".format(clan)
+                    url = "https://api.royaleapi.com/clan/{}".format(x)
                     async with aiohttp.ClientSession() as session:
                         async with session.get(url, headers=headers) as resp:
                             data = await resp.json()
