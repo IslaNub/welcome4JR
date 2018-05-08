@@ -329,11 +329,11 @@ class liquidwelcome:
         return ['98R22PLY', '98PYR0VJ', '9UP2JY2P', 'P0YJ0P2V', '8J0J2RQC', '9QRUO2GR', 'P888QQQ9']
             
     @commands.command(pass_context = True, no_pm = True)
-    async def liquidclans(self, ctx, region):
+    async def liquidclans(self, ctx, region:str):
         x = 0
         while True:
             try:    
-                if region == 'eu':
+                if region.lower().strip() == 'eu':
                     clan = EUClans[x]
                     pass
                 x += 1
