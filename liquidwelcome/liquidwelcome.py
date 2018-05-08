@@ -365,10 +365,11 @@ class liquidwelcome:
                                 await self.bot.say(e)
                                 await self.bot.say('Something went wrong, please try again later.')
                                 print(e)
+                x += 1
                 except Exception as e:
                     await self.bot.say(e) 
                     print(e)
-                x += 1
+                
             except Exception as e:
                 break
                 await self.bot.say(e)
