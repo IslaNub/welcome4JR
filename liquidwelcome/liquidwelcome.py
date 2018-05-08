@@ -341,7 +341,7 @@ class liquidwelcome:
                     clan = NAClans[x]
                     pass
                 if region.lower().strip() == 'la':
-                    clan = NAClans[x]
+                    clan = LAClans[x]
                     pass
                 if region.lower().strip() not in ['eu', 'na', 'la']:
                     await self.bot.say('Invalid region: please choose `eu`, `na` or `la`.')
