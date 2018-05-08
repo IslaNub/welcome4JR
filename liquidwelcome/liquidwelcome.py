@@ -340,7 +340,7 @@ class liquidwelcome:
     @commands.command(pass_context = True, no_pm = True)
     async def liquidclans(self, ctx, region:str):
         x = 0
-        if 1 > 0:
+        while True:
             
             try:    
                 if region.lower().strip() == 'eu':
@@ -350,40 +350,43 @@ class liquidwelcome:
                     clan = NAClans[x]
                     pass
                 if region.lower().strip() == 'la':
-                    await self.bot.say('Please specify a country. `(Available: Mexico, Honduras, ElSalvador, Venezuela, Colombia, Peru, Ecuador, Argentina)`')
-                    answer = await self.bot.wait_for_message(author = ctx.message.author, timeout = 15)
-                    if answer.content.lower().strip() == 'mexico':
-                        clan = MexicoClans[x]
+                    if x == 0:
+                        await self.bot.say('Please specify a country. `(Available: Mexico, Honduras, ElSalvador, Venezuela, Colombia, Peru, Ecuador, Argentina)`')
+                        answer = await self.bot.wait_for_message(author = ctx.message.author, timeout = 15)
+                        if answer.content.lower().strip() == 'mexico':
+                            clan = MexicoClans[x]
+                            pass
+                        if answer.content.lower().strip() == 'honduras':
+                            clan = HondurasClans[x]
+                            pass
+                        if answer.content.lower().strip() == 'elsalvador' or answer.content.lower().strip() == 'el salvador':
+                            clan = ElSalvadorClans[x]
+                            pass
+                        if answer.content.lower().strip() == 'venezuela':
+                            clan = VenezuelaClans[x]
+                            pass
+                        if answer.content.lower().strip() == 'colombia':
+                            clan = ColombiaClans[x]
+                            pass
+                        if answer.content.lower().strip() == 'peru':
+                            clan = PeruClans[x]
+                            pass
+                        if answer.content.lower().strip() == 'ecuador':
+                            clan = EcuadorClans[x]
+                            pass
+                        if answer.content.lower().strip() == 'argentina':
+                            clan = ArgentinaClans[x]
+                            pass
+                        if answer.content.lower().strip() not in ['mexico', 'honduras', 'elsalvador', 'venezuela', 'colombia', 'peru', 'ecuador', 'argentina']:
+                            await self.bot.say('Invalid country.')
+                            return
                         pass
-                    if answer.content.lower().strip() == 'honduras':
-                        clan = HondurasClans[x]
-                        pass
-                    if answer.content.lower().strip() == 'elsalvador' or answer.content.lower().strip() == 'el salvador':
-                        clan = ElSalvadorClans[x]
-                        pass
-                    if answer.content.lower().strip() == 'venezuela':
-                        clan = VenezuelaClans[x]
-                        pass
-                    if answer.content.lower().strip() == 'colombia':
-                        clan = ColombiaClans[x]
-                        pass
-                    if answer.content.lower().strip() == 'peru':
-                        clan = PeruClans[x]
-                        pass
-                    if answer.content.lower().strip() == 'ecuador':
-                        clan = EcuadorClans[x]
-                        pass
-                    if answer.content.lower().strip() == 'argentina':
-                        clan = ArgentinaClans[x]
-                        pass
-                    if answer.content.lower().strip() not in ['mexico', 'honduras', 'elsalvador', 'venezuela', 'colombia', 'peru', 'ecuador', 'argentina']:
-                        await self.bot.say('Invalid country.')
-                        return
                     pass
                 if region.lower().strip() not in ['eu', 'na', 'la']:
                     await self.bot.say('Invalid region: please choose `eu`, `na` or `la`.')
                     return
-                while True:
+                x += 1
+                try:
                     
                 
                     headers = APIAuth
@@ -409,11 +412,11 @@ class liquidwelcome:
                                 await self.bot.say(e)
                                 await self.bot.say('Something went wrong, please try again later.')
                                 print(e)
-                    x += 1
-                #except Exception as e:
                     
-                #    await self.bot.say(e) 
-                #    print(e)
+                except Exception as e:
+                    
+                    await self.bot.say(e) 
+                    print(e)
             except Exception as e:
                 #break
                 await self.bot.say(e)
