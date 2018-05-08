@@ -329,8 +329,11 @@ class liquidwelcome:
             
     @commands.command(pass_context = True, no_pm = True)
     async def euclanbeta(self, ctx):
-        await self.bot.say(LiquidClanWhiteList[0])
-        await self.bot.say(LiquidClanWhiteList[1])
+        try:
+            await self.bot.say(LiquidClanWhiteList[0])
+            await self.bot.say(LiquidClanWhiteList[1])
+        except Exception as e:
+            await self.bot.say(e) 
         while True:
             try:
                 x = 0
