@@ -340,6 +340,12 @@ class liquidwelcome:
                 if region.lower().strip() == 'na':
                     clan = NAClans[x]
                     pass
+                if region.lower().strip() == 'la':
+                    clan = NAClans[x]
+                    pass
+                if region.content.lower() not in ['eu', 'na', 'la']:
+                    await self.bot.say('Invalid region: please choose `eu`, `na` or `la`.')
+                    return
                 x += 1
                 try:
                     headers = APIAuth
