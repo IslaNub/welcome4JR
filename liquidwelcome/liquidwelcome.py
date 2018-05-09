@@ -394,13 +394,13 @@ class liquidwelcome:
                     pass
                 if region.lower().strip() not in ['eu', 'na', 'la']:
                     await self.bot.say('Invalid region: please choose `eu`, `na` or `la`.')
-                    return"""
+                    return
                try:
                     headers = APIAuth
                     url = "https://api.royaleapi.com/clan/{}".format(clan)
                     async with aiohttp.ClientSession() as session:
                         async with session.get(url, headers=headers) as resp:
-                            data = await resp.json()
+                            data = await resp.json()"""
                             try:
                                 embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/{}'.format(clan), color = 0x00FFBF)
                                 embed.set_author(name = 'Stats for {}!'.format(data['name']))
@@ -418,10 +418,10 @@ class liquidwelcome:
                             except Exception as e:
                                 await self.bot.say(e)
                                 await self.bot.say('Something went wrong, please try again later.')
-                                print(e)
+                                print(e)"""
                 except Exception as e:
                     await self.bot.say(e) 
-                    print(e)"""
+                    print(e)
             except Exception as e:
                 break
                 await self.bot.say(e)
