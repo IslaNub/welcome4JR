@@ -16,8 +16,8 @@ HondurasClans = ['9LGV822C']
 ElSalvadorClans = ['8JG8Y20R', '99UL0CRJ', '9YYGCYVL']
 VenezuelaClans = ['VOGL8C8', '889CQU88', '8L98R2JV', '8R8LJYU2', '8J8UVQL0']
 ColombiaClans = ['90Q0LP0V']
-PeruClans = ['9YR8L8R8', '8JROLQ8U', '98LJJLR9', '8CPJV28G', '8G90Y22R', '9GLPUC2R', '980VLVOJ', 'P80J882L', '9LCUJC8Y', '9JL98G9J']
-ParaguayClans = ['9LPC2YYV']
+#PeruClans = ['9YR8L8R8', '8JROLQ8U', '98LJJLR9', '8CPJV28G', '8G90Y22R', '9GLPUC2R', '980VLVOJ', 'P80J882L', '9LCUJC8Y', '9JL98G9J']
+#ParaguayClans = ['9LPC2YYV']
 EcuadorClans = ['9GVUUCRR', 'P0PPQGY8']
 ArgentinaClans = ['9P2CUYJR', 'P88LCUGQ'] 
 NAClans = ['9YU2PQRV', 'V8GRLCQ', '9CJ9YGPL', '820QC80V']
@@ -353,7 +353,7 @@ class liquidwelcome:
                     pass
                 if region.lower().strip() == 'la':
                     if x == 0:
-                        await self.bot.say('Please specify a country.\n```(Available: Mexico, Honduras, ElSalvador, Venezuela, Colombia, Peru, Paraguay, Ecuador, Argentina)```')
+                        await self.bot.say('Please specify a country.\n`(Available: Mexico, Honduras, ElSalvador, Venezuela, Colombia, Peru, Paraguay, Ecuador, Argentina)`')
                         answer = await self.bot.wait_for_message(author = ctx.message.author, timeout = 15)
                     if x > 0:
                         if answer.content.lower().strip() == 'mexico':
@@ -375,14 +375,14 @@ class liquidwelcome:
                             clan = ColombiaClans[x]
                             x += 1
                             pass
-                        if answer.content.lower().strip() == 'peru':
-                            clan = PeruClans[x]
-                            x += 1
-                            pass
-                        if answer.content.lower().strip() == 'paraguay':
-                            clan = ParaguayClans[x]
-                            x += 1
-                            pass
+                        #if answer.content.lower().strip() == 'peru':
+                        #    clan = PeruClans[x]
+                        #    x += 1
+                        #    pass
+                        #if answer.content.lower().strip() == 'paraguay':
+                        #    clan = ParaguayClans[x]
+                        #    x += 1
+                        #    pass
                         if answer.content.lower().strip() == 'ecuador':
                             clan = EcuadorClans[x]
                             x += 1
