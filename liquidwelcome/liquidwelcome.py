@@ -338,7 +338,93 @@ class liquidwelcome:
     def euclans(self):
         return ['98R22PLY', '98PYR0VJ', '9UP2JY2P', 'P0YJ0P2V', '8J0J2RQC', '9QRUO2GR', 'P888QQQ9']
             """
-    
+    @commands.command(pass_context = True, no_pm = True)
+    async def liquidclans(self, ctx, region:str):
+        x = 0
+        while True:
+            try:
+                if region.lower().strip() == 'eu':
+                    clan = EUClans[x]
+                    x += 1
+                    pass
+                if region.lower().strip() == 'na':
+                    clan = NAClans[x]
+                    x += 1
+                    pass
+                if region.lower().strip() == 'la':
+                    if x == 0:
+                        await self.bot.say('Please specify a country. `(Available: Mexico, Honduras, ElSalvador, Venezuela, Colombia, Peru, Ecuador, Argentina)`')
+                        answer = await self.bot.wait_for_message(author = ctx.message.author, timeout = 15)
+                    if x > 0:
+                        if answer.content.lower().strip() == 'mexico':
+                            clan = MexicoClans[x]
+                            x += 1
+                            pass
+                        if answer.content.lower().strip() == 'honduras':
+                            clan = HondurasClans[x]
+                            x += 1
+                            pass
+                        if answer.content.lower().strip() == 'elsalvador' or answer.content.lower().strip() == 'el salvador':
+                            clan = ElSalvadorClans[x]
+                            pass
+                        if answer.content.lower().strip() == 'venezuela':
+                            clan = VenezuelaClans[x]
+                            x += 1
+                            pass
+                        if answer.content.lower().strip() == 'colombia':
+                            clan = ColombiaClans[x]
+                            x += 1
+                            pass
+                        if answer.content.lower().strip() == 'peru':
+                            clan = PeruClans[x]
+                            x += 1
+                            pass
+                        if answer.content.lower().strip() == 'ecuador':
+                            clan = EcuadorClans[x]
+                            x += 1
+                            pass
+                        if answer.content.lower().strip() == 'argentina':
+                            clan = ArgentinaClans[x]
+                            x += 1
+                            pass
+                        if answer.content.lower().strip() not in ['mexico', 'honduras', 'elsalvador', 'venezuela', 'colombia', 'peru', 'ecuador', 'argentina']:
+                            await self.bot.say('Invalid country.')
+                            return
+                        pass
+                    pass
+                if region.lower().strip() not in ['eu', 'na', 'la']:
+                    await self.bot.say('Invalid region: please choose `eu`, `na` or `la`.')
+                    return
+               try:
+                    headers = APIAuth
+                    url = "https://api.royaleapi.com/clan/{}".format(clan)
+                    async with aiohttp.ClientSession() as session:
+                        async with session.get(url, headers=headers) as resp:
+                            data = await resp.json()
+                            try:
+                                embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/{}'.format(clan), color = 0x00FFBF)
+                                embed.set_author(name = 'Stats for {}!'.format(data['name']))
+                                embed.title = f"{data['name']} (#{data['tag']})"
+                                embed.set_thumbnail(url = data['badge']['image'])
+                                embed.add_field(name = 'Description:', value = data['description'], inline = True)
+                                embed.add_field(name = 'Clan Points:', value = f"{data['score']} <:Trophy:443281867316264960>", inline = True)
+                                embed.add_field(name = 'Member Count:', value = f"{data['memberCount']}/50 <:Members:443282536764801026>", inline = True)
+                                embed.add_field(name = 'Required Trophies:', value = f"{data['requiredScore']} <:Trophy:443281867316264960>", inline = True)
+                                embed.add_field(name = 'Donations:', value = f"{data['donations']} <:Cards:443285942875193344>", inline = True)
+                                embed.add_field(name = 'Type:', value = f"{data['type']}".capitalize(), inline = True)
+                                embed.set_footer(text = 'API powered by RoyaleAPI', icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
+                                embed.add_field(name = 'Location:', value = data['location']['name'], inline = True)
+                                await self.bot.say(embed = embed)
+                            except Exception as e:
+                                await self.bot.say(e)
+                                await self.bot.say('Something went wrong, please try again later.')
+                                print(e)
+                except Exception as e:
+                    await self.bot.say(e) 
+                    print(e)
+            except Exception as e:
+                break
+                await self.bot.say(e)
                         
         
 def setup(bot):
