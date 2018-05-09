@@ -303,7 +303,7 @@ class liquidwelcome:
     def getAuth(self):
         return {'auth' : '2da0f327dd7f41c7b0d87fae844fc3f24bc7c9ad99d44a7b9bc61f9cd76600dd'}
     
-    @commands.command(pass_context = True, no_pm = True)
+    """@commands.command(pass_context = True, no_pm = True)
     async def liquidclanbeta(self, ctx, clan_tag):
         clan = clan_tag
         try:
@@ -337,7 +337,7 @@ class liquidwelcome:
 
     def euclans(self):
         return ['98R22PLY', '98PYR0VJ', '9UP2JY2P', 'P0YJ0P2V', '8J0J2RQC', '9QRUO2GR', 'P888QQQ9']
-            
+            """
     
                         
         
