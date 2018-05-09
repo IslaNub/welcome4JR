@@ -353,7 +353,8 @@ class liquidwelcome:
                     pass
                 if region.lower().strip() == 'la':
                     if x == 0:
-                        await self.bot.say('Please specify a country.\n`(Available: Mexico, Honduras, ElSalvador, Venezuela, Colombia, Peru, Paraguay, Ecuador, Argentina)`')
+                        await self.bot.say("""Please specify a country.\n(Available: Mexico, Honduras, ElSalvador, Venezuela, Colombia, Peru, Paraguay, Ecuador, Argentina)`""")
+                        
                         answer = await self.bot.wait_for_message(author = ctx.message.author, timeout = 15)
                     if x > 0:
                         if answer.content.lower().strip() == 'mexico':
