@@ -338,7 +338,7 @@ class liquidwelcome:
     def euclans(self):
         return ['98R22PLY', '98PYR0VJ', '9UP2JY2P', 'P0YJ0P2V', '8J0J2RQC', '9QRUO2GR', 'P888QQQ9']
             
-    """@commands.command(pass_context = True, no_pm = True)
+    @commands.command(pass_context = True, no_pm = True)
     async def liquidclans(self, ctx, region:str):
         x = 0
         while True:
@@ -356,7 +356,7 @@ class liquidwelcome:
                         await self.bot.say("Please specify a country.\n(Available: Mexico, Honduras, ElSalvador, Venezuela, Colombia, Peru, Paraguay, Ecuador, Argentina)`")
                         
                         answer = await self.bot.wait_for_message(author = ctx.message.author, timeout = 15)
-                    if x > 0:
+                   """if x > 0:
                         if answer.content.lower().strip() == 'mexico':
                             clan = MexicoClans[x]
                             x += 1
@@ -376,14 +376,14 @@ class liquidwelcome:
                             clan = ColombiaClans[x]
                             x += 1
                             pass
-                        #if answer.content.lower().strip() == 'peru':
-                        #    clan = PeruClans[x]
-                        #    x += 1
-                        #    pass
-                        #if answer.content.lower().strip() == 'paraguay':
-                        #    clan = ParaguayClans[x]
-                        #    x += 1
-                        #    pass
+                        if answer.content.lower().strip() == 'peru':
+                            clan = PeruClans[x]
+                            x += 1
+                            pass
+                        if answer.content.lower().strip() == 'paraguay':
+                            clan = ParaguayClans[x]
+                            x += 1
+                            pass
                         if answer.content.lower().strip() == 'ecuador':
                             clan = EcuadorClans[x]
                             x += 1
@@ -395,7 +395,7 @@ class liquidwelcome:
                         if answer.content.lower().strip() not in ['mexico', 'honduras', 'elsalvador', 'venezuela', 'colombia', 'peru', 'paraguay', 'ecuador', 'argentina']:
                             await self.bot.say('Invalid country.')
                             return
-                        pass
+                        pass"""
                     pass
                 if region.lower().strip() not in ['eu', 'na', 'la']:
                     await self.bot.say('Invalid region: please choose `eu`, `na` or `la`.')
@@ -429,7 +429,7 @@ class liquidwelcome:
                     print(e)
             except Exception as e:
                 break
-                await self.bot.say(e)"""
+                await self.bot.say(e)
         
 def setup(bot):
     n = liquidwelcome(bot)
