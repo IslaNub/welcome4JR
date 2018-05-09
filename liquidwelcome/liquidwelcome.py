@@ -346,12 +346,13 @@ class liquidwelcome:
                 if region.lower().strip() == 'eu':
                     clan = EUClans[x]
                     x += 1
-                    pass
-                if region.lower().strip() == 'na':
+                    
+                elif region.lower().strip() == 'na':
                     clan = NAClans[x]
                     x += 1
                     pass
-                if region.lower().strip() == 'la':
+                elif region.lower().strip() == 'la':
+                    
                     if x == 0:
                         await self.bot.say('Please specify a country.\n```(Available: Mexico, Honduras, ElSalvador, Venezuela, Colombia, Peru, Paraguay, Ecuador, Argentina)```')
                         answer = await self.bot.wait_for_message(author = ctx.message.author, timeout = 15)
@@ -360,43 +361,43 @@ class liquidwelcome:
                             clan = MexicoClans[x]
                             x += 1
                             pass
-                        if answer.content.lower().strip() == 'honduras':
+                        elif answer.content.lower().strip() == 'honduras':
                             clan = HondurasClans[x]
                             x += 1
                             pass
-                        if answer.content.lower().strip() == 'elsalvador' or answer.content.lower().strip() == 'el salvador':
+                        elif answer.content.lower().strip() == 'elsalvador' or answer.content.lower().strip() == 'el salvador':
                             clan = ElSalvadorClans[x]
                             pass
-                        if answer.content.lower().strip() == 'venezuela':
+                        elif answer.content.lower().strip() == 'venezuela':
                             clan = VenezuelaClans[x]
                             x += 1
                             pass
-                        if answer.content.lower().strip() == 'colombia':
+                        elif answer.content.lower().strip() == 'colombia':
                             clan = ColombiaClans[x]
                             x += 1
                             pass
-                        if answer.content.lower().strip() == 'peru':
+                        elif answer.content.lower().strip() == 'peru':
                             clan = PeruClans[x]
                             x += 1
                             pass
-                        if answer.content.lower().strip() == 'paraguay':
+                        elif answer.content.lower().strip() == 'paraguay':
                             clan = ParaguayClans[x]
                             x += 1
                             pass
-                        if answer.content.lower().strip() == 'ecuador':
+                        elif answer.content.lower().strip() == 'ecuador':
                             clan = EcuadorClans[x]
                             x += 1
                             pass
-                        if answer.content.lower().strip() == 'argentina':
+                        elif answer.content.lower().strip() == 'argentina':
                             clan = ArgentinaClans[x]
                             x += 1
                             pass
-                        if answer.content.lower().strip() not in ['mexico', 'honduras', 'elsalvador', 'venezuela', 'colombia', 'peru', 'paraguay', 'ecuador', 'argentina']:
+                        elif answer.content.lower().strip() not in ['mexico', 'honduras', 'elsalvador', 'venezuela', 'colombia', 'peru', 'paraguay', 'ecuador', 'argentina']:
                             await self.bot.say('Invalid country, canceling operation.')
                             return
                         pass
                     pass
-                if region.lower().strip() not in ['eu', 'na', 'la']:
+                elif region.lower().strip() not in ['eu', 'na', 'la']:
                     await self.bot.say('Invalid region: please choose `eu`, `na` or `la`.')
                     return
                 try:
