@@ -353,7 +353,7 @@ class liquidwelcome:
                     pass
                 if region.lower().strip() == 'la':
                     if x == 0:
-                        await self.bot.say('Please specify a country. `(Available: Mexico, Honduras, ElSalvador, Venezuela, Colombia, Peru, Ecuador, Argentina)`')
+                        await self.bot.say('Please specify a country.\n```(Available: Mexico, Honduras, ElSalvador, Venezuela, Colombia, Peru, Paraguay, Ecuador, Argentina)```')
                         answer = await self.bot.wait_for_message(author = ctx.message.author, timeout = 15)
                     if x > 0:
                         if answer.content.lower().strip() == 'mexico':
@@ -379,6 +379,10 @@ class liquidwelcome:
                             clan = PeruClans[x]
                             x += 1
                             pass
+                        if answer.content.lower().strip() == 'paraguay':
+                            clan = ParaguayClans[x]
+                            x += 
+                            pass
                         if answer.content.lower().strip() == 'ecuador':
                             clan = EcuadorClans[x]
                             x += 1
@@ -387,20 +391,20 @@ class liquidwelcome:
                             clan = ArgentinaClans[x]
                             x += 1
                             pass
-                        if answer.content.lower().strip() not in ['mexico', 'honduras', 'elsalvador', 'venezuela', 'colombia', 'peru', 'ecuador', 'argentina']:
-                            await self.bot.say('Invalid country.')
+                        if answer.content.lower().strip() not in ['mexico', 'honduras', 'elsalvador', 'venezuela', 'colombia', 'peru', 'paraguay', 'ecuador', 'argentina']:
+                            await self.bot.say('Invalid country, canceling operation.')
                             return
                         pass
                     pass
                 if region.lower().strip() not in ['eu', 'na', 'la']:
                     await self.bot.say('Invalid region: please choose `eu`, `na` or `la`.')
                     return
-               try:
+                try:
                     headers = APIAuth
                     url = "https://api.royaleapi.com/clan/{}".format(clan)
                     async with aiohttp.ClientSession() as session:
                         async with session.get(url, headers=headers) as resp:
-                            data = await resp.json()"""
+                            data = await resp.json()
                             try:
                                 embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/{}'.format(clan), color = 0x00FFBF)
                                 embed.set_author(name = 'Stats for {}!'.format(data['name']))
@@ -418,7 +422,7 @@ class liquidwelcome:
                             except Exception as e:
                                 await self.bot.say(e)
                                 await self.bot.say('Something went wrong, please try again later.')
-                                print(e)"""
+                                print(e)
                 except Exception as e:
                     await self.bot.say(e) 
                     print(e)
