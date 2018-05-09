@@ -416,7 +416,7 @@ class liquidwelcome:
                                 embed.add_field(name = 'Required Trophies:', value = f"{data['requiredScore']} <:Trophy:443281867316264960>", inline = True)
                                 embed.add_field(name = 'Donations:', value = f"{data['donations']} <:Cards:443285942875193344>", inline = True)
                                 embed.add_field(name = 'Type:', value = f"{data['type']}".capitalize(), inline = True)
-                                embed.set_footer(text = 'LiquidClans v0.2 - API powered by RoyaleAPI', icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
+                                embed.set_footer(text = 'LiquidClans v0.2b - API powered by RoyaleAPI', icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
                                 embed.add_field(name = 'Location:', value = data['location']['name'], inline = True)
                                 await self.bot.say(embed = embed)
                             except Exception as e:
