@@ -397,7 +397,7 @@ class liquidwelcome:
                             return
                         pass"""
                     pass
-                if region.lower().strip() not in ['eu', 'na', 'la']:
+               if region.lower().strip() not in ['eu', 'na', 'la']:
                     await self.bot.say('Invalid region: please choose `eu`, `na` or `la`.')
                     return
                try:
