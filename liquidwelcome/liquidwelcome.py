@@ -343,7 +343,7 @@ class liquidwelcome:
         x = 0
         while True:
             try:
-                if region.lower().strip() == 'eu':
+               """if region.lower().strip() == 'eu':
                     clan = EUClans[x]
                     x += 1
                     pass
@@ -356,7 +356,7 @@ class liquidwelcome:
                         await self.bot.say("Please specify a country.\n(Available: Mexico, Honduras, ElSalvador, Venezuela, Colombia, Peru, Paraguay, Ecuador, Argentina)`")
                         
                         answer = await self.bot.wait_for_message(author = ctx.message.author, timeout = 15)
-                   """if x > 0:
+                   if x > 0:
                         if answer.content.lower().strip() == 'mexico':
                             clan = MexicoClans[x]
                             x += 1
@@ -395,11 +395,11 @@ class liquidwelcome:
                         if answer.content.lower().strip() not in ['mexico', 'honduras', 'elsalvador', 'venezuela', 'colombia', 'peru', 'paraguay', 'ecuador', 'argentina']:
                             await self.bot.say('Invalid country.')
                             return
-                        pass"""
+                        pass
                     pass
                if region.lower().strip() not in ['eu', 'na', 'la']:
                     await self.bot.say('Invalid region: please choose `eu`, `na` or `la`.')
-                    return
+                    return"""
                try:
                     headers = APIAuth
                     url = "https://api.royaleapi.com/clan/{}".format(clan)
