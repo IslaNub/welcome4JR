@@ -398,13 +398,27 @@ class liquidwelcome:
     @commands.has_permissions(ban_members = True)
     @commands.command(pass_context = True, no_pm = True)
     async def clanmembers(self, ctx, clan):
-        TeamLiquidGER = '98R22PLY'
-        TeamLiquidFR = '98PYR0VJ'
-        TLFluorFR = '9UP2JY2P'
-        TeamLiquidBL = 'P0YJ0P2V'
-        TeamLiquidSRB = '8J0J2RQC'
-        TeamLiquidITA = '9QRUO2GR' 
-        TLSolid = 'P888QQQ9'
+        if clan.lower().strip() == 'teamliquidger':
+            clan = '98R22PLY'
+            pass
+        if clan.lower().strip() == 'tlflourfr':
+            clan = '98PYR0VJ'
+            pass
+        if clan.lower().strip() == 'teamliquidger':
+            clan = '9UP2JY2P'
+            pass
+        if clan.lower().strip() == 'teamliquidbl':
+            clan = 'P0YJ0P2V'
+            pass
+        if clan.lower().strip() == 'teamliquidgsrb':
+            clan = '8J0J2RQC'
+            pass
+        if clan.lower().strip() == 'teamliquidita':
+            clan = '9QRUO2GR' 
+            pass
+        if clan.lower().strip() == 'tlsolid':
+            clan = = 'P888QQQ9'
+            pass
         headers = APIAuth
         url = "https://api.royaleapi.com/clan/{}".format(clan)
         async with aiohttp.ClientSession() as session:
