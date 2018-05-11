@@ -425,7 +425,7 @@ class liquidwelcome:
             async with session.get(url, headers=headers) as resp:
                 data = await resp.json()
                 x = 0
-                m = await self.bot.say(f"```{data['members'][x]['rank']}. {data['members'][x]['name']} #{data['members'][x]['tag']} - {data['members'][x]['role']}```")
+                m = await self.bot.say(f"```{data['members'][x]['rank']}. {data['members'][x]['name']} #{data['members'][x]['tag']} - {data['members'][x]['role'].capitalize()}```")
                 while True:
                     try:
                         x += 1
