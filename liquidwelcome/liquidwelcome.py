@@ -401,10 +401,10 @@ class liquidwelcome:
         if clan.lower().strip() == 'teamliquidger':
             clan = '98R22PLY'
             pass
-        if clan.lower().strip() == 'tlflourfr':
+        if clan.lower().strip() == 'teamliquidfr':
             clan = '98PYR0VJ'
             pass
-        if clan.lower().strip() == 'teamliquidger':
+        if clan.lower().strip() == 'flflourfr':
             clan = '9UP2JY2P'
             pass
         if clan.lower().strip() == 'teamliquidbl':
