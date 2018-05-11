@@ -428,7 +428,7 @@ class liquidwelcome:
                 m = await self.bot.say(f"{data['members'][x]['rank']}. {data['members'][x]['name']} #{data['members'][x]['tag']}")
                 while True:
                     try:
-                        m = await self.bot.edif_message(m, f"{m.content}\n{data['members'][x]['rank']}. {data['members'][x]['name']} #{data['members'][x]['tag']}")
+                        m = await self.bot.edit_message(m, f"{m.content}\n{data['members'][x]['rank']}. {data['members'][x]['name']} #{data['members'][x]['tag']}")
                         x += 1
                     except Exception:
                         break
