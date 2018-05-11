@@ -429,7 +429,7 @@ class liquidwelcome:
                 while True:
                     try:
                         x += 1
-                        m = await self.bot.edit_message(m, f"```{m.content.strip('```')}\n{data['members'][x]['rank']}. {data['members'][x]['name']} #{data['members'][x]['tag']} - {data['members'][x]['role']}```")
+                        m = await self.bot.edit_message(m, f"```{m.content.strip('```')}\n{data['members'][x]['rank']}. {data['members'][x]['name']} #{data['members'][x]['tag']} - {data['members'][x]['role'].capitalize()}```")
                     except Exception:
                         break
     
