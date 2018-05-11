@@ -417,7 +417,7 @@ class liquidwelcome:
             clan = '9QRUO2GR' 
             pass
         if clan.lower().strip() == 'tlsolid':
-            clan = = 'P888QQQ9'
+            clan = 'P888QQQ9'
             pass
         headers = APIAuth
         url = "https://api.royaleapi.com/clan/{}".format(clan)
