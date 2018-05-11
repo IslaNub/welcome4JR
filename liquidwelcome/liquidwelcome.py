@@ -394,8 +394,30 @@ class liquidwelcome:
             except Exception as e:
                 break
                 await self.bot.say(e)
-                        
-        
+                
+    @commands.has_permissions(ban_members = True)
+    @commands.command(pass_context = True, no_pm = True)
+    async def clanmembers(self, ctx, clan):
+        TeamLiquidGER = '98R22PLY'
+        TeamLiquidFR = '98PYR0VJ'
+        TLFluorFR = '9UP2JY2P'
+        TeamLiquidBL = 'P0YJ0P2V'
+        TeamLiquidSRB = '8J0J2RQC'
+        TeamLiquidITA = '9QRUO2GR' 
+        TLSolid = 'P888QQQ9'
+        headers = APIAuth
+        url = "https://api.royaleapi.com/clan/{}".format(clan)
+        async with aiohttp.ClientSession() as session:
+            async with session.get(url, headers=headers) as resp:
+                data = await resp.json()
+                x = 0
+                while True:
+                    try:
+                        print(f"{data['members'][x]['rank']}. {data['members'][x]['name']} #{data['members'][x]['tag']}")
+                        x += 1
+                    except Exception:
+                        break
+    
 def setup(bot):
     n = liquidwelcome(bot)
     bot.add_cog(n)
