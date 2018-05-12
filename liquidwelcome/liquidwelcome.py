@@ -312,7 +312,7 @@ class liquidwelcome:
         while True:
             try:
                 if region.lower().strip() == 'eu':
-                    clan = EUClans([x])
+                    clan = EUClans[x]
                     x += 1
                     
                 elif region.lower().strip() == 'na':
