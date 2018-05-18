@@ -9,7 +9,7 @@ import asyncio
 import requests
 import aiohttp
 
-version = '0.2.2.2b'
+version = '0.2.2.4b'
 
 APIAuth = {'auth': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQ3LCJpZGVuIjoiMTk5NDM2NzkwNTgxNTU5Mjk2IiwibWQiOnt9LCJpYXQiOjE1MjYwMzEzMDd9.5caUvHM82sv4OZ7mxFsnZ20OZwx36QLGoJO93zMDBDQ'}
 EUClans = ['98R22PLY', '98PYR0VJ', '9UP2JY2P', 'P0YJ0P2V', '8J0J2RQC', '9QRUO2GR', 'P888QQQ9']
