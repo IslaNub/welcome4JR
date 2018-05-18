@@ -310,11 +310,7 @@ class liquidwelcome:
     
     @commands.command(pass_context = True, no_pm = True)
     async def liquidclans(self, ctx, region:str):
-        """Choose between EU, NA and LA
-        
-        
-        LiquidClans v0.2.2.2b
-        NOTE: This is a beta function, the code is still under development."""
+        "Choose between EU, NA and LA\n\nLiquidClans v{}\nNOTE: This is a beta function, the code is still under development.".format(version)
         x = 0
         while True:
             try:
