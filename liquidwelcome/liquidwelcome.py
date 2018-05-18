@@ -9,7 +9,7 @@ import asyncio
 import requests
 import aiohttp
 
-version = '0.2.2.1b'
+version = '0.2.2.2b'
 
 APIAuth = {'auth': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQ3LCJpZGVuIjoiMTk5NDM2NzkwNTgxNTU5Mjk2IiwibWQiOnt9LCJpYXQiOjE1MjYwMzEzMDd9.5caUvHM82sv4OZ7mxFsnZ20OZwx36QLGoJO93zMDBDQ'}
 EUClans = ['98R22PLY', '98PYR0VJ', '9UP2JY2P', 'P0YJ0P2V', '8J0J2RQC', '9QRUO2GR', 'P888QQQ9']
@@ -310,10 +310,10 @@ class liquidwelcome:
     
     @commands.command(pass_context = True, no_pm = True)
     async def liquidclans(self, ctx, region:str):
-        f"""Choose between EU, NA and LA
+        """Choose between EU, NA and LA
         
         
-        LiquidClans v{version}
+        LiquidClans v0.2.2.2b
         NOTE: This is a beta function, the code is still under development."""
         x = 0
         while True:
