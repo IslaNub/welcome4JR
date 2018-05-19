@@ -70,11 +70,12 @@ class liquidclans:
             await asyncio.sleep(10)
             await self.bot.delete_messages(msg)
         
-    async def lol(self):
+    @commands.command(pass_context = True, no_pm = True)
+    async def testtrigger(self, ctx):
         c = self.bot.get_channel('414094090070786058')
-        msg = await self.bot.send_message(c, "lol")
+        msg = await self.bot.send_message(c, "kek")
         while True:
-            c = self.bot.get_channel('414094090070786058')
+            #c = self.bot.get_channel('414094090070786058')
             msg = await self.bot.send_message(c, "lol")
             await asyncio.sleep(5)
             await self.bot.delete_messages(c, msg)
