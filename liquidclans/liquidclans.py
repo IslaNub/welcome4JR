@@ -65,7 +65,7 @@ class liquidclans:
                                         async for message in self.bot.logs_from(c, limit = x, reverse = True):
                                             messages = [] 
                                             messages.append(message)
-                                            await self.bot.delete_messages(messages)
+                                            await self.mass_purge(to_delete)(messages)
                                             pass
                                         pass
                                     
@@ -83,6 +83,16 @@ class liquidclans:
                 await self.bot.send_message(c, e)
             #await asyncio.sleep(10)
             #await self.bot.delete_message(msg)
+            
+    async def mass_purge(self, messages):
+        while messages:
+            if len(messages) > 1:
+                await self.bot.delete_messages(messages[:100])
+                messages = messages[100:]
+            else:
+                await self.bot.delete_message(messages[0])
+                messages = []
+            await asyncio.sleep(1.5)
         
     @commands.command(pass_context = True, no_pm = True)
     async def testtrigger(self, ctx):
