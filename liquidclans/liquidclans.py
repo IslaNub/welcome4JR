@@ -65,7 +65,7 @@ class liquidclans:
                                         async for message in self.bot.logs_from(c, limit = x, reverse = True):
                                             to_delete = [] 
                                             to_delete.append(message)
-                                            await self.mass_purge(to_delete)(messages)
+                                            await self.mass_purge(to_delete)
                                             pass
                                         pass
                                     
