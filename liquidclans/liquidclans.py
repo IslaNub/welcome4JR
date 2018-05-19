@@ -78,7 +78,7 @@ class liquidclans:
             #c = self.bot.get_channel('414094090070786058')
             msg = await self.bot.send_message(c, "lol")
             await asyncio.sleep(5)
-            await self.bot.delete_messages(c, msg)
+            await self.bot.delete_messages(msg)
         
 def setup(bot):
     n = liquidclans(bot)
