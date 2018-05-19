@@ -32,8 +32,10 @@ class liquidclans:
     async def triggereu(self, ctx):
         eu = ['98R22PLY', '98PYR0VJ']
         x = 0
+        
         #await self.bot.say(len(eu))
-        c = self.bot.get_channel('414094090070786058')
+        c = self.bot.get_channel('425706490066894848')
+        await self.bot.send_message(c, '***__EU CLANS:__***')
         while True:
             try:
                 while True:
@@ -61,8 +63,9 @@ class liquidclans:
                                     x += 1
                                     if x >= len(EUClans):
                                         #await self.bot.send_message(c, 'Working')
-                                        await asyncio.sleep(10)
-                                        async for message in self.bot.logs_from(c, limit = len(EUClans), reverse = True):
+                                        await asyncio.sleep(3600)
+                                        lim = len(EUClans) + 1
+                                        async for message in self.bot.logs_from(c, limit = lim, reverse = True):
                                             to_delete = [] 
                                             to_delete.append(message)
                                             await self.mass_purge(to_delete)
