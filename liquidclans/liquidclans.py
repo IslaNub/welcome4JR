@@ -62,19 +62,23 @@ class liquidclans:
                                     if x >= len(eu):
                                         await self.bot.send_message(c, 'Working')
                                         await asyncio.sleep(5)
-                                        await self.bot.delete_message(msg)
+                                        async for message in self.bot.logs_from(c, limit = x, reverse = True):
+                                        
+                                            await self.bot.delete_messages(message)
+                                            pass
                                         pass
                                     
                                 except Exception as e:
+                                    x = 0
                                     await self.bot.send_message(c, e)
                                     await self.bot.send_message(c, 'Something went wrong, please try again later.')
                                     print(e)
                     except Exception as e:
-                        
+                        x = 0
                         await self.bot.send_message(c, e) 
                         print(e)
             except Exception as e:
-                break
+                x = 0
                 await self.bot.send_message(c, e)
             #await asyncio.sleep(10)
             #await self.bot.delete_message(msg)
