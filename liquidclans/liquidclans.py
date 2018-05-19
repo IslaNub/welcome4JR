@@ -71,6 +71,8 @@ class liquidclans:
             await self.bot.delete_messages(msg)
         
     async def lol(self):
+        c = self.bot.get_channel('414094090070786058')
+        msg = await self.bot.send_message(c, "lol")
         while True:
             c = self.bot.get_channel('414094090070786058')
             msg = await self.bot.send_message(c, "lol")
