@@ -34,7 +34,7 @@ class liquidclans:
         x = 0
         
         #await self.bot.say(len(eu))
-        c = self.bot.get_channel('425706490066894848')
+        c = self.bot.get_channel('447519506210750474')
         
         while True:
             try:
