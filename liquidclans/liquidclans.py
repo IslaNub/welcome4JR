@@ -32,12 +32,12 @@ class liquidclans:
     async def triggereu(self, ctx):
         eu = ['98R22PLY', '98PYR0VJ']
         x = 0
-        await self.bot.say(len(eu))
+        #await self.bot.say(len(eu))
         c = self.bot.get_channel('414094090070786058')
         while True:
             try:
                 while True:
-                    clan = eu[x]
+                    clan = EUClans[x]
                     try:
                         headers = APIAuth
                         url = "https://api.royaleapi.com/clan/{}".format(clan)
@@ -59,10 +59,10 @@ class liquidclans:
                                     embed.add_field(name = 'Location:', value = data['location']['name'], inline = True)
                                     msg = await self.bot.send_message(c, embed = embed)
                                     x += 1
-                                    if x >= len(eu):
-                                        await self.bot.send_message(c, 'Working')
-                                        await asyncio.sleep(5)
-                                        async for message in self.bot.logs_from(c, limit = x, reverse = True):
+                                    if x >= len(EUClans):
+                                        #await self.bot.send_message(c, 'Working')
+                                        await asyncio.sleep(10)
+                                        async for message in self.bot.logs_from(c, limit = len(EUClans), reverse = True):
                                             to_delete = [] 
                                             to_delete.append(message)
                                             await self.mass_purge(to_delete)
