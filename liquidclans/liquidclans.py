@@ -71,16 +71,16 @@ class liquidclans:
                                     
                                 except Exception as e:
                                     x = 0
-                                    await self.bot.send_message(c, e)
+                                    #await self.bot.send_message(c, e)
                                     await self.bot.send_message(c, 'Something went wrong, please try again later.')
                                     print(e)
                     except Exception as e:
                         x = 0
-                        await self.bot.send_message(c, e) 
+                        #await self.bot.send_message(c, e) 
                         print(e)
             except Exception as e:
                 x = 0
-                await self.bot.send_message(c, e)
+                #await self.bot.send_message(c, e)
             #await asyncio.sleep(10)
             #await self.bot.delete_message(msg)
             
