@@ -9,23 +9,33 @@ import asyncio
 import requests
 import aiohttp
 
+APIAuth = {'auth': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQ3LCJpZGVuIjoiMTk5NDM2NzkwNTgxNTU5Mjk2IiwibWQiOnt9LCJpYXQiOjE1MjYwMzEzMDd9.5caUvHM82sv4OZ7mxFsnZ20OZwx36QLGoJO93zMDBDQ'}
+EUClans = ['98R22PLY', '98PYR0VJ', '9UP2JY2P', 'P0YJ0P2V', '8J0J2RQC', '9QRUO2GR', 'P888QQQ9']
+MexicoClans = ['8URY28UC', '92J9RY9C', '8U0V8CG0', '9PPJJVLQ', '9Q88CP22']
+HondurasClans = ['9LGV822C']
+ElSalvadorClans = ['8JG8Y20R', '99UL0CRJ', '9YYGCYVL']
+VenezuelaClans = ['VOGL8C8', '889CQU88', '8L98R2JV', '8R8LJYU2', '8J8UVQL0']
+ColombiaClans = ['90Q0LP0V']
+PeruClans = ['9YR8L8R8', '8JROLQ8U', '98LJJLR9', '8CPJV28G', '8G90Y22R', '9GLPUC2R', '980VLVOJ', 'P80J882L', '9LCUJC8Y', '9JL98G9J']
+ParaguayClans = ['9LPC2YYV']
+EcuadorClans = ['9GVUUCRR', 'P0PPQGY8']
+ArgentinaClans = ['9P2CUYJR', 'P88LCUGQ'] 
+NAClans = ['9YU2PQRV', 'V8GRLCQ', '9CJ9YGPL', '820QC80V']
+
 class liquidclans:
     """Liquid Clans"""
 
     def __init__(self, bot):
         self.bot = bot
         
-    @commands.command(pass_context = True, no_pm = True)
-    async def liquidclans(self, ctx, region:str):
-        """Choose between EU, NA and LA
-        
-        
-        LiquidClans v0.2.2.6b
-        NOTE: This is a beta function, the code is still under development."""
+    #@commands.command(pass_context = True, no_pm = True)
+    async def clanseu(self):
+        eu = ['98R22PLY', '98PYR0VJ']
         x = 0
+        c = await self.bot.get_channel('414094090070786058')
         while True:
             try:
-                
+                clan = eu[x]
                 try:
                     headers = APIAuth
                     url = "https://api.royaleapi.com/clan/{}".format(clan)
@@ -45,18 +55,21 @@ class liquidclans:
                                 embed.add_field(name = 'Type:', value = f"{data['type']}".capitalize(), inline = True)
                                 embed.set_footer(text = 'LiquidClans v{} - API powered by RoyaleAPI'.format(version), icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
                                 embed.add_field(name = 'Location:', value = data['location']['name'], inline = True)
-                                await self.bot.say(embed = embed)
+                                msg = await self.bot.say(embed = embed)
+                                
                             except Exception as e:
-                                await self.bot.say(e)
-                                await self.bot.say('Something went wrong, please try again later.')
+                                await self.bot.send_message(c, e)
+                                await self.bot.send_message(c, 'Something went wrong, please try again later.')
                                 print(e)
                 except Exception as e:
-                    await self.bot.say(e) 
+                    await self.bot.send_message(c, e) 
                     print(e)
             except Exception as e:
                 break
-                await self.bot.say(e)
+                await self.bot.send_message(c, e)
+            await asyncio.sleep(10)
+            await self.bot.delete_messages(msg)
         
 def setup(bot):
-    n = liquidwelcome(bot)
+    n = liquidclans(bot)
     bot.add_cog(n)
