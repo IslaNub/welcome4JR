@@ -59,7 +59,7 @@ class liquidclans:
                                     embed.add_field(name = 'Type:', value = f"{data['type']}".capitalize(), inline = True)
                                     embed.set_footer(text = 'LiquidClans v{} - API powered by RoyaleAPI'.format('0.1'), icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
                                     embed.add_field(name = 'Location:', value = data['location']['name'], inline = True)
-                                    await self.bot.send_message(c, '***__EU CLANS:__***')
+                                    
                                     msg = await self.bot.send_message(c, embed = embed)
                                     x += 1
                                     if x >= len(EUClans):
@@ -70,6 +70,7 @@ class liquidclans:
                                             to_delete = [] 
                                             to_delete.append(message)
                                             await self.mass_purge(to_delete)
+                                            await self.bot.send_message(c, '***__EU CLANS:__***')
                                             pass
                                         pass
                                     
