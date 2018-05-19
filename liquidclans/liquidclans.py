@@ -57,7 +57,7 @@ class liquidclans:
                                     embed.add_field(name = 'Type:', value = f"{data['type']}".capitalize(), inline = True)
                                     embed.set_footer(text = 'LiquidClans v{} - API powered by RoyaleAPI'.format('0.1'), icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
                                     embed.add_field(name = 'Location:', value = data['location']['name'], inline = True)
-                                    msg = await self.bot.send_message(embed = embed)
+                                    msg = await self.bot.send_message(c, embed = embed)
                                     if len(eu) >= x:
                                         await self.bot.send_message('Working')
                                         await asyncio.sleep(5)
