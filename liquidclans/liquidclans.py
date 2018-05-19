@@ -28,8 +28,8 @@ class liquidclans:
     def __init__(self, bot):
         self.bot = bot
         
-    #@commands.command(pass_context = True, no_pm = True)
-    async def clanseu(self):
+    @commands.command(pass_context = True, no_pm = True)
+    async def triggereu(self, ctx):
         eu = ['98R22PLY', '98PYR0VJ']
         x = 0
         c = await self.bot.get_channel('414094090070786058')
@@ -68,7 +68,7 @@ class liquidclans:
                 break
                 await self.bot.send_message(c, e)
             await asyncio.sleep(10)
-            await self.bot.delete_messages(msg)
+            await self.bot.delete_message(msg)
         
     @commands.command(pass_context = True, no_pm = True)
     async def testtrigger(self, ctx):
