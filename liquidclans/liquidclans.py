@@ -63,8 +63,9 @@ class liquidclans:
                                         await self.bot.send_message(c, 'Working')
                                         await asyncio.sleep(5)
                                         async for message in self.bot.logs_from(c, limit = x, reverse = True):
-                                        
-                                            await self.bot.delete_messages(message)
+                                            messages = [] 
+                                            messages.append(message)
+                                            await self.bot.delete_messages(messages)
                                             pass
                                         pass
                                     
