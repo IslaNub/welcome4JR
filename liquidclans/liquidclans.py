@@ -57,7 +57,11 @@ class liquidclans:
                                     embed.add_field(name = 'Type:', value = f"{data['type']}".capitalize(), inline = True)
                                     embed.set_footer(text = 'LiquidClans v{} - API powered by RoyaleAPI'.format('0.1'), icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
                                     embed.add_field(name = 'Location:', value = data['location']['name'], inline = True)
-                                    msg = await self.bot.say(embed = embed)
+                                    msg = await self.bot.send_message(embed = embed)
+                                    if len(eu) >= x:
+                                        await self.bot.send_message('Working')
+                                        await asyncio.sleep(5)
+                                        await self.bot.delete_message(msg)
                                     x += 1
                                 except Exception as e:
                                     await self.bot.send_message(c, e)
@@ -70,8 +74,8 @@ class liquidclans:
             except Exception as e:
                 break
                 await self.bot.send_message(c, e)
-            await asyncio.sleep(10)
-            await self.bot.delete_message(msg)
+            #await asyncio.sleep(10)
+            #await self.bot.delete_message(msg)
         
     @commands.command(pass_context = True, no_pm = True)
     async def testtrigger(self, ctx):
