@@ -56,7 +56,7 @@ class liquidclans:
                                 embed.set_footer(text = 'LiquidClans v{} - API powered by RoyaleAPI'.format('0.1'), icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
                                 embed.add_field(name = 'Location:', value = data['location']['name'], inline = True)
                                 msg = await self.bot.say(embed = embed)
-                                
+                                x += 1
                             except Exception as e:
                                 await self.bot.send_message(c, e)
                                 await self.bot.send_message(c, 'Something went wrong, please try again later.')
