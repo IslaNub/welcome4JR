@@ -32,7 +32,7 @@ class liquidclans:
     async def triggereu(self, ctx):
         eu = ['98R22PLY', '98PYR0VJ']
         x = 0
-        c = await self.bot.get_channel('414094090070786058')
+        c = self.bot.get_channel('414094090070786058')
         while True:
             try:
                 clan = eu[x]
