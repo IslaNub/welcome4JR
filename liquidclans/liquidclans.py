@@ -32,9 +32,10 @@ class liquidclans:
     async def triggereu(self, ctx):
         eu = ['98R22PLY', '98PYR0VJ']
         x = 0
-        starter = await self.bot.say('***__EU CLANS:__***')
+        
         #await self.bot.say(len(eu))
         c = self.bot.get_channel('447519506210750474')
+        starter = await self.bot.send_message(c, '***__EU CLANS:__***')
         await self.bot.send_message(c, '***__EU CLANS:__***')
         while True:
             try:
