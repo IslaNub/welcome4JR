@@ -72,8 +72,9 @@ class liquidclans:
                                             to_delete.append(message)
                                             x = 0
                                             await self.mass_purge(to_delete)
-                                            starter = await self.bot.send_message(c, '***__EU CLANS:__***')
                                             pass
+                                        starter = await self.bot.send_message(c, '***__EU CLANS:__***')
+                                            
                                         pass
                                     
                                 except Exception as e:
