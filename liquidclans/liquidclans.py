@@ -36,7 +36,7 @@ class liquidclans:
         #await self.bot.say(len(eu))
         c = self.bot.get_channel('447519506210750474')
         starter = await self.bot.send_message(c, '***__EU CLANS:__***')
-        await self.bot.send_message(c, '***__EU CLANS:__***')
+        #await self.bot.send_message(c, '***__EU CLANS:__***')
         while True:
             try:
                 while True:
