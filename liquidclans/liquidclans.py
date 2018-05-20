@@ -66,13 +66,13 @@ class liquidclans:
                                     if x >= len(EUClans):
                                         #await self.bot.send_message(c, 'Working')
                                         await asyncio.sleep(10)
-                                        lim = len(EUClans)
+                                        lim = len(EUClans) + 1
                                         async for message in self.bot.logs_from(c, limit = lim, after = starter):
                                             to_delete = [] 
                                             to_delete.append(message)
                                             x = 0
                                             await self.mass_purge(to_delete)
-                                            #await self.bot.send_message(c, '***__EU CLANS:__***')
+                                            starter = await self.bot.send_message(c, '***__EU CLANS:__***')
                                             pass
                                         pass
                                     
