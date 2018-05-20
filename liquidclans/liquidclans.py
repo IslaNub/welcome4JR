@@ -69,6 +69,7 @@ class liquidclans:
                                         async for message in self.bot.logs_from(c, limit = lim, reverse = True):
                                             to_delete = [] 
                                             to_delete.append(message)
+                                            x = 0
                                             await self.mass_purge(to_delete)
                                             await self.bot.send_message(c, '***__EU CLANS:__***')
                                             pass
