@@ -100,7 +100,7 @@ class liquidclans:
         
         #await self.bot.say(len(eu))
         c = self.bot.get_channel('447519506210750474')
-        starter = await self.bot.send_message(c, '***__EU CLANS:__***')
+        starter = await self.bot.send_message(c, '***__NA CLANS:__***')
         #await self.bot.send_message(c, '***__EU CLANS:__***')
         while True:
             try:
@@ -128,10 +128,10 @@ class liquidclans:
                                     
                                     msg = await self.bot.send_message(c, embed = embed)
                                     x += 1
-                                    if x >= len(EUClans):
+                                    if x >= len(NAClans):
                                         #await self.bot.send_message(c, 'Working')
                                         await asyncio.sleep(3600)
-                                        lim = len(EUClans)
+                                        lim = len(NAClans)
                                         async for message in self.bot.logs_from(c, limit = lim, after = starter):
                                             to_delete = [] 
                                             to_delete.append(message)
@@ -139,7 +139,7 @@ class liquidclans:
                                             await self.mass_purge(to_delete)
                                             pass
                                         await self.bot.delete_message(starter)
-                                        starter = await self.bot.send_message(c, '***__EU CLANS:__***')
+                                        starter = await self.bot.send_message(c, '***__NA CLANS:__***')
                                             
                                         pass
                                     
