@@ -20,7 +20,7 @@ PeruClans = ['9YR8L8R8', '8JROLQ8U', '98LJJLR9', '8CPJV28G', '8G90Y22R', '9GLPUC
 ParaguayClans = ['9LPC2YYV']
 EcuadorClans = ['9GVUUCRR', 'P0PPQGY8']
 ArgentinaClans = ['9P2CUYJR', 'P88LCUGQ'] 
-NAClans = ['9YU2PQRV', 'V8GRLCQ', '9CJ9YGPL', '820QC80V']
+NAClans = ['9YU2PQRV', 'V8GRLCQ', '9CJ9YGPL', '820QC80V', '9YYLQ99L']
 
 class liquidclans:
     """Liquid Clans"""
