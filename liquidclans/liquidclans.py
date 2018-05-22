@@ -93,6 +93,68 @@ class liquidclans:
             #await asyncio.sleep(10)
             #await self.bot.delete_message(msg)
             
+    @commands.command(pass_context = True, no_pm = True)
+    async def triggerna(self, ctx):
+        
+        x = 0
+        
+        #await self.bot.say(len(eu))
+        c = self.bot.get_channel('447519506210750474')
+        starter = await self.bot.send_message(c, '***__EU CLANS:__***')
+        #await self.bot.send_message(c, '***__EU CLANS:__***')
+        while True:
+            try:
+                while True:
+                    clan = NAClans[x]
+                    try:
+                        headers = APIAuth
+                        url = "https://api.royaleapi.com/clan/{}".format(clan)
+                        async with aiohttp.ClientSession() as session:
+                            async with session.get(url, headers=headers) as resp:
+                                data = await resp.json()
+                                try:
+                                    embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/{}'.format(clan), color = 0x00FFBF)
+                                    embed.set_author(name = 'Stats for {}!'.format(data['name']))
+                                    embed.title = f"{data['name']} (#{data['tag']})"
+                                    embed.set_thumbnail(url = data['badge']['image'])
+                                    embed.add_field(name = 'Description:', value = data['description'], inline = True)
+                                    embed.add_field(name = 'Clan Points:', value = f"{data['score']} <:Trophy:443281867316264960>", inline = True)
+                                    embed.add_field(name = 'Member Count:', value = f"{data['memberCount']}/50 <:Members:443282536764801026>", inline = True)
+                                    embed.add_field(name = 'Required Trophies:', value = f"{data['requiredScore']} <:Trophy:443281867316264960>", inline = True)
+                                    embed.add_field(name = 'Donations:', value = f"{data['donations']} <:Cards:443285942875193344>", inline = True)
+                                    embed.add_field(name = 'Type:', value = f"{data['type']}".capitalize(), inline = True)
+                                    embed.set_footer(text = 'LiquidClans v{} - API powered by RoyaleAPI'.format('0.1'), icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
+                                    embed.add_field(name = 'Location:', value = data['location']['name'], inline = True)
+                                    
+                                    msg = await self.bot.send_message(c, embed = embed)
+                                    x += 1
+                                    if x >= len(EUClans):
+                                        #await self.bot.send_message(c, 'Working')
+                                        await asyncio.sleep(3600)
+                                        lim = len(EUClans)
+                                        async for message in self.bot.logs_from(c, limit = lim, after = starter):
+                                            to_delete = [] 
+                                            to_delete.append(message)
+                                            x = 0
+                                            await self.mass_purge(to_delete)
+                                            pass
+                                        await self.bot.delete_message(starter)
+                                        starter = await self.bot.send_message(c, '***__EU CLANS:__***')
+                                            
+                                        pass
+                                    
+                                except Exception as e:
+                                    x = 0
+                                    #await self.bot.send_message(c, e)
+                                    await self.bot.send_message(c, 'Something went wrong, please try again later.')
+                                    print(e)
+                    except Exception as e:
+                        x = 0
+                        #await self.bot.send_message(c, e) 
+                        print(e)
+            except Exception as e:
+                x = 0
+                                                    
     async def mass_purge(self, messages):
         while messages:
             if len(messages) > 1:
