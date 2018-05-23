@@ -381,6 +381,7 @@ class liquidwelcome:
                         async with session.get(url, headers=headers) as resp:
                             data = await resp.json()
                             try:
+                                await self.bot.send_typing(ctx.message.channel)
                                 embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/{}'.format(clan), color = 0x00FFBF)
                                 embed.set_author(name = 'Stats for {}!'.format(data['name']))
                                 embed.title = f"{data['name']} (#{data['tag']})"
@@ -393,7 +394,7 @@ class liquidwelcome:
                                 embed.add_field(name = 'Type:', value = f"{data['type']}".capitalize(), inline = True)
                                 embed.set_footer(text = 'LiquidClans v{} - API powered by RoyaleAPI'.format(version), icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
                                 embed.add_field(name = 'Location:', value = data['location']['name'], inline = True)
-                                await self.bot.send_typing(ctx.message.channel)
+                                #await self.bot.send_typing(ctx.message.channel)
                                 await self.bot.say(embed = embed)
                             except Exception as e:
                                 await self.bot.say(e)
