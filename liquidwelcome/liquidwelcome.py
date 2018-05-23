@@ -443,6 +443,12 @@ class liquidwelcome:
                     except Exception:
                         break
     
+    async def on_message(self, message):
+        msg = 'academy tryouts link'
+        if message.content.lower().strip() == msg:
+            m = 'https://goo.gl/forms/hfDacbsxcZLwDmTV2'
+            await self.bot.send_message(message.channel, m)
+    
 def setup(bot):
     n = liquidwelcome(bot)
     bot.add_cog(n)
