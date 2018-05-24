@@ -9,7 +9,7 @@ import asyncio
 import requests
 import aiohttp
 
-tag = ['9L928JQ', 'G900CVQQ']
+tag = ['9L928JQ', 'G900CVQQ', 'PCVRL8GJ']
 
 APIAuth = {'auth': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQ3LCJpZGVuIjoiMTk5NDM2NzkwNTgxNTU5Mjk2IiwibWQiOnt9LCJpYXQiOjE1MjYwMzEzMDd9.5caUvHM82sv4OZ7mxFsnZ20OZwx36QLGoJO93zMDBDQ'}
 EUClans = ['98R22PLY', '98PYR0VJ', '9UP2JY2P', 'P0YJ0P2V', '8J0J2RQC', '9QRUO2GR', 'P888QQQ9']
@@ -187,12 +187,13 @@ class liquidclans:
                     async with session.get(url, headers=headers) as resp:
                         data = await resp.json()
                         if data['stats']['challengeMaxWins'] >= 15:
-                            await self.bot.say(data['name'] + ' (#' + str(data['tag']) + ' has more than 15 Wins.')
+                            await self.bot.say(data['name'] + ' (#' + str(data['tag']) + ')' has more than 15 Wins.')
                         elif data['stats']['challengeMaxWins'] < 15:
-                            await self.bot.say(data['name'] + ' (#' + str(data['tag']) + ' does NOT have more than 1t Wins.')                       
+                            await self.bot.say(data['name'] + ' (#' + str(data['tag']) + ')' does NOT have more than 1t Wins.')                       
                         x += 1
             except Exception as e:
-                await self.bot.say(e)                                        
+                await self.bot.say(e)
+                break                               
 
 
 def setup(bot):
