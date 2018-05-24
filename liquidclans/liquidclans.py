@@ -195,8 +195,8 @@ class liquidclans:
                             await self.bot.say('I should have finished...🤔')                     
                             break                            
             except Exception as e:
-                await self.bot.say(e)
-                pass                               
+                await self.bot.say('#' + ptag + ' is wrong.')
+                x += 1                               
         
     @commands.command(pass_context = True, no_pm = True)
     async def testwins(self, ctx):
