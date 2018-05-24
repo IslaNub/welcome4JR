@@ -182,7 +182,7 @@ class liquidclans:
             ptag = tag[x]
             try:
                 headers = APIAuth
-                url = "https://api.royaleapi.com/player/{}".format(clan)
+                url = "https://api.royaleapi.com/player/{}".format(ptag)
                 async with aiohttp.ClientSession() as session:
                     async with session.get(url, headers=headers) as resp:
                         data = await resp.json()
