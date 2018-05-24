@@ -196,7 +196,7 @@ class liquidclans:
                             break                            
             except Exception as e:
                 await self.bot.say(e)
-                break                               
+                pass                               
         
     @commands.command(pass_context = True, no_pm = True)
     async def testwins(self, ctx):
@@ -220,7 +220,7 @@ class liquidclans:
                             break                            
             except Exception as e:
                 await self.bot.say(e)
-                break
+                pass
                                                     
 def setup(bot):
     n = liquidclans(bot)
