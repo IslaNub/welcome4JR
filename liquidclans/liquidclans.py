@@ -191,10 +191,13 @@ class liquidclans:
                         elif data['stats']['challengeMaxWins'] < 15:
                             await self.bot.say('**' + data['name'] + ' (#' + str(data['tag']) + ')** does NOT have more than 15 Wins.')                       
                         x += 1
+                        if x >= len(tag):
+                            break                            
             except Exception as e:
+                break                                    
                 await self.bot.say(e)
                 break                               
-        break
+        
 
 def setup(bot):
     n = liquidclans(bot)
