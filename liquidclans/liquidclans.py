@@ -187,8 +187,7 @@ class liquidclans:
                     async with session.get(url, headers=headers) as resp:
                         data = await resp.json()
                         if data['stats']['challengeMaxWins'] >= 15:
-                            pass                        
-                            #await self.bot.say('**' + data['name'] + ' (#' + str(data['tag']) + ')** has more than 15 Wins.')
+                            pass
                         elif data['stats']['challengeMaxWins'] < 15:
                             await self.bot.say('**' + data['name'] + ' (#' + str(data['tag']) + ')** does NOT have more than 15 Wins.')                       
                         x += 1
@@ -196,7 +195,6 @@ class liquidclans:
                             await self.bot.say('I should have finished...🤔')                     
                             break                            
             except Exception as e:
-                break                                    
                 await self.bot.say(e)
                 break                               
         
