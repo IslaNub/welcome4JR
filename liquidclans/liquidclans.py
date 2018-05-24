@@ -186,9 +186,9 @@ class liquidclans:
                 async with aiohttp.ClientSession() as session:
                     async with session.get(url, headers=headers) as resp:
                         data = await resp.json()
-                        if data['stats']['challengeMaxWins'] >= 15:
-                            await self.bot.say('**' + data['name'] + ' (#' + str(data['tag']) + ')** has more than 15 Wins.')
-                        elif data['stats']['challengeMaxWins'] < 15:
+                        #if data['stats']['challengeMaxWins'] >= 15:
+                            #await self.bot.say('**' + data['name'] + ' (#' + str(data['tag']) + ')** has more than 15 Wins.')
+                        if data['stats']['challengeMaxWins'] < 15:
                             await self.bot.say('**' + data['name'] + ' (#' + str(data['tag']) + ')** does NOT have more than 15 Wins.')                       
                         x += 1
                         if x >= len(tag):
