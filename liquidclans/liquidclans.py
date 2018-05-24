@@ -193,6 +193,7 @@ class liquidclans:
                             await self.bot.say('**' + data['name'] + ' (#' + str(data['tag']) + ')** does NOT have more than 15 Wins.')                       
                         x += 1
                         if x >= len(tag):
+                            await self.bot.say('I should have finished...🤔')                     
                             break                            
             except Exception as e:
                 break                                    
