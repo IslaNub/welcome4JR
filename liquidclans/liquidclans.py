@@ -200,7 +200,32 @@ class liquidclans:
                 await self.bot.say(e)
                 break                               
         
-
+    @commands.command(pass_context = True, no_pm = True)
+    async def testwins(self, ctx):
+        x = 0                                            
+        testtag = ['9L928JQ', 'G900CVQQ', 'PCVRL8GJ']                                            
+        while True:
+            ptag = testtag[x].strip()
+            try:
+                headers = APIAuth
+                url = "https://api.royaleapi.com/player/{}".format(ptag)
+                async with aiohttp.ClientSession() as session:
+                    async with session.get(url, headers=headers) as resp:
+                        data = await resp.json()
+                        if data['stats']['challengeMaxWins'] >= 15:
+                            pass                        
+                            #await self.bot.say('**' + data['name'] + ' (#' + str(data['tag']) + ')** has more than 15 Wins.')
+                        elif data['stats']['challengeMaxWins'] < 15:
+                            await self.bot.say('**' + data['name'] + ' (#' + str(data['tag']) + ')** does NOT have more than 15 Wins.')                       
+                        x += 1
+                        if x >= len(testtag):
+                            await self.bot.say('I should have finished...🤔')                     
+                            break                            
+            except Exception as e:
+                break                                    
+                await self.bot.say(e)
+                break
+                                                    
 def setup(bot):
     n = liquidclans(bot)
     bot.add_cog(n)
