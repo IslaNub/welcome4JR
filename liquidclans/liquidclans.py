@@ -9,6 +9,8 @@ import asyncio
 import requests
 import aiohttp
 
+tag = ['9L928JQ', 'G900CVQQ']
+
 APIAuth = {'auth': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQ3LCJpZGVuIjoiMTk5NDM2NzkwNTgxNTU5Mjk2IiwibWQiOnt9LCJpYXQiOjE1MjYwMzEzMDd9.5caUvHM82sv4OZ7mxFsnZ20OZwx36QLGoJO93zMDBDQ'}
 EUClans = ['98R22PLY', '98PYR0VJ', '9UP2JY2P', 'P0YJ0P2V', '8J0J2RQC', '9QRUO2GR', 'P888QQQ9']
 MexicoClans = ['8URY28UC', '92J9RY9C', '8U0V8CG0', '9PPJJVLQ', '9Q88CP22']
@@ -173,8 +175,12 @@ class liquidclans:
             #c = self.bot.get_channel('414094090070786058')
             msg = await self.bot.send_message(c, "lol")
             
-            
-        
+    @commands.command(pass_context = True, no_pm = True)
+    async def wins(self, ctx):
+
+
+
+
 def setup(bot):
     n = liquidclans(bot)
     bot.add_cog(n)
