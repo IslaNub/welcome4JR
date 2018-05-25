@@ -470,6 +470,7 @@ class liquidwelcome:
                     x += 1                                    
                 except Exception:
                     await self.bot.say(tm + ' is not in this Server or the provided name and/or discriminator are not correct.')  
+                    x += 1                                    
                     pass
                 if x >= len(TryoutMembers):
                     break                                        
