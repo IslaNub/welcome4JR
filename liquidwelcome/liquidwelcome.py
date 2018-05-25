@@ -470,10 +470,12 @@ class liquidwelcome:
                     x += 1                                    
                 except Exception:
                     await self.bot.say(tm + ' is not in this Server or the provided name and/or discriminator are not correct.')  
-                    pass                                    
+                    pass
+                if x >= len(TryouMembers):
+                    break                                        
         except Exception as e:
             await self.bot.say(e)
-            break                                            
+                                                      
                                                         
 def setup(bot):
     n = liquidwelcome(bot)
