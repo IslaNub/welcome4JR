@@ -11,6 +11,8 @@ import aiohttp
 
 version = '0.2.2.6b'
 
+TryoutMembers = ["Loader Beans#3355","qwe3rr#3277","ForgottenK#5736","JediBen#1959","Caleb#6483","GotMilk?#7432","Random#7563","King#5835","UltimateHunter#2164","ali-es10","Lime#3792","@Theoo Youtube⚽#7049 ","Trainer Asian #5861","⭐️ A I K E N ⭐️#3206","nakor#7277","Carterg_#1193","ajhernandez#9792","Kooze🌿🌚🌿#7130","CHOCO#0297","evan #9758","shaheer07#7354","kD77#6991","Azorty_QC#8678","bryn_norman ","ZUARTjose#8426","Zair#2399","Rumble98#1382","Fixitralph#8267","Eric Lopez Gonzalez#1341","lokesranger#1253","IXSAIDXI #1987","Jesus Peña#5940","PedroMan18#3866","pixelshoot*-*#0103","-Sergio-#0734","Legend MX#1540","SebasHB💎|Star Lord™#1186","LaloFeick❤#6713","Daddy#2240","Unicorn69 #6602","Alfreditogames#5180","DARKK-NIGHT#5754","cr254#7876","Jorge#1802","Marshmello#9994","Francisco08#0663","ifn9011CR 🇲🇽#6292","BRYAN CSE#8989","TheBiGBarbarian#5575","elgakkl#2953","Morrigan#4834","The Gocho#2678","LorDamteh❤#1215","Edwin U.#6691","ZEUScr#5102","By Neymar#5544","oreki walker#1938", "Ciper#0013","Miguel#7766","DabKing#6679","@red coder1👊#5632","Aurora | Strong#6846 ","chapulincolorao#6718","Alpha I Juan842 #1542","Superior#4140","Loris8700#6241","Yoann#9177","Luxus15 #0702","- NeozZ -#6075","Black Wolf#7512","Note#6942","Tøniø13#0927","Night Fighter#7322","Arttu#4798","Grey#5468","herthaChris #4195","Anis#7316","legamer#8901","Ad | !F¡N!T¥_₩♡rK#5474","Bodi#8128","Rey PEKKA#9315","ckJ#5399","Vatoloco503#3470","AYOUB#5969","MasterMind#2281","Emre Baltalı#1897","Elias#9146","#Åke1421","sheperd40 #1308","danieladamson#4164","Beast341#3984","HardcoreDennisCR#8734","ThugLife028#5621","Tomdehua#0047","Rocklibra#4606","radim cr#5306","Boom123 #1262","DarkKnight24#3584","Jose#3008","Pretoria Titan#3847","the thing2 #5174","merleyn#0387","Badaum|CR#4929","Lancelot#1082","#cosmaki4598","Hunter#2548 ","Striker#1905","Antoine34 #6282","KD.2Nova EG#9182 ","❎oscarinho❎#9703","NovaVikoMMG#5086","rondilla#8850","Schiwan#3164","JN#0376","Blankeart#3502","Bry™I不的#2968","suteekshan#7971","Andy#0719","Hardstone#8306","RohitFreaks#8709","Clan ToPPer#4874","King Zage#1769","Arcshaic#9484","IshaqNausherwani#5450","Abdullahaqeel#8007","OhhNOitsALEX#6289","VARTHAV™#1409","Synergy light #0036","TWISTEEER#0997","sachlang#8953","JH#3991","JO27#2944","blue dragon#0044","Anbelievable#6103"]
+
 APIAuth = {'auth': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQ3LCJpZGVuIjoiMTk5NDM2NzkwNTgxNTU5Mjk2IiwibWQiOnt9LCJpYXQiOjE1MjYwMzEzMDd9.5caUvHM82sv4OZ7mxFsnZ20OZwx36QLGoJO93zMDBDQ'}
 EUClans = ['98R22PLY', '98PYR0VJ', '9UP2JY2P', 'P0YJ0P2V', '8J0J2RQC', '9QRUO2GR', 'P888QQQ9']
 MexicoClans = ['8URY28UC', '92J9RY9C', '8U0V8CG0', '9PPJJVLQ', '9Q88CP22']
@@ -451,6 +453,24 @@ class liquidwelcome:
             m = '<https://goo.gl/forms/hfDacbsxcZLwDmTV2>'
             await self.bot.send_message(message.channel, m)
     
+    @commands.has_permissions(administrator = True)
+    @commands.command(pass_context= True, no_pm = True)
+    async def addtryout(self, ctx):
+        x = 0
+        t = discord.utils.get(ctx.message.server.roles, name = 'Tryouts')                                               
+        try:
+            tm = TryoutMembers[x]                                                
+            while True:
+                try:                                            
+                    m = ctx.message.server.get_member_named(tm)
+                    x += 1
+                    await self.bot.add_roles(m, t)                                    
+                    await self.bot.say('Added Tryouts role to ' + m.mention)
+                except Exception:
+                    await self.bot.say(tm + ' is not in this Server or the provided name and/or discriminator are not correct.')      
+        except Exception as e:
+            await self.bot.say(e)                                                
+                                                        
 def setup(bot):
     n = liquidwelcome(bot)
     bot.add_cog(n)
