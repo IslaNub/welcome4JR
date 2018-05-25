@@ -469,9 +469,11 @@ class liquidwelcome:
                     await self.bot.say('Added Tryouts role to ' + m.mention)
                     x += 1                                    
                 except Exception:
-                    await self.bot.say(tm + ' is not in this Server or the provided name and/or discriminator are not correct.')      
+                    await self.bot.say(tm + ' is not in this Server or the provided name and/or discriminator are not correct.')  
+                    pass                                    
         except Exception as e:
-            await self.bot.say(e)                                                
+            await self.bot.say(e)
+            break                                            
                                                         
 def setup(bot):
     n = liquidwelcome(bot)
