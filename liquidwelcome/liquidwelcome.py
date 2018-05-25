@@ -463,9 +463,10 @@ class liquidwelcome:
             while True:
                 try:                                            
                     m = ctx.message.server.get_member_named(tm)
-                    x += 1
+                    
                     await self.bot.add_roles(m, t)                                    
                     await self.bot.say('Added Tryouts role to ' + m.mention)
+                    x += 1                                    
                 except Exception:
                     await self.bot.say(tm + ' is not in this Server or the provided name and/or discriminator are not correct.')      
         except Exception as e:
