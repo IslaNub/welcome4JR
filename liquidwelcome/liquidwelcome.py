@@ -459,9 +459,10 @@ class liquidwelcome:
         x = 0
         t = discord.utils.get(ctx.message.server.roles, name = 'Tryouts')                                               
         try:
-            tm = TryoutMembers[x]                                                
+                                                            
             while True:
-                try:                                            
+                try:   
+                    tm = TryoutMembers[x]                                    
                     m = ctx.message.server.get_member_named(tm)
                     
                     await self.bot.add_roles(m, t)                                    
