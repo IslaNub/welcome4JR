@@ -49,6 +49,8 @@ class liquidclans:
         if region.lower().strip() in ['latam', 'la']:
             CRegion = LATAMClans
             reg = 'LATAM'
+            await self.bot.say('Not ready yet.')
+            return
         c = self.bot.get_channel('447519506210750474')
         starter = await self.bot.send_message(c, '***__{} CLANS:__***'.format(reg))
         #await self.bot.send_message(c, '***__EU CLANS:__***')
