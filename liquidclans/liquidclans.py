@@ -29,20 +29,27 @@ class liquidclans:
 
     def __init__(self, bot):
         self.bot = bot
-        
+    
+    @commands.has_permissions(administrator = True)
     @commands.command(pass_context = True, no_pm = True)
-    async def triggereu(self, ctx):
+    async def trigger(self, ctx, region):
         eu = ['98R22PLY', '98PYR0VJ']
         x = 0
-        
-        #await self.bot.say(len(eu))
+        if region.lower().strip() == 'eu':
+            CRegion = EUClans
+            reg = 'EU'
+            pass
+        if region.lower().strip() == 'na':
+            CRegion = NAClans
+            reg = 'NA'
+            pass
         c = self.bot.get_channel('447519506210750474')
-        starter = await self.bot.send_message(c, '***__EU CLANS:__***')
+        starter = await self.bot.send_message(c, '***__{} CLANS:__***'.format(reg))
         #await self.bot.send_message(c, '***__EU CLANS:__***')
         while True:
             try:
                 while True:
-                    clan = EUClans[x]
+                    clan = CRegion[x]
                     try:
                         headers = APIAuth
                         url = "https://api.royaleapi.com/clan/{}".format(clan)
@@ -67,24 +74,23 @@ class liquidclans:
                                     embed.set_footer(text = 'LiquidClans v{} - API powered by RoyaleAPI'.format('0.1'), icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
                                     embed.add_field(name = 'Location:', value = data['location']['name'], inline = True)
                                     if wdata['state'] == 'warDay':
-                                        state = 'War Day<:ClanWars:450674675140263936>'
-                                        
+                                        state = 'War Day <:ClanWars:450674675140263936>'
                                         pass
                                     if wdata['state'] == 'collectionDay':
-                                        state = 'Collection Day<:Cards:443285942875193344>'
+                                        state = 'Collection Day <:Cards:443285942875193344>'
                                         pass
                                     if wdata['state'] is None:
                                         state = 'Not currently in a War'
                                     embed.add_field(name = 'War Status:', value = state, inline = True)
                                     if wdata['state'] is not None:
-                                        embed.add_field(name = 'Clan War Participants:', value = str(len(wdata['participants'])) + '<:Members:443282536764801026>', inline = True)
+                                        embed.add_field(name = 'Clan War Participants:', value = str(len(wdata['participants'])) + ' <:Members:443282536764801026>', inline = True)
                                         pass
                                     msg = await self.bot.send_message(c, embed = embed)
                                     x += 1
-                                    if x >= len(EUClans):
+                                    if x >= len(CRegion):
                                         #await self.bot.send_message(c, 'Working')
                                         await asyncio.sleep(3600)
-                                        lim = len(EUClans)
+                                        lim = len(CRegion)
                                         async for message in self.bot.logs_from(c, limit = lim, after = starter):
                                             to_delete = [] 
                                             to_delete.append(message)
@@ -92,7 +98,7 @@ class liquidclans:
                                             await self.mass_purge(to_delete)
                                             pass
                                         await self.bot.delete_message(starter)
-                                        starter = await self.bot.send_message(c, '***__EU CLANS:__***')
+                                        starter = await self.bot.send_message(c, '***__{} CLANS:__***'.format(reg))
                                             
                                         pass
                                     
@@ -111,7 +117,7 @@ class liquidclans:
             #await asyncio.sleep(10)
             #await self.bot.delete_message(msg)
             
-    @commands.command(pass_context = True, no_pm = True)
+    """@commands.command(pass_context = True, no_pm = True)
     async def triggerna(self, ctx):
         
         x = 0
@@ -171,7 +177,7 @@ class liquidclans:
                         #await self.bot.send_message(c, e) 
                         print(e)
             except Exception as e:
-                x = 0
+                x = 0"""
                                                     
     async def mass_purge(self, messages):
         while messages:
