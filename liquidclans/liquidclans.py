@@ -23,6 +23,9 @@ ParaguayClans = ['9LPC2YYV']
 EcuadorClans = ['9GVUUCRR', 'P0PPQGY8']
 ArgentinaClans = ['9P2CUYJR', 'P88LCUGQ'] 
 NAClans = ['9YU2PQRV', 'V8GRLCQ', '9CJ9YGPL', '820QC80V', '9YYLQ99L']
+LATAMClans = ['8URY28UC', '92J9RY9C', '8U0V8CG0', '9PPJJVLQ', '9Q88CP22', '9LGV822C', '8JG8Y20R', '99UL0CRJ', '9YYGCYVL', 'VOGL8C8', '889CQU88', '8L98R2JV', '8R8LJYU2', '8J8UVQL0', '90Q0LP0V', '9YR8L8R8', '8JROLQ8U', '98LJJLR9', '8CPJV28G', '8G90Y22R', '9GLPUC2R', '980VLVOJ', 'P80J882L', '9LCUJC8Y', '9JL98G9J', '9LPC2YYV', '9GVUUCRR', 'P0PPQGY8', '9P2CUYJR', 'P88LCUGQ']
+
+ 
 
 class liquidclans:
     """Liquid Clans"""
@@ -43,6 +46,9 @@ class liquidclans:
             CRegion = NAClans
             reg = 'NA'
             pass
+        if region.lower().strip() in ['latam', 'la']:
+            CRegion = LATAMClans
+            reg = 'LATAM'
         c = self.bot.get_channel('447519506210750474')
         starter = await self.bot.send_message(c, '***__{} CLANS:__***'.format(reg))
         #await self.bot.send_message(c, '***__EU CLANS:__***')
