@@ -49,6 +49,10 @@ class liquidclans:
                         async with aiohttp.ClientSession() as session:
                             async with session.get(url, headers=headers) as resp:
                                 data = await resp.json()
+                                warurl = "https://api.royaleapi.com/clan/{}/war".format(clan)
+                                async with session.get(warurl, headers = headers) as wresp:
+                                    wdata = await wresp.json()
+                                    pass
                                 try:
                                     embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/{}'.format(clan), color = 0x00FFBF)
                                     embed.set_author(name = 'Stats for {}!'.format(data['name']))
@@ -62,7 +66,19 @@ class liquidclans:
                                     embed.add_field(name = 'Type:', value = f"{data['type']}".capitalize(), inline = True)
                                     embed.set_footer(text = 'LiquidClans v{} - API powered by RoyaleAPI'.format('0.1'), icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
                                     embed.add_field(name = 'Location:', value = data['location']['name'], inline = True)
-                                    
+                                    if wdata['state'] == 'warDay':
+                                        state = 'War Day<:ClanWars:450674675140263936>'
+                                        
+                                        pass
+                                    if wdata['state'] == 'collectionDay':
+                                        state = 'Collection Day<:Cards:443285942875193344>'
+                                        pass
+                                    if wdata['state'] is None:
+                                        state = 'Not currently in a War'
+                                    embed.add_field(name = 'War Status:', value = state, inline = True)
+                                    if wdata['state'] is not None:
+                                        embed.add_field(name = 'Clan War Participants:', value = str(len(wdata['participants'])) + '<:Members:443282536764801026>', inline = True)
+                                        pass
                                     msg = await self.bot.send_message(c, embed = embed)
                                     x += 1
                                     if x >= len(EUClans):
