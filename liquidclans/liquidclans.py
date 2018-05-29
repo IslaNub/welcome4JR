@@ -41,17 +41,20 @@ class liquidclans:
         if region.lower().strip() == 'eu':
             CRegion = EUClans
             reg = 'EU'
+            c = self.bot.get_channel('450920001134657536')
             pass
         if region.lower().strip() == 'na':
             CRegion = NAClans
             reg = 'NA'
+            c = self.bot.get_channel('450920685699858462')
             pass
         if region.lower().strip() in ['latam', 'la']:
             CRegion = LATAMClans
             reg = 'LATAM'
+            c = self.bot.get_channel('450920818260836352')
             #await self.bot.say('Not ready yet.')
             #return
-        c = self.bot.get_channel('447519506210750474')
+        #c = self.bot.get_channel('447519506210750474')
         starter = await self.bot.send_message(c, '***__{} CLANS:__***'.format(reg))
         #await self.bot.send_message(c, '***__EU CLANS:__***')
         while True:
