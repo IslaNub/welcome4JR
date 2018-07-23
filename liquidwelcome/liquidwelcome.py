@@ -39,7 +39,7 @@ class liquidwelcome:
         bs = discord.utils.get(ser.roles, name = 'Brawl Stars')
         aov = discord.utils.get(ser.roles, name = 'Arena of Valor')
         cj = self.bot.get_channel('432157348371628042')
-        mj = '**{}** has joined the Server! <:liquid3:425779102927290388>\n```{} members in the Server.```'.format(member.name, ser.member_count)
+        mj = '**{}** has joined the Server! <:LiquidWhite:454153267686014976>\n```{} members in the Server.```'.format(member.name, ser.member_count)
         await self.bot.send_message(cj, mj)
         #await self.bot.add_roles(member, cr)
         #await self.bot.add_roles(member, aov)
@@ -66,7 +66,7 @@ class liquidwelcome:
     async def on_member_remove(self, member):
         c = self.bot.get_channel('432157348371628042')
         s = self.bot.get_server('301578535175323658')
-        m = '**{}** has left the Server, bye bye... <:QooBeeConsole:422749739591794688>\n```{} members left in the Server.```'.format(member, s.member_count)
+        m = '**{}** has left the Server, bye bye... <:PandaNotLike:428559664733618176>\n```{} members left in the Server.```'.format(member, s.member_count)
         await self.bot.send_message(c, m)
         
     async def on_member_ban(self, member):
