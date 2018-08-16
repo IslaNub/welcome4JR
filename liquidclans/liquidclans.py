@@ -52,7 +52,7 @@ class liquidclans:
             CRegion = LASClans
             reg = 'LAS'
             c = self.bot.get_channel('450920818260836352')
-        if region.lower().strip() == 'las':
+        if region.lower().strip() == 'lan':
             CRegion = LANClans
             reg = 'LAN'
             c = self.bot.get_channel('479774601765715968')
