@@ -86,7 +86,7 @@ class liquidclans:
                                     embed.add_field(name = 'Required Trophies:', value = f"{data['requiredScore']} <:Trophy:443281867316264960>", inline = True)
                                     embed.add_field(name = 'Donations:', value = f"{data['donations']} <:Cards:443285942875193344>", inline = True)
                                     embed.add_field(name = 'Type:', value = f"{data['type']}".capitalize(), inline = True)
-                                    embed.set_footer(text = 'LiquidClans v{} - API powered by RoyaleAPI'.format('0.1'), icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
+                                    embed.set_footer(text = 'LiquidClans v{} - API powered by RoyaleAPI'.format('1.0'), icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
                                     embed.add_field(name = 'Location:', value = data['location']['name'], inline = True)
                                     if wdata['state'] == 'notInWar':
                                         state = 'Not currently in a Clan War'
