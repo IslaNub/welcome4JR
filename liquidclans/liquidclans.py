@@ -91,10 +91,10 @@ class liquidclans:
                                         state = 'Not currently in a Clan War'
                                         pass
                                     if wdata['state'] == 'warDay':
-                                        state = 'War Day <:ClanWars:450674675140263936>'
+                                        state = 'War Day, ends in: {} <:ClanWars:450674675140263936>'.format(wdata['warEndTime'])
                                         pass
                                     if wdata['state'] == 'collectionDay':
-                                        state = 'Collection Day <:Cards:443285942875193344>'
+                                        state = 'Collection Day, ends in: {} <:Cards:443285942875193344>'.format(wdata['collectionEndTime'])
                                         pass
                                     embed.add_field(name = 'War Status:', value = state, inline = True)
                                     if wdata['state'] in ['warDay', 'collectionDay']:
