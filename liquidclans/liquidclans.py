@@ -36,7 +36,7 @@ class liquidclans:
         self.bot = bot
     
     def version(self):
-        v = '1.0.2.2'
+        v = '1.0.2.3.1'
         return v
     
     def display_time(self, seconds, granularity=2):
