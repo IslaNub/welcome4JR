@@ -113,20 +113,20 @@ class liquidclans:
                                         state = 'Not currently in a Clan War'
                                         pass
                                     if wdata['state'] == 'warDay':
-                                        seconds = abs(int(wdata['warEndTime']))
-                                        dtime = self.display_time(seconds)
-                                        state = 'War Day, ends in {} <:ClanWars:450674675140263936>'.format(dtime)
+                                        #seconds = abs(int(wdata['warEndTime']))
+                                        #dtime = self.display_time(seconds)
+                                        state = 'War Day, ends in {} <:ClanWars:450674675140263936>'.format(wdata['warEndTime'])
                                         pass
                                     if wdata['state'] == 'collectionDay':
-                                        seconds = abs(int(wdata['collectionEndTime']))
-                                        dtime = self.display_time(seconds)
-                                        state = 'Collection Day, ends in {} <:Cards:443285942875193344>'.format(dtime)
+                                        #seconds = abs(int(wdata['collectionEndTime']))
+                                        #dtime = self.display_time(seconds)
+                                        state = 'Collection Day, ends in {} <:Cards:443285942875193344>'.format(wdata['collectionEndTime'])
                                         pass
                                     embed.add_field(name = 'War Status:', value = state, inline = True)
                                     if wdata['state'] in ['warDay', 'collectionDay']:
                                         embed.add_field(name = 'Clan War Participants:', value = str(len(wdata['participants'])) + ' <:Members:443282536764801026>', inline = True)
                                         pass
-                                    embed.set_footer(text = 'LiquidClans v{} - API powered by RoyaleAPI'.format('1.0.2.1'), icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
+                                    embed.set_footer(text = 'LiquidClans v{} - API powered by RoyaleAPI'.format('1.0.2.2'), icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
                                     msg = await self.bot.send_message(c, embed = embed)
                                     x += 1
                                     if x >= len(CRegion):
