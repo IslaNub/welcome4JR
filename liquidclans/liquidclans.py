@@ -35,6 +35,10 @@ class liquidclans:
     def __init__(self, bot):
         self.bot = bot
     
+    def version(self):
+        v = '1.0.2.2'
+        return v
+    
     def display_time(self, seconds, granularity=2):
         intervals = (
             ('weeks', 604800),  # 60 * 60 * 24 * 7
@@ -115,18 +119,18 @@ class liquidclans:
                                     if wdata['state'] == 'warDay':
                                         #seconds = abs(int(wdata['warEndTime']))
                                         #dtime = self.display_time(seconds)
-                                        state = 'War Day, ends in {} <:ClanWars:450674675140263936>'.format(wdata['warEndTime'])
+                                        state = 'War Day{} <:ClanWars:450674675140263936>'#.format(dtime)
                                         pass
                                     if wdata['state'] == 'collectionDay':
                                         #seconds = abs(int(wdata['collectionEndTime']))
                                         #dtime = self.display_time(seconds)
-                                        state = 'Collection Day, ends in {} <:Cards:443285942875193344>'.format(wdata['collectionEndTime'])
+                                        state = 'Collection Day{} <:Cards:443285942875193344>'#.format(dtime)
                                         pass
                                     embed.add_field(name = 'War Status:', value = state, inline = True)
                                     if wdata['state'] in ['warDay', 'collectionDay']:
                                         embed.add_field(name = 'Clan War Participants:', value = str(len(wdata['participants'])) + ' <:Members:443282536764801026>', inline = True)
                                         pass
-                                    embed.set_footer(text = 'LiquidClans v{} - API powered by RoyaleAPI'.format('1.0.2.2'), icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
+                                    embed.set_footer(text = 'LiquidClans v{} - API powered by RoyaleAPI'.format(self.version()), icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
                                     msg = await self.bot.send_message(c, embed = embed)
                                     x += 1
                                     if x >= len(CRegion):
