@@ -36,7 +36,7 @@ class liquidclans:
         self.bot = bot
     
     def version(self):
-        v = '1.0.2.3.2'
+        v = '1.1.0.1'
         return v
     
     def display_time(self, seconds, granularity=2):
@@ -135,27 +135,18 @@ class liquidclans:
                                     x += 1
                                     if x >= len(CRegion):
                                         mts = starter.timestamp.strftime
-
                                         t = mts("%B")
-
                                         if mts("%d").endswith('1') and mts("%d") != '11':
-
                                             d = 'st'
-
                                         elif mts("%d").endswith('2') and mts("%d") != '12':
-
                                             d = 'nd'
-
                                         elif mts("%d").endswith('3') and mts("%d") != '13':
-
                                             d = 'rd'
-
                                         else:
-
                                             d = 'th'
-                                        up = mts("**__Last update on {} {}{} at %H:%M:%S GMT__**").format(t.capitalize(), mts("%d"), d)
+                                        up = mts("**__Last update on {} {}{} at %H:%M:%S GMT.__**").format(t.capitalize(), mts("%d"), d)
                                         await self.bot.send_message(c, up)
-                                        await asyncio.sleep(60)	
+                                        await asyncio.sleep(1800)	
                                         lim = len(CRegion) + 1
                                         async for message in self.bot.logs_from(c, limit = lim, after = starter):
                                             to_delete = [] 
