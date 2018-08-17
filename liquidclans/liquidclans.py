@@ -36,7 +36,7 @@ class liquidclans:
         self.bot = bot
     
     def version(self):
-        v = '1.0.2.3.1'
+        v = '1.0.2.3.2'
         return v
     
     def display_time(self, seconds, granularity=2):
@@ -119,12 +119,12 @@ class liquidclans:
                                     if wdata['state'] == 'warDay':
                                         #seconds = abs(int(wdata['warEndTime']))
                                         #dtime = self.display_time(seconds)
-                                        state = 'War Day{} <:ClanWars:450674675140263936>'#.format(dtime)
+                                        state = 'War Day <:ClanWars:450674675140263936>'#.format(dtime)
                                         pass
                                     if wdata['state'] == 'collectionDay':
                                         #seconds = abs(int(wdata['collectionEndTime']))
                                         #dtime = self.display_time(seconds)
-                                        state = 'Collection Day{} <:Cards:443285942875193344>'#.format(dtime)
+                                        state = 'Collection Day <:Cards:443285942875193344>'#.format(dtime)
                                         pass
                                     embed.add_field(name = 'War Status:', value = state, inline = True)
                                     if wdata['state'] in ['warDay', 'collectionDay']:
