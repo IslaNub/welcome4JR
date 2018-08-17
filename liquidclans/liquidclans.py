@@ -134,9 +134,29 @@ class liquidclans:
                                     msg = await self.bot.send_message(c, embed = embed)
                                     x += 1
                                     if x >= len(CRegion):
-                                        #await self.bot.send_message(c, 'Working')
-                                        await asyncio.sleep(86400)
-                                        lim = len(CRegion)
+                                        mts = starter.timestamp.strftime
+
+                                        t = mts("%B")
+
+                                        if mts("%d").endswith('1') and mts("%d") != '11':
+
+                                            d = 'st'
+
+                                        elif mts("%d").endswith('2') and mts("%d") != '12':
+
+                                            d = 'nd'
+
+                                        elif mts("%d").endswith('3') and mts("%d") != '13':
+
+                                            d = 'rd'
+
+                                        else:
+
+                                            d = 'th'
+                                        up = mts("**__Last update on {} {}{} at %H:%M:%S GMT__**").format(t.capitalize(), mts("%d"), d)
+                                        await self.bot.send_message(c, up)
+                                        await asyncio.sleep(60)	
+                                        lim = len(CRegion) + 1
                                         async for message in self.bot.logs_from(c, limit = lim, after = starter):
                                             to_delete = [] 
                                             to_delete.append(message)
