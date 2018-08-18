@@ -148,13 +148,18 @@ class liquidclans:
                                         await self.bot.send_message(c, up)
                                         await asyncio.sleep(1800)	
                                         lim = len(CRegion) + 1
-                                        async for message in self.bot.logs_from(c, limit = lim, after = starter):
+                                        async for message in self.bot.logs_from(c, limit = lim + 5, after = starter):
                                             to_delete = [] 
                                             to_delete.append(message)
                                             x = 0
                                             await self.mass_purge(to_delete)
+                                            await asyncio.sleep(10)
                                             pass
-                                        await self.bot.delete_message(starter)
+                                        try:
+                                            await self.bot.delete_message(starter)
+                                        except Exception:
+                                            pass
+                                        await asyncio.sleep(5)
                                         starter = await self.bot.send_message(c, '***__{} CLANS:__***'.format(reg))
                                         pass
                                 except Exception as e:
