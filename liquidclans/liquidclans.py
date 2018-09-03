@@ -164,7 +164,7 @@ class liquidclans:
                                         pass
                                 except Exception as e:
                                     x += 1
-                                    #await self.bot.send_message(c, e)
+                                    await self.bot.send_message(c, e)
                                     await self.bot.send_message(c, 'Something went wrong, please try again later.')
                                     print(e)
                                     pass
