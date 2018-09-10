@@ -102,9 +102,9 @@ class liquidclans:
                                     wdata = await wresp.json()
                                     pass
                                 try:
-                                    embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/{}'.format(clan), color = 0x00FFBF)
+                                    embed = discord.Embed(title = '', url = 'https://TL.gg/Mobile', color = 0x00FFBF)
                                     embed.set_author(name = 'Stats for {}!'.format(data['name']))
-                                    embed.title = f"{data['name']} (#{data['tag']})"
+                                    embed.title = f"{data['name']} ({data['tag']})"
                                     embed.set_thumbnail(url = 'https://cdn.discordapp.com/attachments/414094090070786058/488698485932032001/1536585191942.png')
                                     embed.add_field(name = 'Description:', value = data['description'], inline = True)
                                     embed.add_field(name = 'Clan Points:', value = f"{data['clanScore']} <:Trophy:443281867316264960>", inline = True)
