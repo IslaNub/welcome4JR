@@ -105,7 +105,7 @@ class liquidclans:
                                     embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/{}'.format(clan), color = 0x00FFBF)
                                     embed.set_author(name = 'Stats for {}!'.format(data['name']))
                                     embed.title = f"{data['name']} (#{data['tag']})"
-                                    embed.set_thumbnail(url = data['badge']['image'])
+                                    #embed.set_thumbnail(url = data['badge']['image'])
                                     embed.add_field(name = 'Description:', value = data['description'], inline = True)
                                     embed.add_field(name = 'Clan Points:', value = f"{data['score']} <:Trophy:443281867316264960>", inline = True)
                                     embed.add_field(name = 'Member Count:', value = f"{data['members']}/50 <:Members:443282536764801026>", inline = True)
