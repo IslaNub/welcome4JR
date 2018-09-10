@@ -97,7 +97,7 @@ class liquidclans:
                         async with aiohttp.ClientSession() as session:
                             async with session.get(url, headers=headers) as resp:
                                 data = await resp.json()
-                                warurl = "https://api.royaleapi.com/clan/%23{}/currentwar".format(clan)
+                                warurl = "https://api.clashroyale.com/v1/clans/%23{}/currentwar".format(clan)
                                 async with session.get(warurl, headers = headers) as wresp:
                                     wdata = await wresp.json()
                                     pass
