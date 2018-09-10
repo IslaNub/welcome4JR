@@ -153,7 +153,7 @@ class liquidclans:
                                             to_delete.append(message)
                                             x = 0
                                             await self.mass_purge(to_delete)
-                                            await asyncio.sleep(10)
+                                            #await asyncio.sleep(10)
                                             pass
                                         try:
                                             await self.bot.delete_message(starter)
