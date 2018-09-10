@@ -82,11 +82,11 @@ class liquidclans:
             CRegion = LANClans
             reg = 'LAN'
             c = self.bot.get_channel('479774601765715968')
-            #await self.bot.say('Not ready yet.')
-            #return
-        #c = self.bot.get_channel('447519506210750474')
+            # await self.bot.say('Not ready yet.')
+            # return
+        # c = self.bot.get_channel('447519506210750474')
         starter = await self.bot.send_message(c, '***__{} CLANS:__***'.format(reg))
-        #await self.bot.send_message(c, '***__EU CLANS:__***')
+        # await self.bot.send_message(c, '***__EU CLANS:__***')
         while True:
             try:
                 while True:
@@ -111,19 +111,22 @@ class liquidclans:
                                     embed.add_field(name = 'Member Count:', value = f"{data['members']}/50 <:Members:443282536764801026>", inline = True)
                                     embed.add_field(name = 'Required Trophies:', value = f"{data['requiredTrophies']} <:Trophy:443281867316264960>", inline = True)
                                     embed.add_field(name = 'Donations:', value = f"{data['donationsPerWeek']} <:Cards:443285942875193344>", inline = True)
-                                    embed.add_field(name = 'Type:', value = f"{data['type']}".capitalize(), inline = True)
+                                    t = data['type']
+                                    if t.lower() == 'inviteonly':
+                                        t = 'Invite Only'
+                                    embed.add_field(name = 'Type:', value = t.capitalize(), inline = True)
                                     embed.add_field(name = 'Location:', value = data['location']['name'], inline = True)
                                     if wdata['state'] == 'notInWar':
                                         state = 'Not currently in a Clan War'
                                         pass
                                     if wdata['state'] == 'warDay':
-                                        #seconds = abs(int(wdata['warEndTime']))
-                                        #dtime = self.display_time(seconds)
+                                        # seconds = abs(int(wdata['warEndTime']))
+                                        # dtime = self.display_time(seconds)
                                         state = 'War Day <:ClanWars:450674675140263936>'#.format(dtime)
                                         pass
                                     if wdata['state'] == 'collectionDay':
-                                        #seconds = abs(int(wdata['collectionEndTime']))
-                                        #dtime = self.display_time(seconds)
+                                        # seconds = abs(int(wdata['collectionEndTime']))
+                                        # dtime = self.display_time(seconds)
                                         state = 'Collection Day <:Cards:443285942875193344>'#.format(dtime)
                                         pass
                                     embed.add_field(name = 'War Status:', value = state, inline = True)
