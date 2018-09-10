@@ -107,7 +107,7 @@ class liquidclans:
                                     embed.title = f"{data['name']} (#{data['tag']})"
                                     #embed.set_thumbnail(url = data['badge']['image'])
                                     embed.add_field(name = 'Description:', value = data['description'], inline = True)
-                                    embed.add_field(name = 'Clan Points:', value = f"{data['score']} <:Trophy:443281867316264960>", inline = True)
+                                    embed.add_field(name = 'Clan Points:', value = f"{data['clanScore']} <:Trophy:443281867316264960>", inline = True)
                                     embed.add_field(name = 'Member Count:', value = f"{data['members']}/50 <:Members:443282536764801026>", inline = True)
                                     embed.add_field(name = 'Required Trophies:', value = f"{data['requiredTrophies']} <:Trophy:443281867316264960>", inline = True)
                                     embed.add_field(name = 'Donations:', value = f"{data['donationsPerWeek']} <:Cards:443285942875193344>", inline = True)
