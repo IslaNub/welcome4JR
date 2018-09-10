@@ -105,7 +105,7 @@ class liquidclans:
                                     embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/{}'.format(clan), color = 0x00FFBF)
                                     embed.set_author(name = 'Stats for {}!'.format(data['name']))
                                     embed.title = f"{data['name']} (#{data['tag']})"
-                                    embed.set_thumbnail(url = 'https://d1u5p3l4wpay3k.cloudfront.net/lolesports_gamepedia_en/f/f4/Team_Liquidlogo_square.png?version=e912079afa0146b8f741465994754366')
+                                    embed.set_thumbnail(url = 'https://cdn.discordapp.com/attachments/414094090070786058/488698485932032001/1536585191942.png')
                                     embed.add_field(name = 'Description:', value = data['description'], inline = True)
                                     embed.add_field(name = 'Clan Points:', value = f"{data['clanScore']} <:Trophy:443281867316264960>", inline = True)
                                     embed.add_field(name = 'Member Count:', value = f"{data['members']}/50 <:Members:443282536764801026>", inline = True)
@@ -130,7 +130,7 @@ class liquidclans:
                                     if wdata['state'] in ['warDay', 'collectionDay']:
                                         embed.add_field(name = 'Clan War Participants:', value = str(len(wdata['participants'])) + ' <:Members:443282536764801026>', inline = True)
                                         pass
-                                    embed.set_footer(text = 'LiquidClans v{} - API powered by Clash Royale'.format(self.version()), icon_url = 'https://cdn.discordapp.com/attachments/414094090070786058/488698485932032001/1536585191942.png')
+                                    embed.set_footer(text = 'LiquidClans v{} - API powered by Clash Royale'.format(self.version()), icon_url = 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwji86a-wrDdAhVDyoUKHRTSDo0QjRx6BAgBEAU&url=https%3A%2F%2Froyaleapi.com%2Ftop%2Fplayers%2Fbd%2F&psig=AOvVaw1hzA3YRcjXAWDGKiGCjMtj&ust=1536671742237692')
                                     msg = await self.bot.send_message(c, embed = embed)
                                     x += 1
                                     if x >= len(CRegion):
