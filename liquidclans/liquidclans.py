@@ -13,7 +13,7 @@ import time
 
 tag = [" 9L928JQ"," G900CVQQ"," L8YJ8JGL"," Q28202UJ"," 88QGPCL"," Y9CJJG9U"," 28RCQ8U8V"," 2LPGCCVR8 ","2cjuyr8yr"," Q99QJ82J"," 29899VJLU"," L8PVPUPV"," 2RYGYOQ"," VCCQ28GY "," 2VUL9RGV"," 2UCLVL8"," 2PULU9VG"," 8800JYJ8"," jgurg9j"," 20PLU2"," P8YLG9VL"," 98200R0"," JJUCGVUG","YLQJCQ89"," 2V00VYP8L"," 88R0R08U"," 8GG8LL2Q"," R2Y9UYY"," LY8GGUU8"," GYGYUROC","900GYC08"," 2GR22209L"," 200QGCPGC"," 29CJQGQRR"," 2juy890"," YORG8L9Y"," YORG8L9Y"," 898LLGV0"," 82P0UUPPP"," 2YCRLPL8U"," Y20YQLYV"," 2VRRLGRR8","RPU8JUJO","LJ0228YC"," 2ccoorr","A7W0jM","8GLUQLG2"," 20PVJOQUL"," GGVRL22C"," 8QGUUY2L"," RRGJ9VUO"," P80C0J92"," 8YVRU8RG8"," PVP0YVVY"," 8QGUUY2L"," 2CQ9JYGG","n/a"," 8VLCVGLJ"," 8GYCLJ0L","A7W0jM"," 292VYLOO"," 2URVYU2Q"," 8q8009yl"," 2PLGCU2C9"," 8LJ0LVR8"," 29UJ9Q99"," 2L2GP29CQ"," 2L2GP29CQ","J0LY0c0y"," LV980V2Y"," YLJUPCPU"," 82C8OQCU"," PCPJUVC9"," 2RR2U2JGL "," YPCQRCJ"," 82L9PC2R0"," P898Q9R2"," L2QLPYVQ"," 2QLYOJC9R"," 2L8UCUQQP"," 2L8UCUQQP"," 88LRCUCY"," Y888YPRU"," 2J89YRC8"," Q929C2OL"," 2QY28CGL"," 29LY2RVPG"," 2CRU8VPPY"," 9L8PRGGC"," 9v8qgj"," 8Q8OCJOG"," vp9jq2r8"," 8P9JYLJL"," 808J28QV "," RUJYPYVJ"," 20YGQQPQL"," LY8VRCR9"," RQPQ0G8"," RL9GGCG"," 2VOL8RJ89"," Y80CV92"," 8P2VPQP8V"," PCULQJV2"," 8GU8RJLQ"," 2PQY08JL"," UCQL8Q29"," 2L98RV88U"," 2QPRQQU88"," PG0PC00L"," QGGCRPY8"," 299YUQL2V"," G99YUQG"," JUCGR8"," RPR8QRVL"," RCUO88QQ"," 88LQQY08"," GYGOUOU"," U2LYJV8R"," 89R2G0C9"," 8JLLLVUC"," 2l2jyoop"," 8JLLLVUC"," 8JLLLVUC"," 22PORP2LQ"," P2YL809"," PCJULYVQ"," 2PJGRRQL"," PJ0RC2LV"," 8QLGJCO"," 2CL90G9U"," 2POC88QGP "," P82VUU2P"," YG8CJV0Y"," 2PLYGR0PJ"," 8YVYG2CY"," 2999GUJ "," 8RYG0LLQ"," 9L2QJOJR","Main:QV28989 Second Account: 8UVQRRO8"," LQ2P98U "," 8VLLLLPU"," RPR8RRY9 "," 2VVU2CROP"," 8C0VPC92"," J2UOUGCP"," Y8008J08","2U22UR2C","9P0R8L02"," PLOUR2C9"," 899JRUY"," 8YUJOQLL"," 8C29J"," 20000YUG"," 89p8vu8p"," 8UQRPRCQ "," 82VCPRLRL"," UV8222GG"," PQLOPLUO"," 2RQLPL9VR"," QL8J92V2"," C80LG8Y"," 808220JQ"," Q8LRJPOP"," 8LLVVC2"," PYJQQUR8"," YY829PY2"," Q9PCVGPY"," 9G88ULGP"," QYCOUO"," 2JVRJQRU","JGJC00J"," YQCJJU99"," GQYG89VG"," 2JUCY9R8G"," R92QGOC"," LYU9C09J"," JJY0PRR8 "," 99YR2YPV"," LPJYQV0L"," 88C8VV0QV"," 82PQ2CVR"," 2L2GV20Y0"," 902L9LRU"," 2YLR2R9LO"  ]
 
-APIAuth = {'auth': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQ3LCJpZGVuIjoiMTk5NDM2NzkwNTgxNTU5Mjk2IiwibWQiOnsidXNlcm5hbWUiOiLjgqTjgrnjg6njg4zjg5YiLCJrZXlWZXJzaW9uIjozLCJkaXNjcmltaW5hdG9yIjoiMjIyMiJ9LCJ0cyI6MTUzNjU4MDY2OTk2NH0.kWshG9-aCpkP95B_cU_1IPCWN9Jkrw3q5UM_7RxrO7w'}
+APIAuth = {'authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImYyNWNlYjIzLTRiYjAtNDhhYi1iMDgzLTlkZTRmMzA0MTAxMCIsImlhdCI6MTUzNjU4MzI3NCwic3ViIjoiZGV2ZWxvcGVyLzlhMjZmMGQzLTU2NTktNTczNy1iOWFiLTUyMWE5OGY0YzNkYSIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyI1MS4yNTUuNzAuODgiXSwidHlwZSI6ImNsaWVudCJ9XX0.7zs8JyKqiQeqHu_lllJrym8N1Q1SVVa4ducTt8-OCxnRZPOn7zybbXzOT34-vS3LAhbMQ97Ed-lB8bQmi086Vg'}
 EUClans = ['98PYR0VJ', '9UP2JY2P', 'PQR8L08Y', 'P0YJ0P2V', 'P888QQQ9', '98R22PLY', '9QRU02GR', '9U82UYLJ', 'P0P2G8YQ', 'P09YPG9V', 'PY9QVRCJ', '8J0J2RQC', '9JUCLVCV', '9UYLCJYP']
 MexicoClans = ['8URY28UC', '92J9RY9C', '8U0V8CG0', '9PPJJVLQ', '9Q88CP22']
 HondurasClans = ['9LGV822C']
@@ -93,11 +93,11 @@ class liquidclans:
                     clan = CRegion[x]
                     try:
                         headers = APIAuth
-                        url = "https://api.royaleapi.com/clan/{}".format(clan)
+                        url = "https://api.clashroyale.com/v1/clans/%23{}".format(clan)
                         async with aiohttp.ClientSession() as session:
                             async with session.get(url, headers=headers) as resp:
                                 data = await resp.json()
-                                warurl = "https://api.royaleapi.com/clan/{}/war".format(clan)
+                                warurl = "https://api.royaleapi.com/clan/%23{}/currentwar".format(clan)
                                 async with session.get(warurl, headers = headers) as wresp:
                                     wdata = await wresp.json()
                                     pass
@@ -108,9 +108,9 @@ class liquidclans:
                                     embed.set_thumbnail(url = data['badge']['image'])
                                     embed.add_field(name = 'Description:', value = data['description'], inline = True)
                                     embed.add_field(name = 'Clan Points:', value = f"{data['score']} <:Trophy:443281867316264960>", inline = True)
-                                    embed.add_field(name = 'Member Count:', value = f"{data['memberCount']}/50 <:Members:443282536764801026>", inline = True)
-                                    embed.add_field(name = 'Required Trophies:', value = f"{data['requiredScore']} <:Trophy:443281867316264960>", inline = True)
-                                    embed.add_field(name = 'Donations:', value = f"{data['donations']} <:Cards:443285942875193344>", inline = True)
+                                    embed.add_field(name = 'Member Count:', value = f"{data['members']}/50 <:Members:443282536764801026>", inline = True)
+                                    embed.add_field(name = 'Required Trophies:', value = f"{data['requiredTrophies']} <:Trophy:443281867316264960>", inline = True)
+                                    embed.add_field(name = 'Donations:', value = f"{data['donationsPerWeek']} <:Cards:443285942875193344>", inline = True)
                                     embed.add_field(name = 'Type:', value = f"{data['type']}".capitalize(), inline = True)
                                     embed.add_field(name = 'Location:', value = data['location']['name'], inline = True)
                                     if wdata['state'] == 'notInWar':
@@ -164,7 +164,7 @@ class liquidclans:
                                         pass
                                 except Exception as e:
                                     x += 1
-                                    #await self.bot.send_message(c, e)
+                                    await self.bot.send_message(c, e)
                                     await self.bot.send_message(c, 'Something went wrong, please try again later.')
                                     print(e)
                                     pass
