@@ -36,7 +36,7 @@ class liquidclans:
         self.bot = bot
     
     def version(self):
-        v = '2.0.0.1'
+        v = '2.0.0b2'
         return v
     
     def display_time(self, seconds, granularity=2):
@@ -130,7 +130,7 @@ class liquidclans:
                                     if wdata['state'] in ['warDay', 'collectionDay']:
                                         embed.add_field(name = 'Clan War Participants:', value = str(len(wdata['participants'])) + ' <:Members:443282536764801026>', inline = True)
                                         pass
-                                    embed.set_footer(text = 'LiquidClans v{} - API powered by RoyaleAPI'.format(self.version()), icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
+                                    embed.set_footer(text = 'LiquidClans v{} - API powered by Clash Royale'.format(self.version()), icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
                                     msg = await self.bot.send_message(c, embed = embed)
                                     x += 1
                                     if x >= len(CRegion):
