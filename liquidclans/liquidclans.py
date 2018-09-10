@@ -36,7 +36,7 @@ class liquidclans:
         self.bot = bot
     
     def version(self):
-        v = '2.0.0a1b7c1'
+        v = '2.0.0a1b7c2'
         return v
     
     def display_time(self, seconds, granularity=2):
@@ -146,7 +146,7 @@ class liquidclans:
                                             d = 'th'
                                         up = mts("**__Last update on {} {}{} at %H:%M:%S GMT.__**").format(t.capitalize(), mts("%d"), d)
                                         await self.bot.send_message(c, up)
-                                        await asyncio.sleep(30)	
+                                        await asyncio.sleep(1800)	
                                         lim = len(CRegion) + 1
                                         async for message in self.bot.logs_from(c, limit = lim + 5, after = starter):
                                             to_delete = [] 
