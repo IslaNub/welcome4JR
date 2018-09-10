@@ -36,7 +36,7 @@ class liquidclans:
         self.bot = bot
     
     def version(self):
-        v = '1.1.2.0'
+        v = '2.0.0.1'
         return v
     
     def display_time(self, seconds, granularity=2):
@@ -105,7 +105,7 @@ class liquidclans:
                                     embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/{}'.format(clan), color = 0x00FFBF)
                                     embed.set_author(name = 'Stats for {}!'.format(data['name']))
                                     embed.title = f"{data['name']} (#{data['tag']})"
-                                    #embed.set_thumbnail(url = data['badge']['image'])
+                                    embed.set_thumbnail(url = 'https://d1u5p3l4wpay3k.cloudfront.net/lolesports_gamepedia_en/f/f4/Team_Liquidlogo_square.png?version=e912079afa0146b8f741465994754366')
                                     embed.add_field(name = 'Description:', value = data['description'], inline = True)
                                     embed.add_field(name = 'Clan Points:', value = f"{data['clanScore']} <:Trophy:443281867316264960>", inline = True)
                                     embed.add_field(name = 'Member Count:', value = f"{data['members']}/50 <:Members:443282536764801026>", inline = True)
