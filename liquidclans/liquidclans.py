@@ -262,12 +262,18 @@ class liquidclans:
             if self.smart_clan(clan = clan) != 'No match':
                 if currentTrophiesReq is not None:
                     tro = currentTrophiesReq
+                else:
+                    tro = None
                 if open_Boolean_TrueOrFalse is not None:
                     opened = open_Boolean_TrueOrFalse
+                else:
+                    opened = None
                 if membersCount_Boolean_TrueOrFalse is not None:
                     mcount = membersCount_Boolean_TrueOrFalse
+                else:
+                    mcount = None
                 try:
-                    clan = self.smart_clan(clan = clan, tro = tro or None, opened = opened or None, mcount = mcount or None)
+                    clan = self.smart_clan(clan = clan, tro = tro, opened = opened, mcount = mcount)
                 except Exception as e:
                     await self.bot.say(e)
                 await self.bot.say(self.smart_clan(clan = clan))
