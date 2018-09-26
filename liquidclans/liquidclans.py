@@ -258,7 +258,8 @@ class liquidclans:
     @commands.command(pass_context = True, no_pm = True)
     async def claninfobeta(self, ctx, regionOrName, currentTrophiesReq:int = None, open_Boolean_TrueOrFalse:bool = None, membersCount_Boolean_TrueOrFalse:bool = None):
         if ctx.message.channel.id in ['488772756024852500', '414094090070786058']:
-            if self.smart_clan() != 'No match':
+            clan = regionOrName
+            if self.smart_clan(clan = clan) != 'No match':
                 if currentTrophiesReq is not None:
                     tro = currentTrophiesReq
                 if open_Boolean_TrueOrFalse is not None:
@@ -266,7 +267,7 @@ class liquidclans:
                 if membersCount_Boolean_TrueOrFalse is not None:
                     mcount = membersCount_Boolean_TrueOrFalse
                 try:
-                    clan = self.smart_clan(clan = regionOrName or None, tro = tro or None, opened = opened or None, mcount = mcount or None)
+                    clan = self.smart_clan(clan = clan or None, tro = tro or None, opened = opened or None, mcount = mcount or None)
                 except Exception as e:
                     await self.bot.say(e)
                 headers = APIAuth
@@ -288,7 +289,7 @@ class liquidclans:
                                             countryCode = {}
                                             description = {}""".format(data["tag"], data["name"], data["badgeId"], data["type"], data["clanScore"], data["requiredTrophies"], data["donationsPerWeek"], data["members"], data["location"]["id"], data["location"]["name"], data["location"]["isCountry"], data["location"]["countryCode"], data["description"]))
             else:
-                await self.bot.say(self.smart_clan() + ' found, please contact the owner if you think this is a mistake.')
+                await self.bot.say(self.smart_clan(clan = clan) + ' found, please contact the owner if you think this is a mistake.')
         else:
             await self.bot.say('Please signup to beta first with `+beta` or use the correct channel, this command is currently '\
                                'locked in other channels.')
