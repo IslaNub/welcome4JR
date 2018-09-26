@@ -273,7 +273,7 @@ class liquidclans:
                 #else:
                     #mcount = None
                 try:
-                    clan = self.smart_clan(clan = c, tro = tro:None, opened = opened:None, mcount = mcount:None)
+                    clan = self.smart_clan(clan = c, tro = tro = None, opened = opened = None, mcount = mcount = None)
                 except Exception as e:
                     await self.bot.say(e)
                 await self.bot.say(self.smart_clan(clan = c))
