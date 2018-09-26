@@ -259,7 +259,7 @@ class liquidclans:
     async def claninfobeta(self, ctx, regionOrName, currentTrophiesReq:int = None, open_Boolean_TrueOrFalse:bool = None, membersCount_Boolean_TrueOrFalse:bool = None):
         if ctx.message.channel.id in ['488772756024852500', '414094090070786058']:
             c = regionOrName
-            if self.smart_clan(clan = clan) != 'No match':
+            if self.smart_clan(clan = c) != 'No match':
                 #if currentTrophiesReq is not None:
                     #tro = currentTrophiesReq
                 #else:
