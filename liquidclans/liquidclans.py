@@ -247,7 +247,7 @@ class liquidclans:
                 await self.bot.say(e)
                 pass
             
-    def smart_clan(self, clan, tro:int = None, opened:bool = None, mcount:bool = None):
+    def smart_clan(self, clan, tro:int = None, opened:bool = None, mcount:int = None):
         if clan.lower() == 'academy':
             clan = AcademyClan
             return clan
@@ -256,7 +256,7 @@ class liquidclans:
             return error
     
     @commands.command(pass_context = True, no_pm = True)
-    async def claninfobeta(self, ctx, regionOrName, currentTrophiesReq:int = None, open_Boolean_TrueOrFalse:bool = None, membersCount_Boolean_TrueOrFalse:bool = None):
+    async def claninfobeta(self, ctx, regionOrName, currentTrophiesReq:int = None, open_Boolean_TrueOrFalse:bool = None, membersCount_Boolean_TrueOrFalse:int = None):
         if ctx.message.channel.id in ['488772756024852500', '414094090070786058']:
             c = regionOrName
             if self.smart_clan(clan = c) != 'No match':
