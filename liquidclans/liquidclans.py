@@ -282,7 +282,7 @@ class liquidclans:
                                             "isCountry = {}\n"\
                                             "description = {}\n".format(data["tag"], data["name"], data["badgeId"], data["type"], data["clanScore"], data["requiredTrophies"], data["donationsPerWeek"], data["members"], data["location"]["id"], data["location"]["name"], data["location"]["isCountry"], data["description"]))
             else:
-                await self.bot.say(self.smart_clan(clan = clan) + ' found, please contact the owner if you think this is a mistake.')
+                await self.bot.say(self.smart_clan(clan = c) + ' found, please contact the owner if you think this is a mistake.')
         else:
             await self.bot.say('Please signup to beta first with `+beta` or use the correct channel, this command is currently '\
                                'locked in other channels.')
