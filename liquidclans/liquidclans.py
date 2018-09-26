@@ -247,7 +247,7 @@ class liquidclans:
                 await self.bot.say(e)
                 pass
             
-    async def smart_clan(self, ctx, clan, tro:int = None, opened:bool = None, mcount:bool = None):
+    def smart_clan(self, clan, tro:int = None, opened:bool = None, mcount:bool = None):
         if clan.lower().strip() == 'academy':
             clan = AcademyClan
             return clan
