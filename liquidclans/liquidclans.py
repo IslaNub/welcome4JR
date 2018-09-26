@@ -260,20 +260,20 @@ class liquidclans:
         if ctx.message.channel.id in ['488772756024852500', '414094090070786058']:
             c = regionOrName
             if self.smart_clan(clan = clan) != 'No match':
-                if currentTrophiesReq is not None:
-                    tro = currentTrophiesReq
+                #if currentTrophiesReq is not None:
+                    #tro = currentTrophiesReq
                 #else:
                     #tro = None
-                if open_Boolean_TrueOrFalse is not None:
-                    opened = open_Boolean_TrueOrFalse
+                #if open_Boolean_TrueOrFalse is not None:
+                    #opened = open_Boolean_TrueOrFalse
                 #else:
                     #opened = None
-                if membersCount_Boolean_TrueOrFalse is not None:
-                    mcount = membersCount_Boolean_TrueOrFalse
+                #if membersCount_Boolean_TrueOrFalse is not None:
+                    #mcount = membersCount_Boolean_TrueOrFalse
                 #else:
                     #mcount = None
                 try:
-                    clan = self.smart_clan(clan = c, tro = tro = None, opened = opened = None, mcount = mcount = None)
+                    clan = self.smart_clan(clan = c, tro = currentTrophiesReq, opened = open_Boolean_TrueOrFalse, mcount = membersCount_Boolean_TrueOrFalse)
                 except Exception as e:
                     await self.bot.say(e)
                 await self.bot.say(self.smart_clan(clan = c))
