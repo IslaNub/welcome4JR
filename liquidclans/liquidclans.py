@@ -262,7 +262,6 @@ class liquidclans:
             if self.smart_clan(clan = c) != 'No match':
                 try:
                     clan = self.smart_clan(clan = c, tro = currentTrophiesReq, opened = open_Boolean_TrueOrFalse, mcount = membersCount_Boolean_TrueOrFalse)
-                    await self.bot.say(clan)
                 except Exception as e:
                     await self.bot.say(e)
                 headers = APIAuth
