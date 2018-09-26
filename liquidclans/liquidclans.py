@@ -260,30 +260,16 @@ class liquidclans:
         if ctx.message.channel.id in ['488772756024852500', '414094090070786058']:
             c = regionOrName
             if self.smart_clan(clan = c) != 'No match':
-                #if currentTrophiesReq is not None:
-                    #tro = currentTrophiesReq
-                #else:
-                    #tro = None
-                #if open_Boolean_TrueOrFalse is not None:
-                    #opened = open_Boolean_TrueOrFalse
-                #else:
-                    #opened = None
-                #if membersCount_Boolean_TrueOrFalse is not None:
-                    #mcount = membersCount_Boolean_TrueOrFalse
-                #else:
-                    #mcount = None
                 try:
                     clan = self.smart_clan(clan = c, tro = currentTrophiesReq, opened = open_Boolean_TrueOrFalse, mcount = membersCount_Boolean_TrueOrFalse)
                     await self.bot.say(clan)
                 except Exception as e:
                     await self.bot.say(e)
                 headers = APIAuth
-                await self.bot.say('P')
                 url = "https://api.clashroyale.com/v1/clans/%23{}".format(clan)
                 async with aiohttp.ClientSession() as session:
                     async with session.get(url, headers=headers) as resp:
                         data = await resp.json()
-                        await self.bot.say(data["name"])
                         await self.bot.say("Tag = {}\n"\
                                             "name = {}\n"\
                                             "badgeID = {}\n"\
