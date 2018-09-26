@@ -276,7 +276,7 @@ class liquidclans:
                 async with aiohttp.ClientSession() as session:
                     async with session.get(url, headers=headers) as resp:
                         data = await resp.json()
-                        await self.bot.say data
+                        await self.bot.say(data)
                         await self.bot.say("""Tag = {}
                                             name = {}
                                             badgeID = {}
