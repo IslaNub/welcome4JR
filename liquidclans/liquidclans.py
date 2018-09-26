@@ -248,7 +248,7 @@ class liquidclans:
                 pass
             
     def smart_clan(self, clan, tro:int = None, opened:bool = None, mcount:bool = None):
-        if clan.lower().strip() == 'academy':
+        if clan.lower() == 'academy':
             clan = AcademyClan
             return clan
         else:
