@@ -27,7 +27,7 @@ ArgentinaClans = ['9P2CUYJR', 'P88LCUGQ']
 NAClans = ['9YU2PQRV', 'V8GRLCQ', '9CJ9YGPL', '820QC80V', '9QVYYYV0', '9YYLQ99L', 'PGQY9Q9C', 'P00Q0VUV']
 LASClans = ['9QLLG92U', 'V0GL8C8', '889CQU88', '8R8LJYU2', '8J8UVQL0', '8L98R2JV', '8JR0LQ8U', '98LJJLR9', '8CPJV28G', '8G90Y22R', '9GLPUC2R', '980VLV0J', '9YR8L8R8', '9JL98G9J', 'P80J882L', 'P22C00YR']
 LANClans = ['8URY28UC', '92J9RY9C', '9Q88CP22', '9PPJJVLQ', 'P2PP8L80', '9QL02L9U', 'P2PR8Q0L', 'P2PPR8Q0L', '9LGV822C', '8JG8Y20R', '99UL0CRJ', '9LPJUVYJ']
- 
+AcademyClan = 'P2GJGRUY'
 
 class liquidclans:
     """Liquid Clans"""
@@ -107,10 +107,10 @@ class liquidclans:
                                     embed.title = f"{data['name']} ({data['tag']})"
                                     embed.set_thumbnail(url = 'https://cdn.discordapp.com/attachments/414094090070786058/488698485932032001/1536585191942.png')
                                     embed.add_field(name = 'Description:', value = data['description'], inline = True)
-                                    embed.add_field(name = 'Clan Points:', value = f"{data['clanScore']} <:Trophy:443281867316264960>", inline = True)
-                                    embed.add_field(name = 'Member Count:', value = f"{data['members']}/50 <:Members:443282536764801026>", inline = True)
-                                    embed.add_field(name = 'Required Trophies:', value = f"{data['requiredTrophies']} <:Trophy:443281867316264960>", inline = True)
-                                    embed.add_field(name = 'Donations:', value = f"{data['donationsPerWeek']} <:Cards:443285942875193344>", inline = True)
+                                    embed.add_field(name = 'Clan Points:', value = "{} <:Trophy:443281867316264960>".format(data['clanScore']), inline = True)
+                                    embed.add_field(name = 'Member Count:', value = "{}/50 <:Members:443282536764801026>".format(data['members']), inline = True)
+                                    embed.add_field(name = 'Required Trophies:', value = "{} <:Trophy:443281867316264960>".format(data['requiredTrophies']), inline = True)
+                                    embed.add_field(name = 'Donations:', value = "{} <:Cards:443285942875193344>".format(data['donationsPerWeek']), inline = True)
                                     t = data['type']
                                     if t.lower() == 'inviteonly':
                                         t = 'Invite Only'
@@ -180,68 +180,7 @@ class liquidclans:
                 #await self.bot.send_message(c, e)
             #await asyncio.sleep(10)
             #await self.bot.delete_message(msg)
-            
-    """@commands.command(pass_context = True, no_pm = True)
-    async def triggerna(self, ctx):
-        
-        x = 0
-        
-        #await self.bot.say(len(eu))
-        c = self.bot.get_channel('447519506210750474')
-        starter = await self.bot.send_message(c, '***__NA CLANS:__***')
-        #await self.bot.send_message(c, '***__EU CLANS:__***')
-        while True:
-            try:
-                while True:
-                    clan = NAClans[x]
-                    try:
-                        headers = APIAuth
-                        url = "https://api.royaleapi.com/clan/{}".format(clan)
-                        async with aiohttp.ClientSession() as session:
-                            async with session.get(url, headers=headers) as resp:
-                                data = await resp.json()
-                                try:
-                                    embed = discord.Embed(title = '', url = 'https://royaleapi.com/clan/{}'.format(clan), color = 0x00FFBF)
-                                    embed.set_author(name = 'Stats for {}!'.format(data['name']))
-                                    embed.title = f"{data['name']} (#{data['tag']})"
-                                    embed.set_thumbnail(url = data['badge']['image'])
-                                    embed.add_field(name = 'Description:', value = data['description'], inline = True)
-                                    embed.add_field(name = 'Clan Points:', value = f"{data['score']} <:Trophy:443281867316264960>", inline = True)
-                                    embed.add_field(name = 'Member Count:', value = f"{data['memberCount']}/50 <:Members:443282536764801026>", inline = True)
-                                    embed.add_field(name = 'Required Trophies:', value = f"{data['requiredScore']} <:Trophy:443281867316264960>", inline = True)
-                                    embed.add_field(name = 'Donations:', value = f"{data['donations']} <:Cards:443285942875193344>", inline = True)
-                                    embed.add_field(name = 'Type:', value = f"{data['type']}".capitalize(), inline = True)
-                                    embed.set_footer(text = 'LiquidClans v{} - API powered by RoyaleAPI'.format('0.1'), icon_url = 'https://raw.githubusercontent.com/cr-api/cr-api-docs/master/docs/img/cr-api-logo-b.png')
-                                    embed.add_field(name = 'Location:', value = data['location']['name'], inline = True)
-                                    
-                                    msg = await self.bot.send_message(c, embed = embed)
-                                    x += 1
-                                    if x >= len(NAClans):
-                                        #await self.bot.send_message(c, 'Working')
-                                        await asyncio.sleep(3600)
-                                        lim = len(NAClans)
-                                        async for message in self.bot.logs_from(c, limit = lim, after = starter):
-                                            to_delete = [] 
-                                            to_delete.append(message)
-                                            x = 0
-                                            await self.mass_purge(to_delete)
-                                            pass
-                                        await self.bot.delete_message(starter)
-                                        starter = await self.bot.send_message(c, '***__NA CLANS:__***')
-                                            
-                                        pass
-                                    
-                                except Exception as e:
-                                    x = 0
-                                    #await self.bot.send_message(c, e)
-                                    await self.bot.send_message(c, 'Something went wrong, please try again later.')
-                                    print(e)
-                    except Exception as e:
-                        x = 0
-                        #await self.bot.send_message(c, e) 
-                        print(e)
-            except Exception as e:
-                x = 0"""
+                          
                                                     
     async def mass_purge(self, messages):
         while messages:
@@ -282,7 +221,7 @@ class liquidclans:
                             break                            
             except Exception as e:
                 await self.bot.say('#' + ptag + ' is wrong.')
-                x += 1                               
+                x += 1
         
     @commands.command(pass_context = True, no_pm = True)
     async def testwins(self, ctx):
@@ -307,7 +246,54 @@ class liquidclans:
             except Exception as e:
                 await self.bot.say(e)
                 pass
-                                                    
+            
+    async def smart_clan(self, ctx, clan, tro:int = None, opened:bool = None, mcount:bool = None):
+        if clan.lower().strip() == 'academy':
+            clan = AcademyClan
+            return clan
+        else:
+            error = 'No match'
+            return error
+    
+    @commands.command(pass_context = True, no_pm = True)
+    async def claninfobeta(self, ctx, regionOrName, currentTrophiesReq:int = None, open_Boolean_TrueOrFalse:bool = None, membersCount_Boolean_TrueOrFalse:bool = None):
+        if ctx.message.channel.id in ['488772756024852500', '414094090070786058']:
+            if self.smart_clan() != 'No match':
+                if currentTrophiesReq is not None:
+                    tro = currentTrophiesReq
+                if open_Boolean_TrueOrFalse is not None:
+                    opened = open_Boolean_TrueOrFalse
+                if membersCount_Boolean_TrueOrFalse is not None:
+                    mcount = membersCount_Boolean_TrueOrFalse
+                try:
+                    clan = self.smart_clan(clan = regionOrName or None, tro = tro or None, opened = opened or None, mcount = mcount or None)
+                except Exception as e:
+                    await self.bot.say(e)
+                headers = APIAuth
+                url = "https://api.clashroyale.com/v1/clans/%23{}".format(clan)
+                async with aiohttp.ClientSession() as session:
+                    async with session.get(url, headers=headers) as resp:
+                        data = await resp.json()
+                        await self.bot.say("""Tag = {}
+                                            name = {}
+                                            badgeID = {}
+                                            type = {}
+                                            clanscore = {}
+                                            requiredTrophies = {}
+                                            donationsPerWeek = {}
+                                            members = {}
+                                            locationID = {}
+                                            locationName = {}
+                                            isCountry = {}
+                                            countryCode = {}
+                                            description = {}""".format(data["tag"], data["name"], data["badgeId"], data["type"], data["clanScore"], data["requiredTrophies"], data["donationsPerWeek"], data["members"], data["location"]["id"], data["location"]["name"], data["location"]["isCountry"], data["location"]["countryCode"], data["description"])
+            else:
+                await self.bot.say(self.smart_clan() + ' found, please contact the owner if you think this is a mistake.')
+        else:
+            await self.bot.say('Please signup to beta first with `+beta` or use the correct channel, this command is currently '\
+                               'locked in other channels.'
+                
+            
 def setup(bot):
     n = liquidclans(bot)
     bot.add_cog(n)
