@@ -267,7 +267,7 @@ class liquidclans:
                 if membersCount_Boolean_TrueOrFalse is not None:
                     mcount = membersCount_Boolean_TrueOrFalse
                 try:
-                    clan = self.smart_clan(clan = clan None, tro = tro or None, opened = opened or None, mcount = mcount or None)
+                    clan = self.smart_clan(clan = clan, tro = tro or None, opened = opened or None, mcount = mcount or None)
                 except Exception as e:
                     await self.bot.say(e)
                 await self.bot.say(self.smart_clan(clan = clan))
