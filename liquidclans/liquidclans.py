@@ -274,6 +274,7 @@ class liquidclans:
                     #mcount = None
                 try:
                     clan = self.smart_clan(clan = c, tro = currentTrophiesReq, opened = open_Boolean_TrueOrFalse, mcount = membersCount_Boolean_TrueOrFalse)
+                    await self.bot.say(clan)
                 except Exception as e:
                     await self.bot.say(e)
                 await self.bot.say(self.smart_clan(clan = c))
@@ -283,19 +284,19 @@ class liquidclans:
                     async with session.get(url, headers=headers) as resp:
                         data = await resp.json()
                         await self.bot.say(data)
-                        await self.bot.say("""Tag = {}
-                                            name = {}
-                                            badgeID = {}
-                                            type = {}
-                                            clanscore = {}
-                                            requiredTrophies = {}
-                                            donationsPerWeek = {}
-                                            members = {}
-                                            locationID = {}
-                                            locationName = {}
-                                            isCountry = {}
-                                            countryCode = {}
-                                            description = {}""".format(data["tag"], data["name"], data["badgeId"], data["type"], data["clanScore"], data["requiredTrophies"], data["donationsPerWeek"], data["members"], data["location"]["id"], data["location"]["name"], data["location"]["isCountry"], data["location"]["countryCode"], data["description"]))
+                        await self.bot.say("Tag = {}\n"\
+                                            "name = {}\n"\
+                                            "badgeID = {}\n"\
+                                            "type = {}\n"\
+                                            "clanscore = {}\n"\
+                                            "requiredTrophies = {}\n"\
+                                            "donationsPerWeek = {}\n"\
+                                            "members = {}\n"\
+                                            "locationID = {}\n"\
+                                            "locationName = {}\n"\
+                                            "isCountry = {}\n"\
+                                            "countryCode = {}\n"\
+                                            "description = {}\n".format(data["tag"], data["name"], data["badgeId"], data["type"], data["clanScore"], data["requiredTrophies"], data["donationsPerWeek"], data["members"], data["location"]["id"], data["location"]["name"], data["location"]["isCountry"], data["location"]["countryCode"], data["description"]))
             else:
                 await self.bot.say(self.smart_clan(clan = clan) + ' found, please contact the owner if you think this is a mistake.')
         else:
