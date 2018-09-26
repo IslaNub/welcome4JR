@@ -291,7 +291,7 @@ class liquidclans:
                 await self.bot.say(self.smart_clan() + ' found, please contact the owner if you think this is a mistake.')
         else:
             await self.bot.say('Please signup to beta first with `+beta` or use the correct channel, this command is currently '\
-                               'locked in other channels.'
+                               'locked in other channels.')
                 
             
 def setup(bot):
