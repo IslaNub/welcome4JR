@@ -286,7 +286,7 @@ class liquidclans:
                                             locationName = {}
                                             isCountry = {}
                                             countryCode = {}
-                                            description = {}""".format(data["tag"], data["name"], data["badgeId"], data["type"], data["clanScore"], data["requiredTrophies"], data["donationsPerWeek"], data["members"], data["location"]["id"], data["location"]["name"], data["location"]["isCountry"], data["location"]["countryCode"], data["description"])
+                                            description = {}""".format(data["tag"], data["name"], data["badgeId"], data["type"], data["clanScore"], data["requiredTrophies"], data["donationsPerWeek"], data["members"], data["location"]["id"], data["location"]["name"], data["location"]["isCountry"], data["location"]["countryCode"], data["description"]))
             else:
                 await self.bot.say(self.smart_clan() + ' found, please contact the owner if you think this is a mistake.')
         else:
