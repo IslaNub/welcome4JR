@@ -277,8 +277,8 @@ class liquidclans:
                     await self.bot.say(clan)
                 except Exception as e:
                     await self.bot.say(e)
-                await self.bot.say(self.smart_clan(clan = c))
                 headers = APIAuth
+                await self.bot.say('P')
                 url = "https://api.clashroyale.com/v1/clans/%23{}".format(clan)
                 async with aiohttp.ClientSession() as session:
                     async with session.get(url, headers=headers) as resp:
