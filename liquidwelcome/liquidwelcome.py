@@ -33,14 +33,15 @@ class liquidwelcome:
         self.bot = bot
 
     async def on_member_join(self, member):
-        ser = self.bot.get_server('301578535175323658')
-        #nv = discord.utils.get(ser.roles, name = 'Not Verified')
-        cr = discord.utils.get(ser.roles, name = 'Clash Royale')
-        bs = discord.utils.get(ser.roles, name = 'Brawl Stars')
-        aov = discord.utils.get(ser.roles, name = 'Arena of Valor')
-        cj = self.bot.get_channel('432157348371628042')
-        mj = '**{}** has joined the Server! <:LiquidWhite:454153267686014976>\n```{} members in the Server.```'.format(member.name, ser.member_count)
-        await self.bot.send_message(cj, mj)
+        if member.server.id == '301578535175323658':
+            ser = self.bot.get_server('301578535175323658')
+            #nv = discord.utils.get(ser.roles, name = 'Not Verified')
+            cr = discord.utils.get(ser.roles, name = 'Clash Royale')
+            bs = discord.utils.get(ser.roles, name = 'Brawl Stars')
+            aov = discord.utils.get(ser.roles, name = 'Arena of Valor')
+            cj = self.bot.get_channel('432157348371628042')
+            mj = '**{}** has joined the Server! <:LiquidWhite:454153267686014976>\n```{} members in the Server.```'.format(member.name, ser.member_count)
+            await self.bot.send_message(cj, mj)
         #await self.bot.add_roles(member, cr)
         #await self.bot.add_roles(member, aov)
         #await self.bot.add_roles(member, bs)                        
@@ -64,16 +65,18 @@ class liquidwelcome:
         #        await self.bot.remove_roles(member, nv)
         
     async def on_member_remove(self, member):
-        c = self.bot.get_channel('432157348371628042')
-        s = self.bot.get_server('301578535175323658')
-        m = '**{}** has left the Server, bye bye... <:PandaNotLike:428559664733618176>\n```{} members left in the Server.```'.format(member, s.member_count)
-        await self.bot.send_message(c, m)
+        if member.server.id == '301578535175323658':
+            c = self.bot.get_channel('432157348371628042')
+            s = self.bot.get_server('301578535175323658')
+            m = '**{}** has left the Server, bye bye... <:PandaNotLike:428559664733618176>\n```{} members left in the Server.```'.format(member, s.member_count)
+            await self.bot.send_message(c, m)
         
     async def on_member_ban(self, member):
-        c = self.bot.get_channel('432157348371628042')
-        s = self.bot.get_server('301578535175323658')
-        m = 'Someone has used the Hammer and **{}** has been banned from this Server! <:BanHammer:438979295671746560>'.format(member)
-        await self.bot.send_message(c, m)
+        if member.server.id == '301578535175323658':
+            c = self.bot.get_channel('432157348371628042')
+            s = self.bot.get_server('301578535175323658')
+            m = 'Someone has used the Hammer and **{}** has been banned from this Server! <:BanHammer:438979295671746560>'.format(member)
+            await self.bot.send_message(c, m)
         
     @commands.command(pass_context = True, no_pm = True)
     async def liquid(self, ctx):
